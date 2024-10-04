@@ -1022,8 +1022,25 @@ LittlerootTown_Text_BirchSomethingToShowYouAtLab:
 
 `
 
-script LittlerootTown_EventScript_NewSign {
+script LittlerootTown_EventScript_SebastiansHouse {
     lockall
-    msgbox("Hello World")
+    msgbox("SEBASTIAN'S HOUSE")
+    releaseall
+}
+
+script LittlerootTown_EventScript_SamsHouse {
+    lockall
+    msgbox("SAM'S HOUSE")
+    releaseall
+}
+script LittlerootTown_EventScript_AbigailsHouse {
+    lockall
+    msgbox("ABIGAIL'S HOUSE")
+    releaseall
+}
+
+script LittlerootTown_EventScript_NeighboursHouse {
+    lockall
+    msgbox("A neighbour lives here.")
     releaseall
 }

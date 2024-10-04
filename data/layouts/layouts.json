@@ -4410,6 +4410,26 @@
       "secondary_tileset": "gTileset_MysteryEventsHouse",
       "border_filepath": "data/layouts/SootopolisCity_MysteryEventsHouse_1F_StairsUnblocked/border.bin",
       "blockdata_filepath": "data/layouts/SootopolisCity_MysteryEventsHouse_1F_StairsUnblocked/map.bin"
+    },
+    {
+      "id": "LAYOUT_LITTLEROOT_TOWN_MART",
+      "name": "LittlerootTown_Mart_Layout",
+      "width": 11,
+      "height": 8,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_Shop",
+      "border_filepath": "data/layouts/LittlerootTown_Mart/border.bin",
+      "blockdata_filepath": "data/layouts/LittlerootTown_Mart/map.bin"
+    },
+    {
+      "id": "LAYOUT_LITTLEROOT_TOWN_SAMS_HOUSE",
+      "name": "LittlerootTown_SamsHouse_Layout",
+      "width": 17,
+      "height": 9,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_GenericBuilding",
+      "border_filepath": "data/layouts/LittlerootTown_SamsHouse/border.bin",
+      "blockdata_filepath": "data/layouts/LittlerootTown_SamsHouse/map.bin"
     }
   ]
 }
