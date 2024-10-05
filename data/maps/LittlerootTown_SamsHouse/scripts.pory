@@ -1,17 +1,32 @@
-mapscripts LittlerootTown_SamsHouse_MapScripts {}
+mapscripts LittlerootTown_SamsHouse_MapScripts {
+     MAP_SCRIPT_ON_FRAME_TABLE [
+        VAR_SAM_STATE, 2: LittlerootTown_Samshouse_Event_Script_SamHeart1
+    ]
+    MAP_SCRIPT_ON_TRANSITION: SamHeart1_Helper
+}
+
+script SamHeart1_Helper {
+    setflag(FLAG_HIDE_LITTLEROOT_TOWN_SAMS_HOUSE_SEBASTIAN)
+    if (var(VAR_SAM_STATE) == 1) { 
+        setvar(VAR_SAM_STATE , 2)
+    }
+    releaseall
+}
 
 script LittlerootTown_SamsHouse_Event_Script_MeetSam {
     lock
     faceplayer
-    playbgm(MUS_ENCOUNTER_BRENDAN, TRUE)
+
     if(flag(FLAG_MEETSAM)){ 
-        msgbox("I wish I could get the day off...", MSGBOX_NPC)
+        msgbox(format("I'm glad I have the day off! Sebastian and I have been meaning to hang for a while. Why don't you drop by later. {PLAYER}?"), MSGBOX_NPC)
+        setvar(VAR_SAM_STATE, 1)
     }
     else {
+        playbgm(MUS_ENCOUNTER_BRENDAN, TRUE)
         msgbox ("Hey, I'm Sam. Good to meet you.", MSGBOX_NPC)
         setflag(FLAG_MEETSAM)
+        fadedefaultbgm
     }
-	fadedefaultbgm
     releaseall
 }
 
@@ -28,4 +43,80 @@ script LittlerootTown_SamsHouse_Event_Script_Jodi {
     msgbox (format("Oh! You aren't exactly how I imagined... but that's okay! I'm Jodi."), MSGBOX_NPC)
     msgbox ("Have you met my boys yet?", MSGBOX_NPC)
     releaseall
+}
+
+script LittlerootTown_Samshouse_Event_Script_SamHeart1 {
+    lockall
+    fadescreen(FADE_TO_BLACK)
+    hideobjectat(1,MAP_LITTLEROOT_TOWN_SAMS_HOUSE)
+    hideobjectat(3,MAP_LITTLEROOT_TOWN_SAMS_HOUSE)
+    clearflag(FLAG_HIDE_LITTLEROOT_TOWN_SAMS_HOUSE_SEBASTIAN)
+    addobject(4)
+    fadescreen(FADE_FROM_BLACK)
+    applymovement(OBJ_EVENT_ID_PLAYER, SamHeart1_Movement_Player)
+    waitmovement(0)
+    playse(SE_PIN)
+    applymovement(2, Common_Movement_ExclamationMark)
+    applymovement(4, Common_Movement_ExclamationMark)
+    applymovement(4, SamHeart1_Movement_Sebastian)
+    waitmovement(2)
+    waitmovement(4)
+    delay(4)
+    applymovement(2, SamHeart1_Movement_2)
+    waitmovement(0)
+    msgbox(format("SAM: Oh, hi {PLAYER}! Sebastian and I were just having a little 'jam session'."), MSGBOX_NPC)
+    applymovement(4, SamHeart1_Movement_1)
+    delay(8)
+    waitmovement(0)
+    msgbox(format("SAM: We're trying to start a band, but we still don't know what kind of music to make. There's too many possibilities."), MSGBOX_NPC)
+
+    delay(8)
+
+    msgbox(format("SAM: Say, {PLAYER}... what kind of music do you like?"), MSGBOX_NPC)
+
+    delay(16)
+
+    msgbox("SAM: You like Brazillian funk?\n What the heck?", MSGBOX_NPC)
+
+    msgbox(format("SAM: What do you say, Sebastian? Should we do this?"), MSGBOX_NPC)
+
+    delay(8)
+
+    msgbox(format("SEBASTIAN: ...Okay."), MSGBOX_NPC)
+
+    msgbox(format("SAM: Thanks for the help, {PLAYER}. With my guitar skills, and Sebastian's wizardry on the synthesizer, we're gonna be a screaming success. I'm convinced of it!"), MSGBOX_NPC)
+
+    delay(16)
+
+    msgbox(format("SAM: Now I just need to find someone to play drums..."), MSGBOX_NPC)
+
+    fadescreen(FADE_TO_BLACK)
+    showobjectat(1,MAP_LITTLEROOT_TOWN_SAMS_HOUSE)
+    showobjectat(3,MAP_LITTLEROOT_TOWN_SAMS_HOUSE)
+    setflag(FLAG_HIDE_LITTLEROOT_TOWN_SAMS_HOUSE_SEBASTIAN)
+    removeobject(4)
+    fadescreen(FADE_FROM_BLACK)
+    setvar(VAR_SAM_STATE, 3)
+    releaseall
+}
+
+movement SamHeart1_Movement_Player {
+    walk_up
+    walk_right * 6
+    walk_up * 3
+    face_left
+}
+
+movement SamHeart1_Movement_1 {
+    face_up
+    face_left
+}
+
+movement SamHeart1_Movement_Sebastian {
+    face_left
+}
+
+movement SamHeart1_Movement_2 {
+    walk_left
+    face_down
 }
