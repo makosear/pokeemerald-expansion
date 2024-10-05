@@ -10,23 +10,28 @@ script SamHeart1_Helper {
     if (var(VAR_SAM_STATE) == 1) { 
         setvar(VAR_SAM_STATE , 2)
     }
-    releaseall
 }
 
 script LittlerootTown_SamsHouse_Event_Script_MeetSam {
     lock
     faceplayer
 
-    if(flag(FLAG_MEETSAM)){ 
-        msgbox(format("I'm glad I have the day off! Sebastian and I have been meaning to hang for a while. Why don't you drop by later. {PLAYER}?"), MSGBOX_NPC)
-        setvar(VAR_SAM_STATE, 1)
-    }
-    else {
+    if(!flag(FLAG_MEETSAM)) {
         playbgm(MUS_ENCOUNTER_BRENDAN, TRUE)
         msgbox ("Hey, I'm Sam. Good to meet you.", MSGBOX_NPC)
         setflag(FLAG_MEETSAM)
         fadedefaultbgm
     }
+
+    if (var(VAR_SAM_STATE) < 3) { 
+        msgbox(format("I'm glad I have the day off! Sebastian and I have been meaning to hang for a while. Why don't you drop by later. {PLAYER}?"), MSGBOX_NPC)
+        setvar(VAR_SAM_STATE, 1)
+    }
+
+    if (var(VAR_SAM_STATE) < 5 && var(VAR_SAM_STATE) > 2) {
+        msgbox(format("Thanks for your help, {PLAYER}!\nI really think we're onto something."), MSGBOX_NPC)
+    }
+
     releaseall
 }
 
@@ -53,42 +58,51 @@ script LittlerootTown_Samshouse_Event_Script_SamHeart1 {
     clearflag(FLAG_HIDE_LITTLEROOT_TOWN_SAMS_HOUSE_SEBASTIAN)
     addobject(4)
     fadescreen(FADE_FROM_BLACK)
+    playbgm(MUS_OLDALE, TRUE)
     applymovement(OBJ_EVENT_ID_PLAYER, SamHeart1_Movement_Player)
+    waitmovement(0)
+    applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight)
     waitmovement(0)
     playse(SE_PIN)
     applymovement(2, Common_Movement_ExclamationMark)
     applymovement(4, Common_Movement_ExclamationMark)
-    applymovement(4, SamHeart1_Movement_Sebastian)
-    waitmovement(2)
     waitmovement(4)
-    delay(4)
+    applymovement(4, Common_Movement_FaceLeft)
+    waitmovement(4)
+    waitmovement(2)
+    delay(8)
     applymovement(2, SamHeart1_Movement_2)
+    waitmovement(2)
+    msgbox(format("SAM: Oh, hi {PLAYER}! Sebastian and I were just having a little 'jam session'."))
+    delay(4)
+    applymovement(4, Common_Movement_FaceUp)
     waitmovement(0)
-    msgbox(format("SAM: Oh, hi {PLAYER}! Sebastian and I were just having a little 'jam session'."), MSGBOX_NPC)
-    applymovement(4, SamHeart1_Movement_1)
     delay(8)
+    applymovement(4, Common_Movement_FaceLeft)
     waitmovement(0)
-    msgbox(format("SAM: We're trying to start a band, but we still don't know what kind of music to make. There's too many possibilities."), MSGBOX_NPC)
+    delay(8)
+    msgbox(format("SAM: We're trying to start a band, but we still don't know what kind of music to make. There's too many possibilities."))
 
     delay(8)
 
-    msgbox(format("SAM: Say, {PLAYER}... what kind of music do you like?"), MSGBOX_NPC)
+    msgbox(format("SAM: Say, {PLAYER}... what kind of music do you like?"))
+
+    dynmultichoice(8,4, TRUE, 4, 0, DYN_MULTICHOICE_CB_NONE, "Cheerful pop music.",
+"Experimental noise rock.", "Hi-Energy dance music.", "Honky-tonky country music.")
+
+    msgbox(format("SAM: Hey, you know what? That's exactly the kind of style I've been thinking about... for the band."))
+
+    msgbox(format("SAM: What do you say, Sebastian? Should we do this?"), MSGBOX_AUTOCLOSE)
+
+    delay(8)
+
+    msgbox(format("SEBASTIAN: ...Okay."), MSGBOX_AUTOCLOSE)
+
+    msgbox(format("SAM: Thanks for the help, {PLAYER}. With my guitar skills, and Sebastian's wizardry on the synthesizer, we're gonna be a screaming success. I'm convinced of it!"))
 
     delay(16)
 
-    msgbox("SAM: You like Brazillian funk?\n What the heck?", MSGBOX_NPC)
-
-    msgbox(format("SAM: What do you say, Sebastian? Should we do this?"), MSGBOX_NPC)
-
-    delay(8)
-
-    msgbox(format("SEBASTIAN: ...Okay."), MSGBOX_NPC)
-
-    msgbox(format("SAM: Thanks for the help, {PLAYER}. With my guitar skills, and Sebastian's wizardry on the synthesizer, we're gonna be a screaming success. I'm convinced of it!"), MSGBOX_NPC)
-
-    delay(16)
-
-    msgbox(format("SAM: Now I just need to find someone to play drums..."), MSGBOX_NPC)
+    msgbox(format("SAM: Now I just need to find someone to play drums..."), MSGBOX_AUTOCLOSE)
 
     fadescreen(FADE_TO_BLACK)
     showobjectat(1,MAP_LITTLEROOT_TOWN_SAMS_HOUSE)
@@ -96,6 +110,7 @@ script LittlerootTown_Samshouse_Event_Script_SamHeart1 {
     setflag(FLAG_HIDE_LITTLEROOT_TOWN_SAMS_HOUSE_SEBASTIAN)
     removeobject(4)
     fadescreen(FADE_FROM_BLACK)
+    fadedefaultbgm
     setvar(VAR_SAM_STATE, 3)
     releaseall
 }
@@ -104,16 +119,7 @@ movement SamHeart1_Movement_Player {
     walk_up
     walk_right * 6
     walk_up * 3
-    face_left
-}
-
-movement SamHeart1_Movement_1 {
-    face_up
-    face_left
-}
-
-movement SamHeart1_Movement_Sebastian {
-    face_left
+    face_right
 }
 
 movement SamHeart1_Movement_2 {
