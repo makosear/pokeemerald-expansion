@@ -1078,3 +1078,7 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/LittlerootTown_Mart/scripts.inc"
 
 	.include "data/maps/LittlerootTown_SamsHouse/scripts.inc"
+
+	.include "data/maps/Route135/scripts.inc"
+
+	.include "data/maps/Route136/scripts.inc"
