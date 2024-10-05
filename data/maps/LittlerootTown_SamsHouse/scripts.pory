@@ -23,7 +23,7 @@ script LittlerootTown_SamsHouse_Event_Script_MeetSam {
         fadedefaultbgm
     }
 
-    if (var(VAR_SAM_STATE) < 3) { 
+    elif (var(VAR_SAM_STATE) < 3) { 
         msgbox(format("I'm glad I have the day off! Sebastian and I have been meaning to hang for a while. Why don't you drop by later. {PLAYER}?"), MSGBOX_NPC)
         setvar(VAR_SAM_STATE, 1)
     }
@@ -85,24 +85,24 @@ script LittlerootTown_Samshouse_Event_Script_SamHeart1 {
 
     delay(8)
 
-    msgbox(format("SAM: Say, {PLAYER}... what kind of music do you like?"))
+    msgbox(format("SAM: Say, {PLAYER}... what kind of music do you like?"), MSGBOX_DEFAULT)
 
-    dynmultichoice(8,4, TRUE, 4, 0, DYN_MULTICHOICE_CB_NONE, "Cheerful pop music.",
+    dynmultichoice(8,4, TRUE, 6, 0, DYN_MULTICHOICE_CB_NONE, "Cheerful pop music.",
 "Experimental noise rock.", "Hi-Energy dance music.", "Honky-tonky country music.")
 
     msgbox(format("SAM: Hey, you know what? That's exactly the kind of style I've been thinking about... for the band."))
 
-    msgbox(format("SAM: What do you say, Sebastian? Should we do this?"), MSGBOX_AUTOCLOSE)
+    msgbox(format("SAM: What do you say, Sebastian? Should we do this?"), MSGBOX_DEFAULT)
 
     delay(8)
 
-    msgbox(format("SEBASTIAN: ...Okay."), MSGBOX_AUTOCLOSE)
+    msgbox(format("SEBASTIAN: ...Okay."), MSGBOX_DEFAULT)
 
     msgbox(format("SAM: Thanks for the help, {PLAYER}. With my guitar skills, and Sebastian's wizardry on the synthesizer, we're gonna be a screaming success. I'm convinced of it!"))
 
     delay(16)
 
-    msgbox(format("SAM: Now I just need to find someone to play drums..."), MSGBOX_AUTOCLOSE)
+    msgbox(format("SAM: Now I just need to find someone to play drums..."), MSGBOX_DEFAULT)
 
     fadescreen(FADE_TO_BLACK)
     showobjectat(1,MAP_LITTLEROOT_TOWN_SAMS_HOUSE)

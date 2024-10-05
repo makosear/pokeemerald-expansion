@@ -32,15 +32,14 @@ LittlerootTown_SamsHouse_Event_Script_MeetSam::
 	faceplayer
 # 19 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
 	goto_if_unset FLAG_MEETSAM, LittlerootTown_SamsHouse_Event_Script_MeetSam_2
-LittlerootTown_SamsHouse_Event_Script_MeetSam_1:
 # 26 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
 	compare VAR_SAM_STATE, 3
-	goto_if_lt LittlerootTown_SamsHouse_Event_Script_MeetSam_5
-LittlerootTown_SamsHouse_Event_Script_MeetSam_4:
+	goto_if_lt LittlerootTown_SamsHouse_Event_Script_MeetSam_3
+LittlerootTown_SamsHouse_Event_Script_MeetSam_1:
 # 31 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
 	compare VAR_SAM_STATE, 5
-	goto_if_lt LittlerootTown_SamsHouse_Event_Script_MeetSam_9
-LittlerootTown_SamsHouse_Event_Script_MeetSam_7:
+	goto_if_lt LittlerootTown_SamsHouse_Event_Script_MeetSam_8
+LittlerootTown_SamsHouse_Event_Script_MeetSam_6:
 # 35 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
 	releaseall
 	return
@@ -56,23 +55,23 @@ LittlerootTown_SamsHouse_Event_Script_MeetSam_2:
 	fadedefaultbgm
 	goto LittlerootTown_SamsHouse_Event_Script_MeetSam_1
 
-LittlerootTown_SamsHouse_Event_Script_MeetSam_5:
+LittlerootTown_SamsHouse_Event_Script_MeetSam_3:
 # 27 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
 	msgbox LittlerootTown_SamsHouse_Event_Script_MeetSam_Text_1, MSGBOX_NPC
 # 28 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
 	setvar VAR_SAM_STATE, 1
-	goto LittlerootTown_SamsHouse_Event_Script_MeetSam_4
+	goto LittlerootTown_SamsHouse_Event_Script_MeetSam_1
 
-LittlerootTown_SamsHouse_Event_Script_MeetSam_8:
+LittlerootTown_SamsHouse_Event_Script_MeetSam_7:
 # 32 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
 	msgbox LittlerootTown_SamsHouse_Event_Script_MeetSam_Text_2, MSGBOX_NPC
-	goto LittlerootTown_SamsHouse_Event_Script_MeetSam_7
+	goto LittlerootTown_SamsHouse_Event_Script_MeetSam_6
 
-LittlerootTown_SamsHouse_Event_Script_MeetSam_9:
+LittlerootTown_SamsHouse_Event_Script_MeetSam_8:
 # 31 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
 	compare VAR_SAM_STATE, 2
-	goto_if_gt LittlerootTown_SamsHouse_Event_Script_MeetSam_8
-	goto LittlerootTown_SamsHouse_Event_Script_MeetSam_7
+	goto_if_gt LittlerootTown_SamsHouse_Event_Script_MeetSam_7
+	goto LittlerootTown_SamsHouse_Event_Script_MeetSam_6
 
 
 LittlerootTown_SamsHouse_Event_Script_Vincent::
@@ -167,23 +166,23 @@ LittlerootTown_Samshouse_Event_Script_SamHeart1::
 # 86 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
 	delay 8
 # 88 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
-	msgbox LittlerootTown_Samshouse_Event_Script_SamHeart1_Text_2
+	msgbox LittlerootTown_Samshouse_Event_Script_SamHeart1_Text_2, MSGBOX_DEFAULT
 # 90 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
-	dynmultichoice 8, 4, TRUE, 4, 0, DYN_MULTICHOICE_CB_NONE, LittlerootTown_Samshouse_Event_Script_SamHeart1_Text_3, LittlerootTown_Samshouse_Event_Script_SamHeart1_Text_4, LittlerootTown_Samshouse_Event_Script_SamHeart1_Text_5, LittlerootTown_Samshouse_Event_Script_SamHeart1_Text_6
+	dynmultichoice 8, 4, TRUE, 6, 0, DYN_MULTICHOICE_CB_NONE, LittlerootTown_Samshouse_Event_Script_SamHeart1_Text_3, LittlerootTown_Samshouse_Event_Script_SamHeart1_Text_4, LittlerootTown_Samshouse_Event_Script_SamHeart1_Text_5, LittlerootTown_Samshouse_Event_Script_SamHeart1_Text_6
 # 93 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
 	msgbox LittlerootTown_Samshouse_Event_Script_SamHeart1_Text_7
 # 95 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
-	msgbox LittlerootTown_Samshouse_Event_Script_SamHeart1_Text_8, MSGBOX_AUTOCLOSE
+	msgbox LittlerootTown_Samshouse_Event_Script_SamHeart1_Text_8, MSGBOX_DEFAULT
 # 97 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
 	delay 8
 # 99 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
-	msgbox LittlerootTown_Samshouse_Event_Script_SamHeart1_Text_9, MSGBOX_AUTOCLOSE
+	msgbox LittlerootTown_Samshouse_Event_Script_SamHeart1_Text_9, MSGBOX_DEFAULT
 # 101 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
 	msgbox LittlerootTown_Samshouse_Event_Script_SamHeart1_Text_10
 # 103 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
 	delay 16
 # 105 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
-	msgbox LittlerootTown_Samshouse_Event_Script_SamHeart1_Text_11, MSGBOX_AUTOCLOSE
+	msgbox LittlerootTown_Samshouse_Event_Script_SamHeart1_Text_11, MSGBOX_DEFAULT
 # 107 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
 	fadescreen FADE_TO_BLACK
 # 108 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
