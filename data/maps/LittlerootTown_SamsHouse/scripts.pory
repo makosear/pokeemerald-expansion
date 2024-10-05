@@ -1,1 +1,31 @@
 mapscripts LittlerootTown_SamsHouse_MapScripts {}
+
+script LittlerootTown_SamsHouse_Event_Script_MeetSam {
+    lock
+    faceplayer
+    playbgm(MUS_ENCOUNTER_BRENDAN, TRUE)
+    if(flag(FLAG_MEETSAM)){ 
+        msgbox("I wish I could get the day off...", MSGBOX_NPC)
+    }
+    else {
+        msgbox ("Hey, I'm Sam. Good to meet you.", MSGBOX_NPC)
+        setflag(FLAG_MEETSAM)
+    }
+	fadedefaultbgm
+    releaseall
+}
+
+script LittlerootTown_SamsHouse_Event_Script_Vincent {
+    lock
+    faceplayer
+    msgbox("Oh, hi! Name's Vincent!", MSGBOX_NPC)
+    releaseall
+}
+
+script LittlerootTown_SamsHouse_Event_Script_Jodi {
+    lock
+    faceplayer
+    msgbox (format("Oh! You aren't exactly how I imagined... but that's okay! I'm Jodi."), MSGBOX_NPC)
+    msgbox ("Have you met my boys yet?", MSGBOX_NPC)
+    releaseall
+}
