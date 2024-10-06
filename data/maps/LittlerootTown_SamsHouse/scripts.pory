@@ -90,13 +90,15 @@ script LittlerootTown_Samshouse_Event_Script_SamHeart1 {
     dynmultichoice(8,4, TRUE, 6, 0, DYN_MULTICHOICE_CB_NONE, "Cheerful pop music.",
 "Experimental noise rock.", "Hi-Energy dance music.", "Honky-tonky country music.")
 
-    msgbox(format("SAM: Hey, you know what? That's exactly the kind of style I've been thinking about... for the band."))
+    msgbox(format("SAM: Hey, you know what? If you win against me in a POKEMON battle, we'll play that kind of music!."))
 
     msgbox(format("SAM: What do you say, Sebastian? Should we do this?"), MSGBOX_DEFAULT)
 
     delay(8)
 
     msgbox(format("SEBASTIAN: ...Okay."), MSGBOX_DEFAULT)
+
+    
 
     msgbox(format("SAM: Thanks for the help, {PLAYER}. With my guitar skills, and Sebastian's wizardry on the synthesizer, we're gonna be a screaming success. I'm convinced of it!"))
 
