@@ -135,28 +135,45 @@ movement SamHeart1_Movement_2 {
 
 script LittlerootTown_Samshouse_Event_Script_SamHeart2 {
 
-# Hello @. Nice day, isn't it?
-# I'm just keeping an eye on my little brother. It's good for him to get some fresh air on a day like this.
-# Our Dad used to take us to the beach on sunny days like this.
-# Sam...?
-# Is Dad ever going to come home?
-# Of course, Vince. Dad's going to come back as soon as he possibly can.
-# But I heard some grown-ups saying that... that all of our troops are getting shot to pieces.
-# Don't believe everything you hear!
-# Don't you remember how strong Dad is? He'd never let a pathetic Gotoro grunt get him like that! Don't you worry!
-# And always remember that Mom and I are here to play with you if you ever feel lonely.
-# Okay!
-# To be honest, I have no idea if my old man will come back... We've all read the reports. Our soldiers are falling by the thousands.$s#$b#But what am I going to say to Vincent?
-# [It's best to be honest with kids.] -- [You did the right thing. Kids should have hope.]
-# You think so?
-# ~Maybe you're right... The world is a cruel place, but kids have to learn that one way or another.
-# ~Yeah... kids should play and have fun while they still have the chance.
-# Hey did I tell you the band's starting to come together?
-# Yeah! It turns out Abigail's a pretty good drummer. And Sebastian seemed to really want her in the band...
-
     msgbox(format("SAM: Hello {PLAYER}. Nice day, isn't it?"), MSGBOX_DEFAULT)
 
     msgbox(format("SAM: I'm just keeping an eye on my little brother. It's good for him to get some fresh air on a day like this."), MSGBOX_DEFAULT)
+
+    msgbox(format("SAM: Vince wanted to go to the woods to find some Bug Pokemon, but Mom said it was too dangerous. He always gets lost..."), MSGBOX_DEFAULT)
+
+    msgbox(format("SAM: I didn't want to bum him out, though..."), MSGBOX_DEFAULT)
+
+    msgbox(format("SAM: Hey, {PLAYER}! Do you think you can do me a favor?"), MSGBOX_YESNO)
+
+    while (var(VAR_RESULT) != 1) {
+        msgbox("...Please?", MSGBOX_YESNO)
+    }
+
+    msgbox(format("SAM: Hey, Vince! {PLAYER} wants to battle you!"), MSGBOX_DEFAULT)
+
+    msgbox(format("VINCENT: Really? I want to battle him too! Will you help me out, Sam?"), MSGBOX_DEFAULT)
+
+    msgbox(format("SAM: Huh? Oh, like a double battle?"), MSGBOX_DEFAULT)
+
+    msgbox(format("SAM: What do you say, {PLAYER}?"), MSGBOX_YESNO)
+
+    while (var(VAR_RESULT) != 1) {
+        msgbox("C'mon, man, this this once!", MSGBOX_YESNO)
+    }
+
+    msgbox(format("SAM: Alright, {PLAYER}. Let's do this!"), MSGBOX_DEFAULT)
+
+    msgbox(format("VINCENT: I'm ready!"), MSGBOX_DEFAULT)
+
+    trainerbattle_two_trainers(TRAINER_SAM_ONEHEART, "Man...", TRAINER_VINCENT_SAMTWOHEART, "That was fun!\n I wanna be as strong as you one day, Mister!")
+
+    msgbox(format("SAM: You really won against the both of us, huh..."), MSGBOX_DEFAULT)
+
+    msgbox(format("VINCENT: That was so cool!"), MSGBOX_DEFAULT)
+
+    msgbox(format("SAM: Thanks for humoring me, {PLAYER}. That was cool of you."), MSGBOX_DEFAULT)
+
+    msgbox(format("SAM: ..."), MSGBOX_DEFAULT)
 
     msgbox(format("SAM: Our Dad used to take us to the beach on sunny days like this."), MSGBOX_DEFAULT)
 
@@ -190,6 +207,5 @@ script LittlerootTown_Samshouse_Event_Script_SamHeart2 {
     msgbox(format("SAM: Hey did I tell you the band's starting to come together?"), MSGBOX_DEFAULT)
 
     msgbox(format("SAM: Yeah! It turns out Abigail's a pretty good drummer. And Sebastian seemed to really want her in the band..."), MSGBOX_DEFAULT)
-
 }
 
