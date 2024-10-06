@@ -42183,3 +42183,42 @@ F_TRAINER_FEMALE |
             },
         },
     },
+#line 16877
+    [TRAINER_SAM_ONEHEART] =
+    {
+#line 16878
+        .trainerName = _("SAM"),
+#line 16879
+        .trainerClass = TRAINER_CLASS_GUITARIST,
+#line 16880
+        .trainerPic = TRAINER_PIC_GUITARIST,
+        .encounterMusic_gender = 
+#line 16882
+            TRAINER_ENCOUNTER_MUSIC_INTENSE,
+#line 16883
+        .doubleBattle = FALSE,
+#line 16884
+        .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+        .partySize = 1,
+        .party = (const struct TrainerMon[])
+        {
+            {
+#line 16886
+            .species = SPECIES_HELIOPTILE,
+            .gender = TRAINER_MON_RANDOM_GENDER,
+#line 16888
+            .iv = TRAINER_PARTY_IVS(12, 12, 12, 12, 12, 12),
+#line 16887
+            .lvl = 5,
+            .nature = NATURE_HARDY,
+            .dynamaxLevel = MAX_DYNAMAX_LEVEL,
+            .moves = {
+#line 16889
+                MOVE_MUD_SLAP,
+                MOVE_TAIL_WHIP,
+                MOVE_SPARK,
+                MOVE_LEER,
+            },
+            },
+        },
+    },
