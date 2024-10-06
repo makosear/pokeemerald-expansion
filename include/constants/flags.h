@@ -44,7 +44,7 @@
 
 #define FLAG_MEETSAM    0x20 // Unused Flag
 #define FLAG_HIDE_LITTLEROOT_TOWN_SAMS_HOUSE_SEBASTIAN    0x21 // Unused Flag
-#define FLAG_UNUSED_0x022    0x22 // Unused Flag
+#define FLAG_HIDE_ROUTE_136_SAMTWOHEARTS    0x22 // Unused Flag
 #define FLAG_UNUSED_0x023    0x23 // Unused Flag
 #define FLAG_UNUSED_0x024    0x24 // Unused Flag
 #define FLAG_UNUSED_0x025    0x25 // Unused Flag

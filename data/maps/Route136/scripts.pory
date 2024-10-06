@@ -1,1 +1,270 @@
-mapscripts Route136_MapScripts {}
+mapscripts Route136_MapScripts {
+     MAP_SCRIPT_ON_FRAME_TABLE [
+        VAR_SAM_STATE, 4: Route136_Event_Script_SamHeart2
+    ]
+    MAP_SCRIPT_ON_TRANSITION: SamHeart2_Helper
+}
+
+script SamHeart2_Helper {
+    setflag(FLAG_HIDE_ROUTE_136_SAMTWOHEARTS)
+    if (var(VAR_SAM_STATE) == 3) { 
+        setvar(VAR_SAM_STATE, 4)
+    }
+}
+
+script Route136_Event_Script_SamHeart2 {
+    lockall
+    fadescreen(FADE_TO_BLACK)
+    //set player xy to 17, 3
+    clearflag(FLAG_HIDE_ROUTE_136_SAMTWOHEARTS)
+    addobject(1)
+    addobject(2)
+    addobject(3)
+    setobjectxy(OBJ_EVENT_ID_PLAYER, 17, 3)
+    setvar(VAR_0x8004, 17) # x
+    setvar(VAR_0x8005, 3) # y
+    special(TeleportCamera)
+    # special(SpawnCameraObject)
+    # setobjectxy(OBJ_EVENT_ID_CAMERA, 17, 3)
+    # special(RemoveCameraObject)
+	setobjectmovementtype(OBJ_EVENT_ID_PLAYER, MOVEMENT_TYPE_FACE_UP)
+    fadescreen(FADE_FROM_BLACK)
+    playbgm(MUS_OLDALE, TRUE)
+
+    #vincent playing with his toys on the sand
+    #sam watching from afar
+    #player walks up from the top of the screen
+    #sam and player face each other
+    applymovement(OBJ_EVENT_ID_PLAYER, SamHeart2_Movement_Player)
+    waitmovement(0)
+
+    applymovement(2, Common_Movement_FaceLeft)
+    applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight)
+    waitmovement(0)
+    waitmovement(2)
+
+    msgbox(format("SAM: Hello {PLAYER}. Nice day, isn't it?"), MSGBOX_DEFAULT)
+    closemessage
+
+    #sam and player look up
+    applymovement(2, Common_Movement_FaceDown)
+    applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceDown)
+    waitmovement(2)
+    waitmovement(0)
+
+    delay(32)
+
+    msgbox(format("SAM: I'm just keeping an eye on my little brother. It's good for him to get some fresh air on a day like this."), MSGBOX_DEFAULT)
+    closemessage
+    delay(32)
+
+    msgbox(format("SAM: Vince wanted to go to the woods to find some Bug Pokemon, but Mom said it was too dangerous. He always gets lost..."), MSGBOX_DEFAULT)
+
+    msgbox(format("SAM: I didn't want to bum him out, though..."), MSGBOX_DEFAULT)
+
+    #sam looks at player, after delay, player looks at sam
+    applymovement(2, Common_Movement_FaceLeft)
+    waitmovement(0)
+    delay(16)
+    applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight)
+    waitmovement(0)
+
+    closemessage
+    delay(32)
+
+    msgbox(format("SAM: Hey, {PLAYER}! Do you think you can do me a favor?"), MSGBOX_YESNO)
+
+    while (var(VAR_RESULT) != 1) {
+        msgbox("...Please?", MSGBOX_YESNO)
+    }
+
+    msgbox(format("SAM: Just follow along."), MSGBOX_DEFAULT)
+    closemessage
+
+    #sam walks to vincent, looks at him, then vincent looks at sam
+    applymovement(2, SamHeart2_Movement_2)
+    waitmovement(2)
+    applymovement(2, Common_Movement_FaceRight)
+    waitmovement(0)
+    delay(16)
+    applymovement(1, Common_Movement_FaceLeft)
+    waitmovement(1)
+
+    msgbox(format("SAM: Hey, Vince! {PLAYER} wants to battle you!"), MSGBOX_DEFAULT)
+    closemessage
+
+    #vincent does a lil happy jump and looks up, at player
+    applymovement(1, SamHeart2_Movement_1) 
+    waitmovement(1)
+    applymovement(1, Common_Movement_FaceUp)
+    waitmovement(1)
+
+    msgbox(format("VINCENT: Really? I want to battle him too!"), MSGBOX_DEFAULT) 
+    
+    applymovement(1, Common_Movement_FaceLeft)
+    msgbox(format("Will you help me out, Sam?"), MSGBOX_DEFAULT)
+
+    msgbox(format("SAM: Huh? Oh, like a double battle?"), MSGBOX_DEFAULT)
+
+    applymovement(2, Common_Movement_FaceUp)
+    waitmovement(2)
+    msgbox(format("SAM: What do you say, {PLAYER}?"), MSGBOX_YESNO)
+
+    while (var(VAR_RESULT) != 1) {
+        msgbox("C'mon, man, just this once...", MSGBOX_YESNO)
+    }
+
+    playbgm(MUS_ENCOUNTER_INTENSE, TRUE)
+
+    msgbox(format("SAM: Alright, {PLAYER}. Let's do this!"), MSGBOX_DEFAULT)
+
+    applymovement(1, SamHeart2_Movement_1)
+    waitmovement(1)
+    applymovement(1, Common_Movement_FaceUp)
+    waitmovement(1)
+
+    playbgm(MUS_ENCOUNTER_MALE, TRUE)
+
+    msgbox(format("VINCENT: I'm ready!"), MSGBOX_DEFAULT)
+
+    trainerbattle_two_trainers(TRAINER_SAM_ONEHEART, "Man...", TRAINER_VINCENT_SAMTWOHEART, "That was fun!\n I wanna be as strong as you one day, Mister!")
+
+    playbgm(MUS_OLDALE, TRUE) #TODO fade song
+
+    applymovement(2, SamHeart2_Movement_2_2)
+
+    msgbox(format("SAM: You really won against the both of us, huh..."), MSGBOX_DEFAULT)
+
+    msgbox(format("VINCENT: That was so cool!"), MSGBOX_DEFAULT)
+
+    playbgm(MUS_DUMMY, TRUE)
+
+    # vincent walks back to his toys
+    applymovement(1, Common_Movement_FaceDown)
+
+    msgbox(format("SAM: Thanks for humoring me, {PLAYER}. That was cool of you."), MSGBOX_DEFAULT)
+
+    # sam and player face forwards and delay
+    applymovement(2, Common_Movement_FaceDown)
+    applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceDown)
+    waitmovement(2)
+    waitmovement(0)
+    delay(16)
+
+
+    msgbox(format("SAM: ..."), MSGBOX_DEFAULT)
+
+    # delay
+    delay(16)
+
+    msgbox(format("SAM: Our Dad used to take us to the beach on sunny days like this."), MSGBOX_DEFAULT)
+
+    # vince is startled, jumps and walks to sam, real close face each other 
+
+    applymovement(1, SamHeart2_Movement_1_2)
+    waitmovement(1)
+
+    msgbox(format("VINCENT: Sam...?"), MSGBOX_DEFAULT)
+
+    msgbox(format("VINCENT: Is Dad ever going to come home?"), MSGBOX_DEFAULT)
+
+    # sad song starts, melancholic but soft 
+
+    # MUS_LILYCOVE_MUSEUM is a choice
+    # MUS_VERDANTURF is also good
+    # MUS_CREDITS might be my choice if it doesnt out of nowhere gets fast
+
+    playbgm(MUS_END, TRUE)
+
+    # common movement tear drop mark 
+    #applymovement(1, Common_Movement_TearDropMark) #TODO ADD THIS
+
+    playse(SE_M_DIZZY_PUNCH)
+    applymovement(2, Common_Movement_ExclamationMark) #PLACEHOLDER
+
+    msgbox(format("SAM: Of course, Vince. Dad's going to come back as soon as he possibly can."), MSGBOX_DEFAULT)
+
+    msgbox(format("VINCENT: But I heard some grown-ups saying that... that all of our troops are getting shot to pieces."), MSGBOX_DEFAULT)
+
+    # common movement exclamation mark 
+    playse(SE_PIN)
+    applymovement(2, Common_Movement_ExclamationMark)
+    waitmovement(2)
+
+    msgbox(format("SAM: Don't believe everything you hear!"), MSGBOX_DEFAULT)
+
+    msgbox(format("SAM: Don't you remember how strong Dad is? He'd never let a pathetic Gotoro grunt get him like that! Don't you worry!"), MSGBOX_DEFAULT)
+
+    msgbox(format("SAM: And always remember that Mom and I are here to play with you if you ever feel lonely."), MSGBOX_DEFAULT)
+
+    msgbox(format("Okay!"), MSGBOX_DEFAULT)
+
+    playbgm(MUS_OLDALE, TRUE)
+
+    # vince jumps, returns to his toys
+    applymovement(1, SamHeart2_Movement_2) #can reuse this movement
+
+    msgbox(format("SAM: To be honest, I have no idea if my old man will come back... We've all read the reports. Our soldiers are falling by the thousands.\nBut what am I going to say to Vincent?"), MSGBOX_DEFAULT)
+
+    dynmultichoice(8,4, TRUE, 6, 0, DYN_MULTICHOICE_CB_NONE, "It's best to be honest with kids.", "You did the right thing. Kids should have hope.")
+
+    # common movement ... mark
+    # applymovement(2, Common_Movement_EllipsisMark) #TODO
+
+    msgbox(format("SAM: You think so?"), MSGBOX_DEFAULT)
+
+    if (var(VAR_RESULT) == 1) {
+        msgbox(format("SAM: Maybe you're right... The world is a cruel place, but kids have to learn that one way or another."), MSGBOX_DEFAULT)
+    } else {
+        msgbox(format("SAM: Yeah... kids should play and have fun while they still have the chance."), MSGBOX_DEFAULT)
+    }
+
+    # sam faces player 
+    # small delay and then player faces sam
+    applymovement(2, Common_Movement_FaceLeft)
+    waitmovement(2)
+    delay(16)
+    applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight)
+    waitmovement(0)
+    msgbox(format("SAM: Hey did I tell you the band's starting to come together?"), MSGBOX_DEFAULT)
+
+    msgbox(format("SAM: Yeah! It turns out Abigail's a pretty good drummer. And Sebastian seemed to really want her in the band..."), MSGBOX_DEFAULT)
+
+    fadescreen (FADE_TO_BLACK)
+
+    setvar(VAR_SAM_STATE, 5)
+    setflag(FLAG_HIDE_ROUTE_136_SAMTWOHEARTS)
+    removeobject(1)
+    removeobject(2)
+    removeobject(3)
+    setobjectxy(OBJ_EVENT_ID_PLAYER, 19, 0)
+    setvar(VAR_0x8004, 10) # x
+    setvar(VAR_0x8005, 0) # y
+    special(TeleportCamera)
+    fadescreen (FADE_FROM_BLACK)
+    fadedefaultbgm
+    releaseall
+}
+
+movement SamHeart2_Movement_Player {
+    walk_down * 4
+}
+
+movement SamHeart2_Movement_2 {
+    walk_down * 3
+}
+
+movement SamHeart2_Movement_1 {
+    jump_in_place_left
+}
+
+movement SamHeart2_Movement_1_2 {
+    jump_in_place_down
+    walk_up * 3
+    face_left
+}
+
+movement SamHeart2_Movement_2_2 {
+    walk_up * 3
+    face_left
+}

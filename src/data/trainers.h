@@ -42222,3 +42222,35 @@ F_TRAINER_FEMALE |
             },
         },
     },
+#line 16894
+    [TRAINER_VINCENT_SAMTWOHEART] =
+    {
+#line 16895
+        .trainerName = _("VINCENT"),
+#line 16896
+        .trainerClass = TRAINER_CLASS_BUG_CATCHER,
+#line 16897
+        .trainerPic = TRAINER_PIC_BUG_CATCHER,
+        .encounterMusic_gender = 
+#line 16899
+            TRAINER_ENCOUNTER_MUSIC_MALE,
+#line 16900
+        .doubleBattle = FALSE,
+#line 16901
+        .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+        .partySize = 1,
+        .party = (const struct TrainerMon[])
+        {
+            {
+#line 16903
+            .species = SPECIES_WURMPLE,
+            .gender = TRAINER_MON_RANDOM_GENDER,
+#line 16905
+            .iv = TRAINER_PARTY_IVS(6, 6, 6, 6, 6, 6),
+#line 16904
+            .lvl = 5,
+            .nature = NATURE_HARDY,
+            .dynamaxLevel = MAX_DYNAMAX_LEVEL,
+            },
+        },
+    },
