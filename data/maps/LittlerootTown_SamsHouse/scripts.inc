@@ -75,14 +75,8 @@ LittlerootTown_SamsHouse_Event_Script_MeetSam_8:
 
 
 LittlerootTown_SamsHouse_Event_Script_Vincent::
-# 39 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
-	lock
-# 40 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
-	faceplayer
 # 41 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
 	msgbox LittlerootTown_SamsHouse_Event_Script_Vincent_Text_0, MSGBOX_NPC
-# 42 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
-	releaseall
 	return
 
 
@@ -240,6 +234,48 @@ SamHeart1_Movement_2:
 	walk_left
 # 133 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
 	face_down
+	step_end
+
+LittlerootTown_SamsHouse_Event_Script_Testing::
+# 137 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
+	applymovement 5, MovementTestingSamshouse
+# 138 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
+	waitmovement 0
+	return
+
+
+# 141 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
+MovementTestingSamshouse:
+# 142 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
+	walk_up
+# 142 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
+	walk_up
+# 142 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
+	walk_up
+# 142 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
+	walk_up
+# 142 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
+	walk_up
+# 143 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
+	walk_right
+# 143 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
+	walk_right
+# 143 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
+	walk_right
+# 143 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
+	walk_right
+# 143 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
+	walk_right
+# 144 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
+	walk_left
+# 144 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
+	walk_left
+# 144 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
+	walk_left
+# 144 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
+	walk_left
+# 144 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
+	walk_left
 	step_end
 
 LittlerootTown_SamsHouse_Event_Script_MeetSam_Text_0:

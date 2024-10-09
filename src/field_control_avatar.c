@@ -256,6 +256,7 @@ static bool8 TryStartInteractionScript(struct MapPosition *position, u16 metatil
      && script != EventScript_PC)
         PlaySE(SE_SELECT);
 
+    UnlockPlayerFieldControls();
     ScriptContext_SetupScript(script);
     return TRUE;
 }

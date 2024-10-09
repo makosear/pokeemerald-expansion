@@ -234,7 +234,7 @@ bool8 ScriptContext_RunScript(void)
     if (sGlobalScriptContextStatus == CONTEXT_WAITING)
         return FALSE;
 
-    LockPlayerFieldControls();
+    //LockPlayerFieldControls();
 
     if (!RunScriptCommand(&sGlobalScriptContext))
     {
@@ -251,8 +251,9 @@ void ScriptContext_SetupScript(const u8 *ptr)
 {
     InitScriptContext(&sGlobalScriptContext, gScriptCmdTable, gScriptCmdTableEnd);
     SetupBytecodeScript(&sGlobalScriptContext, ptr);
-    LockPlayerFieldControls();
+    //LockPlayerFieldControls();
     sGlobalScriptContextStatus = CONTEXT_RUNNING;
+    UnlockPlayerFieldControls();
 }
 
 // Puts the script into waiting mode; usually called from a wait* script command.
@@ -265,7 +266,7 @@ void ScriptContext_Stop(void)
 void ScriptContext_Enable(void)
 {
     sGlobalScriptContextStatus = CONTEXT_RUNNING;
-    LockPlayerFieldControls();
+    //LockPlayerFieldControls();
 }
 
 // Sets up and runs a script in its own context immediately. The script will be

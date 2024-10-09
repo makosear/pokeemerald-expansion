@@ -147,7 +147,7 @@ void FieldCB_ContinueScriptHandleMusic(void)
     CreateTask(Task_WaitForFadeAndEnableScriptCtx, 10);
 }
 
-void FieldCB_ContinueScript(void)
+void FieldCB_ContinueScript(void) //TODO 
 {
     LockPlayerFieldControls();
     FadeInFromBlack();

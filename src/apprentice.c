@@ -888,7 +888,7 @@ static void PrintApprenticeMessage(void)
 
 static void Script_PrintApprenticeMessage(void)
 {
-    LockPlayerFieldControls();
+    LockPlayerFieldControls ();
     FreezeObjectEvents();
     PlayerFreeze();
     StopPlayerAvatar();

@@ -36,10 +36,10 @@ script LittlerootTown_SamsHouse_Event_Script_MeetSam {
 }
 
 script LittlerootTown_SamsHouse_Event_Script_Vincent {
-    lock
-    faceplayer
+    //lock
+    //faceplayer
     msgbox("Oh, hi! Name's Vincent!", MSGBOX_NPC)
-    releaseall
+    //releaseall
 }
 
 script LittlerootTown_SamsHouse_Event_Script_Jodi {
@@ -131,4 +131,15 @@ movement SamHeart1_Movement_Player {
 movement SamHeart1_Movement_2 {
     walk_left
     face_down
+}
+
+script LittlerootTown_SamsHouse_Event_Script_Testing {
+    applymovement(5, MovementTestingSamshouse)
+    waitmovement(0)
+}
+
+movement MovementTestingSamshouse {
+    walk_up * 5
+    walk_right * 5
+    walk_left * 5
 }

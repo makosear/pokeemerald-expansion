@@ -1494,8 +1494,9 @@ static void DoCB1_Overworld(u16 newKeys, u16 heldKeys)
     {
         if (ProcessPlayerFieldInput(&inputStruct) == 1)
         {
-            LockPlayerFieldControls();
+            //LockPlayerFieldControls(); //check this one for me
             HideMapNamePopUpWindow();
+            
         }
         else
         {
@@ -2870,9 +2871,9 @@ static void InitLinkRoomStartMenuScript(void)
 
 static void RunInteractLocalPlayerScript(const u8 *script)
 {
-    PlaySE(SE_SELECT);
+    //PlaySE(SE_SELECT);
     ScriptContext_SetupScript(script);
-    LockPlayerFieldControls();
+    //LockPlayerFieldControls();
 }
 
 static void RunConfirmLeaveCableClubScript(void)
@@ -2884,9 +2885,9 @@ static void RunConfirmLeaveCableClubScript(void)
 
 static void InitMenuBasedScript(const u8 *script)
 {
-    PlaySE(SE_SELECT);
+    //PlaySE(SE_SELECT);
     ScriptContext_SetupScript(script);
-    LockPlayerFieldControls();
+    //LockPlayerFieldControls();
 }
 
 static void RunTerminateLinkScript(void)

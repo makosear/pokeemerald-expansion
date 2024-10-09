@@ -4414,7 +4414,7 @@ static void HandleCancelActivity(bool32 setData)
 
 static void StartScriptInteraction(void)
 {
-    LockPlayerFieldControls();
+    //LockPlayerFieldControls();
     FreezeObjects_WaitForPlayer();
 }
 
