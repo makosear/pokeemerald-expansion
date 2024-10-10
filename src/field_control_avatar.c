@@ -36,6 +36,7 @@
 #include "constants/map_types.h"
 #include "constants/songs.h"
 #include "constants/trainer_hill.h"
+#include "toggle_map_name_popup.h"
 
 static EWRAM_DATA u8 sWildEncounterImmunitySteps = 0;
 static EWRAM_DATA u16 sPrevMetatileBehavior = 0;
@@ -142,6 +143,11 @@ void FieldGetPlayerInput(struct FieldInput *input, u16 newKeys, u16 heldKeys)
         input->DEBUG_OVERWORLD_TRIGGER_EVENT = FALSE;
     }
 #endif
+    if ((heldKeys & L_BUTTON) && input->pressedStartButton)
+    {
+        input->input_field_1_3 = TRUE;
+        input->pressedStartButton = FALSE;
+    }
 }
 
 int ProcessPlayerFieldInput(struct FieldInput *input)
@@ -210,6 +216,13 @@ int ProcessPlayerFieldInput(struct FieldInput *input)
         return TRUE;
     }
 #endif
+
+    if (input->input_field_1_3)
+    {
+        PlaySE(SE_WIN_OPEN);
+        ToggleMapPopup();
+        return TRUE;
+    }
 
     return FALSE;
 }

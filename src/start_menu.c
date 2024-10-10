@@ -483,13 +483,34 @@ static void ShowPyramidFloorWindow(void)
 
 #define CLOCK_WINDOW_WIDTH 70
 
+#define TIME_UPDATE_INTERVAL (1 << 8)
 
+static void UpdateMenuClock(void)
+{
+    switch (gSaveBlock1Ptr->clockState)
+    {
+    case 0:
+        if (gMain.vblankCounter1 & TIME_UPDATE_INTERVAL)
+        {
+            RtcCalcLocalTime();
+            gSaveBlock1Ptr->clockState++;
+        }
+        break;
+    case 1:
+        if (!(gMain.vblankCounter1 & TIME_UPDATE_INTERVAL))
+            gSaveBlock1Ptr->clockState--;
+        break;
+    }
+}
 
 static void ShowTimeWindow(void)
 {
     const u8 *suffix;
     u8* ptr;
     u8 convertedHours;
+
+    UpdateMenuClock();
+    //update time
 
     // print window
     sStartClockWindowId = AddWindow(&sWindowTemplate_StartClock);

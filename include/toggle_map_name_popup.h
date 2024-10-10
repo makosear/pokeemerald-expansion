@@ -1,0 +1,6 @@
+#ifndef GUARD_TOGGLE_MAP_NAME_POPUP_H
+#define GUARD_TOGGLE_MAP_NAME_POPUP_H
+
+void ToggleMapPopup(void);
+
+#endif // GUARD_TOGGLE_MAP_NAME_POPUP_H

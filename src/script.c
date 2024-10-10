@@ -252,6 +252,7 @@ void ScriptContext_SetupScript(const u8 *ptr)
     InitScriptContext(&sGlobalScriptContext, gScriptCmdTable, gScriptCmdTableEnd);
     SetupBytecodeScript(&sGlobalScriptContext, ptr);
     LockPlayerFieldControls();
+    //Honestly need to learn how this one works too
     sGlobalScriptContextStatus = CONTEXT_RUNNING;
 }
 
@@ -266,6 +267,7 @@ void ScriptContext_Enable(void)
 {
     sGlobalScriptContextStatus = CONTEXT_RUNNING;
     LockPlayerFieldControls();
+    //I'm not sure how this interacts tbh. 
 }
 
 // Sets up and runs a script in its own context immediately. The script will be

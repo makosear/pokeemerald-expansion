@@ -1007,6 +1007,8 @@ struct SaveBlock1
     /*0x848*/ struct Pokeblock pokeblocks[POKEBLOCKS_COUNT];
 #if FREE_EXTRA_SEEN_FLAGS_SAVEBLOCK1 == FALSE
     /*0x988*/ struct Coords16 savedPos;
+    /*0x989*/ u8 clockState;
+    /*0x98A*/ u8 isPopupActive;
     /*0x98C*/ u8 filler1[0x30]; // Previously Dex Flags, feel free to remove.
 #endif //FREE_EXTRA_SEEN_FLAGS_SAVEBLOCK1
     /*0x9BC*/ u16 berryBlenderRecords[3];
