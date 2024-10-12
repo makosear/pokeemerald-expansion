@@ -854,6 +854,8 @@ if (I_VS_SEEKER_CHARGING != 0)
     ResetFieldTasksArgs();
     RunOnResumeMapScript();
 
+    HideFieldClockWindow(); //Need to hide this window when transitioning maps  
+
     if (OW_HIDE_REPEAT_MAP_POPUP)
     {
         if (gMapHeader.regionMapSectionId != sLastMapSectionId)
@@ -865,6 +867,8 @@ if (I_VS_SEEKER_CHARGING != 0)
          || gMapHeader.regionMapSectionId != sLastMapSectionId)
             ShowMapNamePopup();
     }
+
+    ShowFieldClock();
 }
 
 static void LoadMapFromWarp(bool32 a1)
@@ -1752,6 +1756,7 @@ static void FieldCB_FadeTryShowMapPopup(void)
 {
     if (gMapHeader.showMapName == TRUE && SecretBaseMapPopupEnabled() == TRUE)
         ShowMapNamePopup();
+    ShowFieldClock();
     FieldCB_WarpExitFadeFromBlack();
 }
 
@@ -1998,6 +2003,8 @@ static bool32 LoadMapInStepsLocal(u8 *state, bool32 a2)
     case 11:
         if (gMapHeader.showMapName == TRUE && SecretBaseMapPopupEnabled() == TRUE)
             ShowMapNamePopup();
+
+        //DebugPrintfLevel(MGBA_LOG_WARN, "showmapname popup is from here actually");
         (*state)++;
         break;
     case 12:
