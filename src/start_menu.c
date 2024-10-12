@@ -47,7 +47,8 @@
 #include "constants/battle_frontier.h"
 #include "constants/rgb.h"
 #include "constants/songs.h"
-#include "rtc.h"
+
+#include "ow_clock_ui.h"
 
 // Menu actions
 enum
@@ -82,7 +83,7 @@ bool8 (*gMenuCallback)(void);
 
 // EWRAM
 EWRAM_DATA static u8 sSafariBallsWindowId = 0;
-EWRAM_DATA static u8 sStartClockWindowId = 0;
+
 EWRAM_DATA static u8 sBattlePyramidFloorWindowId = 0;
 EWRAM_DATA static u8 sStartMenuCursorPos = 0;
 EWRAM_DATA static u8 sNumStartMenuActions = 0;
@@ -140,6 +141,7 @@ static void StartMenuTask(u8 taskId);
 static void SaveGameTask(u8 taskId);
 static void Task_SaveAfterLinkBattle(u8 taskId);
 static void Task_WaitForBattleTowerLinkSave(u8 taskId);
+static void Task_GoToFieldClock(u8 taskId);
 static bool8 FieldCB_ReturnToFieldStartMenu(void);
 
 static const struct WindowTemplate sWindowTemplate_SafariBalls = {
@@ -150,25 +152,6 @@ static const struct WindowTemplate sWindowTemplate_SafariBalls = {
     .height = 4,
     .paletteNum = 15,
     .baseBlock = 0x8
-};
-
-
-static const struct WindowTemplate sWindowTemplate_StartClock = {
-
-    .bg = 0, 
-
-    .tilemapLeft = 1, 
-
-    .tilemapTop = 1, 
-
-    .width = 9, // If you want to shorten the dates to Sat., Sun., etc., change this to 9. If you want to make the dates larger change this to 13.
-
-    .height = 4, 
-
-    .paletteNum = 15,
-
-    .baseBlock = 0x30
-
 };
 
 static const u8 *const sPyramidFloorNames[FRONTIER_STAGES_PER_CHALLENGE + 1] =
@@ -294,7 +277,6 @@ static void ShowSaveInfoWindow(void);
 static void RemoveSaveInfoWindow(void);
 static void HideStartMenuWindow(void);
 static void HideStartMenuDebug(void);
-static void ShowTimeWindow(void);
 
 void SetDexPokemonPokenavFlags(void) // unused
 {
@@ -481,77 +463,6 @@ static void ShowPyramidFloorWindow(void)
 
 // If you want to shorten the dates to Sat., Sun., etc., change this to 70. Larger dates need 104
 
-#define CLOCK_WINDOW_WIDTH 70
-
-#define TIME_UPDATE_INTERVAL (1 << 8)
-
-static void UpdateMenuClock(void)
-{
-    switch (gSaveBlock1Ptr->clockState)
-    {
-    case 0:
-        if (gMain.vblankCounter1 & TIME_UPDATE_INTERVAL)
-        {
-            RtcCalcLocalTime();
-            gSaveBlock1Ptr->clockState++;
-        }
-        break;
-    case 1:
-        if (!(gMain.vblankCounter1 & TIME_UPDATE_INTERVAL))
-            gSaveBlock1Ptr->clockState--;
-        break;
-    }
-}
-
-static void ShowTimeWindow(void)
-{
-    const u8 *suffix;
-    u8* ptr;
-    u8 convertedHours;
-
-    UpdateMenuClock();
-    //update time
-
-    // print window
-    sStartClockWindowId = AddWindow(&sWindowTemplate_StartClock);
-    PutWindowTilemap(sStartClockWindowId);
-    DrawStdWindowFrame(sStartClockWindowId, FALSE);
-    if (gLocalTime.hours < 12) {
-        if (gLocalTime.hours == 0)
-            convertedHours = 12;
-        else
-            convertedHours = gLocalTime.hours;
-        suffix = gText_AM;
-    }
-
-    else if (gLocalTime.hours == 12){
-        convertedHours = 12;
-        if (suffix == gText_AM);
-            suffix = gText_PM;
-    }
-    else{
-        convertedHours = gLocalTime.hours - 12;
-        suffix = gText_PM;
-    }
-
-    if (gLocalTime.dayOfWeek <= DAY_SATURDAY)
-        StringCopy(gStringVar4, gDayNameStringsTable[gLocalTime.dayOfWeek]);
-    else
-        StringCopy(gStringVar4, gText_None);
-
-    AddTextPrinterParameterized(sStartClockWindowId, 1, gStringVar4, 0, 1, 0xFF, NULL);
-    ConvertIntToDecimalStringN(gStringVar1, GetDate(), STR_CONV_MODE_RIGHT_ALIGN, 2);
-    ConvertIntToDecimalStringN(gStringVar2, GetMonth(), STR_CONV_MODE_RIGHT_ALIGN, 2);
-    ConvertIntToDecimalStringN(gStringVar3, GetYear(), STR_CONV_MODE_RIGHT_ALIGN, 2);
-    StringExpandPlaceholders(gStringVar4, gText_Date);
-    AddTextPrinterParameterized(sStartClockWindowId, 1, gStringVar4, 0, 16, 0xFF, NULL);
-    ptr = ConvertIntToDecimalStringN(gStringVar4, convertedHours, STR_CONV_MODE_LEFT_ALIGN, 3);
-    *ptr = 0xF0;
-    ConvertIntToDecimalStringN(ptr + 1, gLocalTime.minutes, STR_CONV_MODE_LEADING_ZEROS, 2);
-    AddTextPrinterParameterized(sStartClockWindowId, 1, gStringVar4, GetStringRightAlignXOffset(1, suffix, CLOCK_WINDOW_WIDTH) - (CLOCK_WINDOW_WIDTH - GetStringRightAlignXOffset(1, gStringVar4, CLOCK_WINDOW_WIDTH) + 3), 1, 0xFF, NULL); // print time
-    AddTextPrinterParameterized(sStartClockWindowId, 1, suffix, GetStringRightAlignXOffset(1, suffix, CLOCK_WINDOW_WIDTH), 1, 0xFF, NULL); // print am/pm
-    CopyWindowToVram(sStartClockWindowId, COPYWIN_GFX);
-}
 
 static void RemoveExtraStartMenuWindows(void)
 {
@@ -567,11 +478,11 @@ static void RemoveExtraStartMenuWindows(void)
         RemoveWindow(sBattlePyramidFloorWindowId);
     }
 
-    ClearStdWindowAndFrameToTransparent(sStartClockWindowId, FALSE);
+    //ClearStdWindowAndFrameToTransparent(sStartClockWindowId, FALSE);
 
     // CopyWindowToVram(sStartClockWindowId, COPYWIN_GFX);
 
-    RemoveWindow(sStartClockWindowId);
+    //RemoveWindow(sStartClockWindowId);
 }
 
 static bool32 PrintStartMenuActions(s8 *pIndex, u32 count)
@@ -632,7 +543,6 @@ static bool32 InitStartMenuStep(void)
         sInitStartMenuData[0]++;
         break;
     case 4:
-        ShowTimeWindow();
         sInitStartMenuData[0]++;
         break;
     case 5:
@@ -704,8 +614,27 @@ void Task_ShowStartMenu(u8 taskId)
         task->data[0]++;
         break;
     case 1:
-        if (gMenuCallback() == TRUE)
+        if (gMenuCallback() == TRUE){
             DestroyTask(taskId);
+            //ShowFieldClockFromMenu();
+            CreateTask(Task_GoToFieldClock, 0x50);
+        }
+        break;
+    }
+}
+
+static void Task_GoToFieldClock(u8 taskId)
+{
+    struct Task *task = &gTasks[taskId];
+
+    switch(task->data[0])
+    {
+    case 0:
+        ShowFieldClock();
+        task->data[0]++;
+        break;
+    case 1:
+        DestroyTask(taskId);
         break;
     }
 }
@@ -718,6 +647,7 @@ void ShowStartMenu(void)
         PlayerFreeze();
         StopPlayerAvatar();
     }
+    HideFieldClockWindow();
     CreateStartMenuTask(Task_ShowStartMenu);
     LockPlayerFieldControls();
 }
@@ -767,7 +697,6 @@ static bool8 HandleStartMenuInput(void)
     }
 
     RemoveExtraStartMenuWindows();
-    ShowTimeWindow();
 
     return FALSE;
 }
@@ -799,11 +728,11 @@ static bool8 StartMenuPokemonCallback(void)
 
         return TRUE;
     }
-    
+    /*
     if (!GetSafariZoneFlag() && !InBattlePyramid() && gSaveBlock2Ptr->playTimeSeconds == 0){
         RemoveExtraStartMenuWindows();
         ShowTimeWindow();
-    }
+    } */
 
     return FALSE;
 }

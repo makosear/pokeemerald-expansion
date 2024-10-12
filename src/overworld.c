@@ -69,6 +69,8 @@
 #include "constants/trainer_hill.h"
 #include "constants/weather.h"
 
+#include "ow_clock_ui.h"
+
 struct CableClubPlayer
 {
     u8 playerId;
@@ -1999,10 +2001,14 @@ static bool32 LoadMapInStepsLocal(u8 *state, bool32 a2)
         (*state)++;
         break;
     case 12:
+        ShowFieldClock();
+        (*state)++;
+        break;
+    case 13:
         if (RunFieldCallback())
             (*state)++;
         break;
-    case 13:
+    case 14:
         return TRUE;
     }
 

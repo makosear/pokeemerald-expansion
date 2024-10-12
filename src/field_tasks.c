@@ -178,6 +178,8 @@ static void Task_RunTimeBasedEvents(u8 taskId)
 
 #undef tState
 
+#include "ow_clock_ui.h" //doing an include here to make sure to not forget this is a custom addition
+
 void SetUpFieldTasks(void)
 {
     if (!FuncIsActiveTask(Task_RunPerStepCallback))

@@ -23,6 +23,8 @@
 #include "config/overworld.h"
 #include "constants/songs.h"
 
+#include "ow_clock_ui.h"
+
 #define DLG_WINDOW_PALETTE_NUM 15
 #define DLG_WINDOW_BASE_TILE_NUM 0x200
 #define STD_WINDOW_PALETTE_NUM 14
@@ -66,6 +68,7 @@ static void task_free_buf_after_copying_tile_data_to_vram(u8 taskId);
 static EWRAM_DATA u8 sStartMenuWindowId = 0;
 static EWRAM_DATA u8 sMapNamePopupWindowId = 0;
 static EWRAM_DATA u8 sSecondaryPopupWindowId = 0;
+static EWRAM_DATA u8 sFieldClockWindowId = 0;
 static EWRAM_DATA struct Menu sMenu = {0};
 static EWRAM_DATA u16 sTileNum = 0;
 static EWRAM_DATA u8 sPaletteNum = 0;
@@ -152,6 +155,7 @@ void InitStandardTextBoxWindows(void)
     sMapNamePopupWindowId = WINDOW_NONE;
     if (OW_POPUP_GENERATION == GEN_5)
         sSecondaryPopupWindowId = WINDOW_NONE;
+    sFieldClockWindowId = WINDOW_NONE;
 }
 
 void FreeAllOverworldWindowBuffers(void)
@@ -550,6 +554,28 @@ void RemoveMapNamePopUpWindow(void)
         sMapNamePopupWindowId = WINDOW_NONE;
     }
 }
+
+u8 AddFieldClockWindow(void)
+{
+    if (sFieldClockWindowId == WINDOW_NONE)
+        //sFieldClockWindowId = AddWindowParameterized(0, 0, 0, 30, 3, 14, 0x107);
+        sFieldClockWindowId = AddWindowParameterized(0,20,1,9,4,15, 0x80);
+    return sFieldClockWindowId;
+}
+
+u8 GetFieldClockWindowId(void)
+{
+    return sFieldClockWindowId;
+}
+
+void RemoveFieldClockWindow() {
+    if (sFieldClockWindowId != WINDOW_NONE) {
+        RemoveWindow(sFieldClockWindowId);
+        sFieldClockWindowId = WINDOW_NONE;
+    }
+}
+
+
 
 void AddTextPrinterWithCallbackForMessage(bool8 canSpeedUp, void (*callback)(struct TextPrinterTemplate *, u16))
 {
