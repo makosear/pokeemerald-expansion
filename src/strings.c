@@ -1846,11 +1846,11 @@ const u8 *const gDayNameStringsTable[] ={
     [DAY_SATURDAY] = gText_Saturday,
 };
 
-const u8 gText_Sunday[]    = _("Sun,");
-const u8 gText_Monday[]    = _("Mon,");
-const u8 gText_Tuesday[]   = _("Tue,");
-const u8 gText_Wednesday[] = _("Wed,");
-const u8 gText_Thursday[]  = _("Thu,");
-const u8 gText_Friday[]    = _("Fri,");
-const u8 gText_Saturday[]  = _("Sat,");
+const u8 gText_Sunday[]    = _("Sun.");
+const u8 gText_Monday[]    = _("Mon.");
+const u8 gText_Tuesday[]   = _("Tue.");
+const u8 gText_Wednesday[] = _("Wed.");
+const u8 gText_Thursday[]  = _("Thu.");
+const u8 gText_Friday[]    = _("Fri.");
+const u8 gText_Saturday[]  = _("Sat.");
 const u8 gText_Date[] = _("{STR_VAR_1}-{STR_VAR_2}-20{STR_VAR_3}");

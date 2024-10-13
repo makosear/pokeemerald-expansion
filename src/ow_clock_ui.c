@@ -49,9 +49,29 @@ struct FieldClockGfx
 
 static const struct FieldClockGfx sFieldClock = {sFieldClock_Gfx, sFieldClock_Pal};
 */
+
+
+//LOOK IF BW_PRIMARY.PNG is defined elsewhere, like where the compiler is making the .png into these files 
+//doesnt look like it lol
+
+static const u8 sFieldClock_Gfx[]        = INCBIN_U8("graphics/interface/fieldclock.4bpp");
+static const u16 sFieldClock_Pal[16]        = INCBIN_U16("graphics/interface/fieldclock.gbapal");
+
+/*struct FieldClockGfx
+{
+    const u8 *gfx;
+    const u16 *pal;
+};
+
+static const struct FieldClockGfx sFieldClock = {sFieldClock_Gfx, sFieldClock_Pal};*/
+
+//sMapPopUpTilesPrimary_BW = sFieldClock_GFX
+//sMapPopUpTilesPalette_BW_Black = sFieldClock_Pal
+
 EWRAM_DATA static s8 sInitShowFieldClockData[2] = {0};
 EWRAM_DATA u8 gFieldClockTaskId = 0;
 
+static void LoadFieldClockWindowBg(void);
 static void ShowTimeWindow(void);
 void ShowFieldClockFromMenu(void);
 static void InitShowFieldClockStep(u8 taskId);
@@ -152,13 +172,19 @@ static void ShowTimeWindow(void)
 
     UpdateMenuClock();
 
-    // print window
-    //0, 20, 1, 9, 4, 15, 0x??
-    LoadMessageBoxAndBorderGfx();
+    // * Below is for the standard window graphics (so like msgbox and stuff)
+    //LoadMessageBoxAndBorderGfx(); 
+    
+
     fieldClockWindowId = AddFieldClockWindow();
-    //LoadMapNamePopUpWindowBg();
-    //PutWindowTilemap(fieldClockWindowId);
-    DrawStdWindowFrame(fieldClockWindowId, FALSE);
+    LoadFieldClockWindowBg();
+    /*
+     * this was also for the std window graphics (I think?)
+        PutWindowTilemap(fieldClockWindowId);
+        DrawStdWindowFrame(fieldClockWindowId, FALSE);
+    */
+
+    //GET SUFFIX (AM/PM)
     if (gLocalTime.hours < 12) {
         if (gLocalTime.hours == 0)
             convertedHours = 12;
@@ -177,41 +203,47 @@ static void ShowTimeWindow(void)
         suffix = gText_PM;
     }
 
+
+    //GET DAY OF WEEK (SUN/MON/TUE/WED/THU/FRI/SAT)
     if (gLocalTime.dayOfWeek <= DAY_SATURDAY)
         StringCopy(gStringVar4, gDayNameStringsTable[gLocalTime.dayOfWeek]);
     else
         StringCopy(gStringVar4, gText_None);
+    
 
-    AddTextPrinterParameterized(fieldClockWindowId, 1, gStringVar4, 0, 1, 0xFF, NULL);
+    AddTextPrinterParameterized(fieldClockWindowId, 1, gStringVar4, 5, 5, TEXT_SKIP_DRAW, NULL);
+
+    
+
+    /* 
+    * iiii think this just adds month year date to stringvar4?? whichi dont want yet
     ConvertIntToDecimalStringN(gStringVar1, GetDate(), STR_CONV_MODE_RIGHT_ALIGN, 2);
     ConvertIntToDecimalStringN(gStringVar2, GetMonth(), STR_CONV_MODE_RIGHT_ALIGN, 2);
     ConvertIntToDecimalStringN(gStringVar3, GetYear(), STR_CONV_MODE_RIGHT_ALIGN, 2);
     StringExpandPlaceholders(gStringVar4, gText_Date);
-    AddTextPrinterParameterized(fieldClockWindowId, 1, gStringVar4, 0, 16, 0xFF, NULL);
+    */
+    
+
+    
+
+    //AddTextPrinterParameterized(fieldClockWindowId, 1, gStringVar4, 0, 16, 0xFF, NULL);
+
     ptr = ConvertIntToDecimalStringN(gStringVar4, convertedHours, STR_CONV_MODE_LEFT_ALIGN, 3);
     *ptr = 0xF0;
     ConvertIntToDecimalStringN(ptr + 1, gLocalTime.minutes, STR_CONV_MODE_LEADING_ZEROS, 2);
-    AddTextPrinterParameterized(fieldClockWindowId, 1, gStringVar4, GetStringRightAlignXOffset(1, suffix, CLOCK_WINDOW_WIDTH) - (CLOCK_WINDOW_WIDTH - GetStringRightAlignXOffset(1, gStringVar4, CLOCK_WINDOW_WIDTH) + 3), 1, 0xFF, NULL); // print time
-    AddTextPrinterParameterized(fieldClockWindowId, 1, suffix, GetStringRightAlignXOffset(1, suffix, CLOCK_WINDOW_WIDTH), 1, 0xFF, NULL); // print am/pm
+
+    
+
+    //AddTextPrinterParameterized(fieldClockWindowId, 1, gStringVar4, GetStringRightAlignXOffset(1, suffix, CLOCK_WINDOW_WIDTH) - (CLOCK_WINDOW_WIDTH - GetStringRightAlignXOffset(1, gStringVar4, CLOCK_WINDOW_WIDTH) + 3), 1, 0xFF, NULL);
+    
+     // print time
+
+    
+    
+    //AddTextPrinterParameterized(fieldClockWindowId, 1, suffix, GetStringRightAlignXOffset(1, suffix, CLOCK_WINDOW_WIDTH), 1, 0xFF, NULL); // print am/pm
     
     CopyWindowToVram(fieldClockWindowId, COPYWIN_FULL);
 }
-
-/*
-void RemoveFieldClockWindow(void) //we need to use this later
-{
-    if (sShowFieldClockWindowId != WINDOW_NONE)
-    {
-        //ClearStdWindowAndFrame(sShowFieldClockWindowId, TRUE);
-        ClearStdWindowAndFrameToTransparent(sShowFieldClockWindowId, FALSE);
-
-        //removew window
-        {RemoveWindow(sShowFieldClockWindowId);
-        sShowFieldClockWindowId = WINDOW_NONE;}
-        //FreeAllWindowBuffers();
-        DestroyTask(FindTaskIdByFunc(Task_ShowFieldClock));
-    }
-} */
 
 void HideFieldClockWindow(void)
 {
@@ -228,6 +260,18 @@ void HideFieldClockWindow(void)
         //SetGpuReg_ForcedBlank(REG_OFFSET_BG0VOFS, 0);
         DestroyTask(gFieldClockTaskId);
     }
+}
+
+static void LoadFieldClockWindowBg(void)
+{
+    //u8 FieldCLockThemeId;
+    u8 fieldClockWindowId = GetFieldClockWindowId();
+
+    LoadPalette(sFieldClock_Pal, BG_PLTT_ID(14), sizeof(sFieldClock_Pal));
+    
+    CopyToWindowPixelBuffer(fieldClockWindowId, sFieldClock_Gfx, sizeof(sFieldClock_Gfx), 0);
+
+    PutWindowTilemap(fieldClockWindowId);
 }
 
 
