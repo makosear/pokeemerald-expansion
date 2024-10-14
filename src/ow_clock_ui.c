@@ -184,7 +184,7 @@ static void ShowTimeWindow(void)
         DrawStdWindowFrame(fieldClockWindowId, FALSE);
     */
 
-    //GET SUFFIX (AM/PM)
+//GET CONVERTED HOURS + SUFFIX (AM/PM)
     if (gLocalTime.hours < 12) {
         if (gLocalTime.hours == 0)
             convertedHours = 12;
@@ -211,8 +211,11 @@ static void ShowTimeWindow(void)
         StringCopy(gStringVar4, gText_None);
     
 
-    AddTextPrinterParameterized(fieldClockWindowId, 1, gStringVar4, 5, 5, TEXT_SKIP_DRAW, NULL);
+    AddTextPrinterParameterized(fieldClockWindowId, 1, gStringVar4, 4, 5, TEXT_SKIP_DRAW, NULL);
 
+    ConvertIntToDecimalStringN(gStringVar4, GetDate(), STR_CONV_MODE_RIGHT_ALIGN, 2);
+
+    AddTextPrinterParameterized(fieldClockWindowId, 1, gStringVar4, 24, 5, TEXT_SKIP_DRAW, NULL);
     
 
     /* 
@@ -228,19 +231,19 @@ static void ShowTimeWindow(void)
 
     //AddTextPrinterParameterized(fieldClockWindowId, 1, gStringVar4, 0, 16, 0xFF, NULL);
 
-    ptr = ConvertIntToDecimalStringN(gStringVar4, convertedHours, STR_CONV_MODE_LEFT_ALIGN, 3);
+    ptr = ConvertIntToDecimalStringN(gStringVar4, convertedHours, STR_CONV_MODE_LEADING_ZEROS, 2);
     *ptr = 0xF0;
     ConvertIntToDecimalStringN(ptr + 1, gLocalTime.minutes, STR_CONV_MODE_LEADING_ZEROS, 2);
 
     
 
-    //AddTextPrinterParameterized(fieldClockWindowId, 1, gStringVar4, GetStringRightAlignXOffset(1, suffix, CLOCK_WINDOW_WIDTH) - (CLOCK_WINDOW_WIDTH - GetStringRightAlignXOffset(1, gStringVar4, CLOCK_WINDOW_WIDTH) + 3), 1, 0xFF, NULL);
+    AddTextPrinterParameterized(fieldClockWindowId, 1, gStringVar4, GetStringRightAlignXOffset(1, suffix, CLOCK_WINDOW_WIDTH) - (CLOCK_WINDOW_WIDTH - GetStringRightAlignXOffset(1, gStringVar4, CLOCK_WINDOW_WIDTH) + 3) + 14, 5, 0xFF, NULL);
     
      // print time
 
     
     
-    //AddTextPrinterParameterized(fieldClockWindowId, 1, suffix, GetStringRightAlignXOffset(1, suffix, CLOCK_WINDOW_WIDTH), 1, 0xFF, NULL); // print am/pm
+    AddTextPrinterParameterized(fieldClockWindowId, 1, suffix, GetStringRightAlignXOffset(1, suffix, CLOCK_WINDOW_WIDTH) + 13, 5, 0xFF, NULL); // print am/pm
     
     CopyWindowToVram(fieldClockWindowId, COPYWIN_FULL);
 }

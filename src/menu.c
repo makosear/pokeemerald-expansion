@@ -559,7 +559,7 @@ u8 AddFieldClockWindow(void)
 {
     if (sFieldClockWindowId == WINDOW_NONE)
         //sFieldClockWindowId = AddWindowParameterized(0, 0, 0, 30, 3, 14, 0x107);
-        sFieldClockWindowId = AddWindowParameterized(0,20,0,10,4,14, 0x80); 
+        sFieldClockWindowId = AddWindowParameterized(0,19,0,11,4,14, 0x80); 
     return sFieldClockWindowId;
 }
 
