@@ -309,7 +309,6 @@ u16 AddTextPrinterParameterized(u8 windowId, u8 fontId, const u8 *str, u8 x, u8 
     printerTemplate.unk = gFonts[fontId].unk;
     printerTemplate.fgColor = gFonts[fontId].fgColor;
     printerTemplate.bgColor = gFonts[fontId].bgColor;
-    gFonts[0]
     printerTemplate.shadowColor = gFonts[fontId].shadowColor;
     return AddTextPrinter(&printerTemplate, speed, callback);
 }

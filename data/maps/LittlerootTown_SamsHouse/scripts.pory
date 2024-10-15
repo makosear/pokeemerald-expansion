@@ -1,6 +1,12 @@
+const SAM_ID = 2
+const JODI_ID = 1
+const VINCENT_ID = 3
+const SEBASTIAN_ID = 4
+
 mapscripts LittlerootTown_SamsHouse_MapScripts {
      MAP_SCRIPT_ON_FRAME_TABLE [
         VAR_SAM_STATE, 2: LittlerootTown_Samshouse_Event_Script_SamHeart1
+        VAR_SAM_STATE, 6: LittlerootTown_Samshouse_Event_Script_SamHeart2
     ]
     MAP_SCRIPT_ON_TRANSITION: SamHeart1_Helper
 }
@@ -9,6 +15,9 @@ script SamHeart1_Helper {
     setflag(FLAG_HIDE_LITTLEROOT_TOWN_SAMS_HOUSE_SEBASTIAN)
     if (var(VAR_SAM_STATE) == 1) { 
         setvar(VAR_SAM_STATE , 2)
+    }
+    elif (var(VAR_SAM_STATE) == 5) { 
+        setvar(VAR_SAM_STATE, 6)
     }
 }
 
@@ -53,10 +62,10 @@ script LittlerootTown_SamsHouse_Event_Script_Jodi {
 script LittlerootTown_Samshouse_Event_Script_SamHeart1 {
     lockall
     fadescreen(FADE_TO_BLACK)
-    hideobjectat(1,MAP_LITTLEROOT_TOWN_SAMS_HOUSE)
-    hideobjectat(3,MAP_LITTLEROOT_TOWN_SAMS_HOUSE)
+    hideobjectat(JODI_ID, MAP_LITTLEROOT_TOWN_SAMS_HOUSE)
+    hideobjectat(VINCENT_ID, MAP_LITTLEROOT_TOWN_SAMS_HOUSE)
     clearflag(FLAG_HIDE_LITTLEROOT_TOWN_SAMS_HOUSE_SEBASTIAN)
-    addobject(4)
+    addobject(SEBASTIAN_ID)
     fadescreen(FADE_FROM_BLACK)
     playbgm(MUS_OLDALE, TRUE)
     applymovement(OBJ_EVENT_ID_PLAYER, SamHeart1_Movement_Player)
@@ -64,24 +73,24 @@ script LittlerootTown_Samshouse_Event_Script_SamHeart1 {
     applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight)
     waitmovement(0)
     playse(SE_PIN)
-    applymovement(2, Common_Movement_ExclamationMark)
-    applymovement(4, Common_Movement_ExclamationMark)
-    waitmovement(4)
-    applymovement(4, Common_Movement_FaceLeft)
-    waitmovement(4)
-    waitmovement(2)
+    applymovement(SAM_ID, Common_Movement_ExclamationMark)
+    applymovement(SEBASTIAN_ID, Common_Movement_ExclamationMark)
+    waitmovement(SEBASTIAN_ID)
+    applymovement(SEBASTIAN_ID, Common_Movement_FaceLeft)
+    waitmovement(SEBASTIAN_ID)
+    waitmovement(SAM_ID)
     delay(8)
-    applymovement(2, SamHeart1_Movement_2)
-    waitmovement(2)
-    msgbox(format("SAM: Oh, hi {PLAYER}! Sebastian and I were just having a little 'jam session'."))
+    applymovement(SAM_ID, SamHeart1_Movement_2)
+    waitmovement(SAM_ID)
+    msgbox(format("SAM: Oh, hi {PLAYER}! Sebastian and I were just having a little 'jam session'."), MSGBOX_DEFAULT)
     delay(4)
-    applymovement(4, Common_Movement_FaceUp)
+    applymovement(SEBASTIAN_ID, Common_Movement_FaceUp)
     waitmovement(0)
     delay(8)
-    applymovement(4, Common_Movement_FaceLeft)
+    applymovement(SEBASTIAN_ID, Common_Movement_FaceLeft)
     waitmovement(0)
     delay(8)
-    msgbox(format("SAM: We're trying to start a band, but we still don't know what kind of music to make. There's too many possibilities."))
+    msgbox(format("SAM: We're trying to start a band, but we still don't know what kind of music to make. There's too many possibilities."), MSGBOX_DEFAULT)
 
     delay(8)
 
@@ -90,7 +99,7 @@ script LittlerootTown_Samshouse_Event_Script_SamHeart1 {
     dynmultichoice(8,4, TRUE, 6, 0, DYN_MULTICHOICE_CB_NONE, "Cheerful pop music.",
 "Experimental noise rock.", "Hi-Energy dance music.", "Honky-tonky country music.")
 
-    msgbox(format("SAM: Hey, you know what? If you win against me in a POKEMON battle, we'll play that kind of music."))
+    msgbox(format("SAM: Hey, you know what? If you win against me in a POKEMON battle, we'll play that kind of music."), MSGBOX_DEFAULT)
 
     msgbox(format("SAM: What do you say, Sebastian? Should we do this?"), MSGBOX_DEFAULT)
 
@@ -98,23 +107,23 @@ script LittlerootTown_Samshouse_Event_Script_SamHeart1 {
 
     msgbox(format("SEBASTIAN: ...Okay."), MSGBOX_DEFAULT)
 
-    msgbox(format("SAM: Alright, {PLAYER}. Just, psst, try not to make a mess in the house or my Mom will flip."))
+    msgbox(format("SAM: Alright, {PLAYER}. Just, psst, try not to make a mess in the house or my Mom will flip."), MSGBOX_DEFAULT)
 
     # trainerbattle_no_intro TRAINER_GRUNT_PETALBURG_WOODS, PetalburgWoods_Text_YoureKiddingMe
 
     trainerbattle_no_intro(TRAINER_SAM_ONEHEART, "Your buddy is pretty good!")
 
-    msgbox(format("SAM: Thanks for the help, {PLAYER}. With my guitar skills, and Sebastian's wizardry on the synthesizer, we're gonna be a screaming success. I'm convinced of it!"))
+    msgbox(format("SAM: Thanks for the help, {PLAYER}. With my guitar skills, and Sebastian's wizardry on the synthesizer, we're gonna be a screaming success. I'm convinced of it!"), MSGBOX_DEFAULT)
 
     delay(16)
 
     msgbox(format("SAM: Now I just need to find someone to play drums..."), MSGBOX_DEFAULT)
 
     fadescreen(FADE_TO_BLACK)
-    showobjectat(1,MAP_LITTLEROOT_TOWN_SAMS_HOUSE)
-    showobjectat(3,MAP_LITTLEROOT_TOWN_SAMS_HOUSE)
+    showobjectat(JODI_ID, MAP_LITTLEROOT_TOWN_SAMS_HOUSE)
+    showobjectat(VINCENT_ID, MAP_LITTLEROOT_TOWN_SAMS_HOUSE)
     setflag(FLAG_HIDE_LITTLEROOT_TOWN_SAMS_HOUSE_SEBASTIAN)
-    removeobject(4)
+    removeobject(SEBASTIAN_ID)
     fadescreen(FADE_FROM_BLACK)
     fadedefaultbgm
     setvar(VAR_SAM_STATE, 3)
@@ -131,4 +140,123 @@ movement SamHeart1_Movement_Player {
 movement SamHeart1_Movement_2 {
     walk_left
     face_down
+}
+
+script LittlerootTown_Samshouse_Event_Script_SamHeart2 {
+    lockall
+    fadescreen(FADE_TO_BLACK)
+    hideobjectat(VINCENT_ID, MAP_LITTLEROOT_TOWN_SAMS_HOUSE)
+    setobjectxy(JODI_ID, 16, 7)
+    setobjectmovementtype(JODI_ID, MOVEMENT_TYPE_FACE_UP)
+    setobjectxy(SAM_ID, 5, 2)
+    setobjectmovementtype(SAM_ID, MOVEMENT_TYPE_FACE_UP)
+    fadescreen(FADE_FROM_BLACK)
+    playbgm(MUS_OLDALE, TRUE)
+
+    // sam looking at fridge
+    // mc walks in, sam turns back
+    applymoveplayer(SamHeart3_Player)
+    applymove(SAM_ID, Common_Movement_FaceDown)
+
+    msgbox(format("SAM: Oh, hi {PLAYER}. I was just about to have a snack."), MSGBOX_DEFAULT)
+    msgbox(format("SAM: Here, let me get something for you."), MSGBOX_DEFAULT)
+    closemessage
+
+    //turns to fridge, sound of something being taken out
+    applymove(SAM_ID, Common_Movement_FaceUp)
+    delay(30)
+    playse(SE_USE_ITEM)
+    delay(30)
+    applymove(SAM_ID, Common_Movement_FaceLeft)
+    // sam accidentaly lets the egg fall on the floor
+    playse(SE_FALL)
+    waitse
+    playse(SE_SUPER_EFFECTIVE)
+    waitse
+    playbgm(MUS_TOO_BAD, FALSE)
+    delay(60)
+    fadeoutbgm(0)
+    playbgm(MUS_DUMMY, FALSE)
+
+    msgbox(format("SAM: Oh no... What a mess."), MSGBOX_DEFAULT)
+    closemessage
+
+    //jodi comes running from her room (appears from the stairs)
+    //stands behind mc
+    applymove(JODI_ID, SamHeart3_Jodi1)
+    msgbox(format("JODI: What was that sound?"), MSGBOX_DEFAULT)
+    closemessage
+    //exclamation mark
+    emote(JODI_ID, EMOTE_EXCLAM)
+    msgbox(format("JODI: Oh, my!"), MSGBOX_DEFAULT)
+    closemessage
+    //walks towards the mess on the floor
+    applymove(JODI_ID, SamHeart3_Jodi2)
+    msgbox(format("JODI: This is absolutely terrible! What happened?"), MSGBOX_DEFAULT)
+
+    msgbox(format("SAM: Tell her, {PLAYER}..."), MSGBOX_DEFAULT)
+
+    dynmultichoice(8, 4, TRUE, 6, 0, DYN_MULTICHOICE_CB_NONE, "Sam dropped the snack accidentally.", "I dropped the snack accidentally.", "Sam dropped it as a joke.")
+
+
+    if (var(VAR_RESULT) < 2) {
+        if (var(VAR_RESULT) == 0){
+            setvar(VAR_SAM_STATE, 7)
+            msgbox(format("SAM: They're right... That's what happened."), MSGBOX_DEFAULT)
+            }
+        elif (var(VAR_RESULT) == 1){
+            setvar(VAR_SAM_STATE, 8)
+            msgbox(format("SAM: Yeah... That's what happened!"), MSGBOX_DEFAULT)
+            }
+        msgbox(format("JODI: Thanks for telling me the truth, {PLAYER}. It's not such a big deal."), MSGBOX_DEFAULT)
+
+    }
+    else {
+        setvar(VAR_SAM_STATE, 9)
+        msgbox(format("SAM: What!? They're lying!"), MSGBOX_DEFAULT)
+
+        msgbox(format("JODI: You did WHAT, Sam?! What's gotten into you?"), MSGBOX_DEFAULT)
+    }
+
+    closemessage
+    delay(60)
+    
+    msgbox(format("SAM: I'm sorry about this, mom. I'll clean it up."), MSGBOX_DEFAULT)
+    closemessage
+
+    //jodi heart emoji
+    emote(JODI_ID, EMOTE_HEART)
+
+    msgbox(format("JODI: Thanks, honey."), MSGBOX_DEFAULT)
+    closemessage
+    //jodi leaves the kitchen
+    applymove(JODI_ID, SamHeart3_Jodi3)
+    
+    fadescreen(FADE_TO_BLACK)
+    showobjectat(VINCENT_ID, MAP_LITTLEROOT_TOWN_SAMS_HOUSE)
+    fadescreen(FADE_FROM_BLACK)
+    fadedefaultbgm
+    releaseall
+}
+
+movement SamHeart3_Jodi1 {
+    walk_left * 11
+    walk_up
+}
+
+movement SamHeart3_Jodi2 {
+    walk_left
+    walk_up * 2
+}
+
+movement SamHeart3_Jodi3 {
+    walk_down * 2
+    walk_right
+    walk_down
+    walk_right * 11
+    face_up
+}
+
+movement SamHeart3_Player {
+    walk_up * 4
 }
