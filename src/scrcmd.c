@@ -52,6 +52,7 @@
 #include "list_menu.h"
 #include "malloc.h"
 #include "constants/event_objects.h"
+#include "ow_clock_ui.h"
 
 typedef u16 (*SpecialFunc)(void);
 typedef void (*NativeFunc)(struct ScriptContext *ctx);
@@ -1434,6 +1435,8 @@ bool8 ScrCmd_dynmultichoice(struct ScriptContext *ctx)
     // Read vararg
     u32 argc = ScriptReadByte(ctx);
     struct ListMenuItem *items;
+
+    HideFieldClockWindow();
 
     if (argc == 0)
         return FALSE;

@@ -67,6 +67,7 @@
 #include "constants/species.h"
 #include "constants/weather.h"
 #include "save.h"
+#include "ow_clock_ui.h"
 
 #if DEBUG_OVERWORLD_MENU == TRUE
 // *******************************
@@ -1167,6 +1168,8 @@ static void Debug_ShowMenu(void (*HandleInput)(u8), struct ListMenuTemplate LMte
 
     // create window
     HideMapNamePopUpWindow();
+    HideFieldClockWindow();
+    
     LoadMessageBoxAndBorderGfx();
     windowId = AddWindow(&sDebugMenuWindowTemplateMain);
     DrawStdWindowFrame(windowId, FALSE);
