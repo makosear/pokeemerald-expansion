@@ -1634,3 +1634,22 @@ const u16 gTilesetPalettes_UnionRoom[][16] =
 };
 
 const u32 gTilesetTiles_UnionRoom[] = INCBIN_U32("data/tilesets/secondary/union_room/tiles.4bpp.lz");
+
+const u16 gTilesetPalettes_porytiletesting[][16] =
+{
+    INCBIN_U16("data/tilesets/primary/porytiletesting/palettes/00.gbapal"),
+    INCBIN_U16("data/tilesets/primary/porytiletesting/palettes/01.gbapal"),
+    INCBIN_U16("data/tilesets/primary/porytiletesting/palettes/02.gbapal"),
+    INCBIN_U16("data/tilesets/primary/porytiletesting/palettes/03.gbapal"),
+    INCBIN_U16("data/tilesets/primary/porytiletesting/palettes/04.gbapal"),
+    INCBIN_U16("data/tilesets/primary/porytiletesting/palettes/05.gbapal"),
+    INCBIN_U16("data/tilesets/primary/porytiletesting/palettes/06.gbapal"),
+    INCBIN_U16("data/tilesets/primary/porytiletesting/palettes/07.gbapal"),
+    INCBIN_U16("data/tilesets/primary/porytiletesting/palettes/08.gbapal"),
+    INCBIN_U16("data/tilesets/primary/porytiletesting/palettes/09.gbapal"),
+    INCBIN_U16("data/tilesets/primary/porytiletesting/palettes/10.gbapal"),
+    INCBIN_U16("data/tilesets/primary/porytiletesting/palettes/11.gbapal"),
+    INCBIN_U16("data/tilesets/primary/porytiletesting/palettes/12.gbapal"),
+};
+
+const u32 gTilesetTiles_porytiletesting[] = INCBIN_U32("data/tilesets/primary/porytiletesting/tiles.4bpp.lz");
