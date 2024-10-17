@@ -210,3 +210,9 @@ const u16 gMetatileAttributes_UnionRoom[] = INCBIN_U16("data/tilesets/secondary/
 
 const u16 gMetatiles_porytiletesting[] = INCBIN_U16("data/tilesets/primary/porytiletesting/metatiles.bin");
 const u16 gMetatileAttributes_porytiletesting[] = INCBIN_U16("data/tilesets/primary/porytiletesting/metatile_attributes.bin");
+
+const u16 gMetatiles_PorytilesSecondaryTutorial[] = INCBIN_U16("data/tilesets/secondary/porytiles_secondary_tutorial/metatiles.bin");
+const u16 gMetatileAttributes_PorytilesSecondaryTutorial[] = INCBIN_U16("data/tilesets/secondary/porytiles_secondary_tutorial/metatile_attributes.bin");
+
+const u16 gMetatiles_porysecondarytest[] = INCBIN_U16("data/tilesets/secondary/porysecondarytest/metatiles.bin");
+const u16 gMetatileAttributes_porysecondarytest[] = INCBIN_U16("data/tilesets/secondary/porysecondarytest/metatile_attributes.bin");

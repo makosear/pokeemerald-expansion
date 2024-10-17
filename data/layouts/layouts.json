@@ -4454,12 +4454,22 @@
     {
       "id": "LAYOUT_NEW_MAP1",
       "name": "NewMap1_Layout",
-      "width": 20,
-      "height": 20,
+      "width": 50,
+      "height": 32,
       "primary_tileset": "gTileset_porytiletesting",
-      "secondary_tileset": "gTileset_Petalburg",
+      "secondary_tileset": "gTileset_porysecondarytest",
       "border_filepath": "data/layouts/NewMap1/border.bin",
       "blockdata_filepath": "data/layouts/NewMap1/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROUTE1",
+      "name": "Route1_Layout",
+      "width": 38,
+      "height": 7,
+      "primary_tileset": "gTileset_porytiletesting",
+      "secondary_tileset": "gTileset_PorytilesSecondaryTutorial",
+      "border_filepath": "data/layouts/Route1/border.bin",
+      "blockdata_filepath": "data/layouts/Route1/map.bin"
     }
   ]
 }
