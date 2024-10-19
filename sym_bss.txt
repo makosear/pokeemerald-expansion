@@ -60,4 +60,6 @@
 	.include "src/siirtc.o"
 	.include "*libgcc.a:dp-bit.o"
 	.include "*libgcc.a:fp-bit.o"
+	.include "src/quests.o"
 	.include "*libc.a:syscalls.o"
+	
