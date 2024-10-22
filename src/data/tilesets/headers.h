@@ -858,3 +858,14 @@ const struct Tileset gTileset_porysecondarytest =
     .metatileAttributes = gMetatileAttributes_porysecondarytest,
     .callback = NULL,
 };
+
+const struct Tileset gTileset_porybeach =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_porybeach,
+    .palettes = gTilesetPalettes_porybeach,
+    .metatiles = gMetatiles_porybeach,
+    .metatileAttributes = gMetatileAttributes_porybeach,
+    .callback = NULL,
+};

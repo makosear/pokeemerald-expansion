@@ -17,6 +17,11 @@
       "map": "MAP_NEW_MAP1",
       "offset": 0,
       "direction": "up"
+    },
+    {
+      "map": "MAP_PELIPPER_BEACH_REAL",
+      "offset": -8,
+      "direction": "down"
     }
   ],
   "object_events": [

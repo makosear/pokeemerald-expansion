@@ -216,3 +216,6 @@ const u16 gMetatileAttributes_PorytilesSecondaryTutorial[] = INCBIN_U16("data/ti
 
 const u16 gMetatiles_porysecondarytest[] = INCBIN_U16("data/tilesets/secondary/porysecondarytest/metatiles.bin");
 const u16 gMetatileAttributes_porysecondarytest[] = INCBIN_U16("data/tilesets/secondary/porysecondarytest/metatile_attributes.bin");
+
+const u16 gMetatiles_porybeach[] = INCBIN_U16("data/tilesets/secondary/porybeach/metatiles.bin");
+const u16 gMetatileAttributes_porybeach[] = INCBIN_U16("data/tilesets/secondary/porybeach/metatile_attributes.bin");

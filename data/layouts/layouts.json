@@ -4455,7 +4455,7 @@
       "id": "LAYOUT_NEW_MAP1",
       "name": "NewMap1_Layout",
       "width": 50,
-      "height": 32,
+      "height": 34,
       "primary_tileset": "gTileset_porytiletesting",
       "secondary_tileset": "gTileset_porysecondarytest",
       "border_filepath": "data/layouts/NewMap1/border.bin",
@@ -4465,11 +4465,31 @@
       "id": "LAYOUT_ROUTE1",
       "name": "Route1_Layout",
       "width": 38,
-      "height": 7,
+      "height": 8,
       "primary_tileset": "gTileset_porytiletesting",
-      "secondary_tileset": "gTileset_PorytilesSecondaryTutorial",
+      "secondary_tileset": "gTileset_porybeach",
       "border_filepath": "data/layouts/Route1/border.bin",
       "blockdata_filepath": "data/layouts/Route1/map.bin"
+    },
+    {
+      "id": "LAYOUT_PELIPPER_BEACH",
+      "name": "PelipperBeach_Layout",
+      "width": 40,
+      "height": 20,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Slateport",
+      "border_filepath": "data/layouts/PelipperBeach/border.bin",
+      "blockdata_filepath": "data/layouts/PelipperBeach/map.bin"
+    },
+    {
+      "id": "LAYOUT_PELIPPER_BEACH_REAL",
+      "name": "PelipperBeachReal_Layout",
+      "width": 40,
+      "height": 20,
+      "primary_tileset": "gTileset_porytiletesting",
+      "secondary_tileset": "gTileset_porybeach",
+      "border_filepath": "data/layouts/PelipperBeachReal/border.bin",
+      "blockdata_filepath": "data/layouts/PelipperBeachReal/map.bin"
     }
   ]
 }

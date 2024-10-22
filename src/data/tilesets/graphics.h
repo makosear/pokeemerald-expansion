@@ -1691,3 +1691,22 @@ const u16 gTilesetPalettes_porysecondarytest[][16] =
 };
 
 const u32 gTilesetTiles_porysecondarytest[] = INCBIN_U32("data/tilesets/secondary/porysecondarytest/tiles.4bpp.lz");
+
+const u16 gTilesetPalettes_porybeach[][16] =
+{
+    INCBIN_U16("data/tilesets/secondary/porybeach/palettes/00.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/porybeach/palettes/01.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/porybeach/palettes/02.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/porybeach/palettes/03.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/porybeach/palettes/04.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/porybeach/palettes/05.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/porybeach/palettes/06.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/porybeach/palettes/07.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/porybeach/palettes/08.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/porybeach/palettes/09.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/porybeach/palettes/10.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/porybeach/palettes/11.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/porybeach/palettes/12.gbapal"),
+};
+
+const u32 gTilesetTiles_porybeach[] = INCBIN_U32("data/tilesets/secondary/porybeach/tiles.4bpp.lz");
