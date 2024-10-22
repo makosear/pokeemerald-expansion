@@ -223,7 +223,7 @@ int ProcessPlayerFieldInput(struct FieldInput *input)
     if (input->input_field_1_3)
     {
         PlaySE(SE_WIN_OPEN);
-        ToggleMapPopup();
+        FlagSet(FLAG_SYS_QUEST_MENU_GET);
         return TRUE;
     }
 

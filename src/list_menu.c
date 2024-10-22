@@ -430,6 +430,8 @@ s32 ListMenu_ProcessInput(u8 listTaskId)
             ListMenuChangeSelection(list,TRUE,lastPositon,TRUE);
         else
             ListMenuChangeSelection(list, TRUE, 1, FALSE);
+            
+        return LIST_NOTHING_CHOSEN;
     }
     else if (JOY_REPEAT(DPAD_DOWN))
     {
