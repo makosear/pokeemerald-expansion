@@ -4455,7 +4455,7 @@
       "id": "LAYOUT_NEW_MAP1",
       "name": "NewMap1_Layout",
       "width": 50,
-      "height": 34,
+      "height": 36,
       "primary_tileset": "gTileset_porytiletesting",
       "secondary_tileset": "gTileset_porysecondarytest",
       "border_filepath": "data/layouts/NewMap1/border.bin",
@@ -4465,7 +4465,7 @@
       "id": "LAYOUT_ROUTE1",
       "name": "Route1_Layout",
       "width": 38,
-      "height": 8,
+      "height": 12,
       "primary_tileset": "gTileset_porytiletesting",
       "secondary_tileset": "gTileset_porybeach",
       "border_filepath": "data/layouts/Route1/border.bin",
@@ -4490,6 +4490,16 @@
       "secondary_tileset": "gTileset_porybeach",
       "border_filepath": "data/layouts/PelipperBeachReal/border.bin",
       "blockdata_filepath": "data/layouts/PelipperBeachReal/map.bin"
+    },
+    {
+      "id": "LAYOUT_PELIPPER_TOWN_FARMERS_HOUSE",
+      "name": "PelipperTownFarmersHouse_Layout",
+      "width": 10,
+      "height": 9,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_GenericBuilding",
+      "border_filepath": "data/layouts/PelipperTownFarmersHouse/border.bin",
+      "blockdata_filepath": "data/layouts/PelipperTownFarmersHouse/map.bin"
     }
   ]
 }

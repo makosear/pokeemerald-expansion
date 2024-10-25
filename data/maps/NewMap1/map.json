@@ -25,16 +25,23 @@
   "warp_events": [
     {
       "x": 41,
-      "y": 28,
+      "y": 30,
       "elevation": 0,
       "dest_map": "MAP_LITTLEROOT_TOWN_MART",
       "dest_warp_id": "0"
     },
     {
       "x": 31,
-      "y": 7,
+      "y": 9,
       "elevation": 0,
       "dest_map": "MAP_LITTLEROOT_TOWN_SAMS_HOUSE",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 4,
+      "y": 12,
+      "elevation": 0,
+      "dest_map": "MAP_PELIPPER_TOWN_FARMERS_HOUSE",
       "dest_warp_id": "0"
     }
   ],

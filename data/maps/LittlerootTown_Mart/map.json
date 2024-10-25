@@ -33,15 +33,15 @@
       "x": 4,
       "y": 7,
       "elevation": 0,
-      "dest_map": "MAP_LITTLEROOT_TOWN",
-      "dest_warp_id": "3"
+      "dest_map": "MAP_NEW_MAP1",
+      "dest_warp_id": "0"
     },
     {
       "x": 3,
       "y": 7,
       "elevation": 0,
-      "dest_map": "MAP_LITTLEROOT_TOWN",
-      "dest_warp_id": "3"
+      "dest_map": "MAP_NEW_MAP1",
+      "dest_warp_id": "0"
     }
   ],
   "coord_events": [
