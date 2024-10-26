@@ -1093,3 +1093,5 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/PelipperBeachReal/scripts.inc"
 
 	.include "data/maps/PelipperTownFarmersHouse/scripts.inc"
+
+	.include "data/maps/PelipperTownFarmHouse_Unpacked/scripts.inc"

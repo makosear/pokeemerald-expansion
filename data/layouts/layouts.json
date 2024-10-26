@@ -4497,9 +4497,19 @@
       "width": 10,
       "height": 9,
       "primary_tileset": "gTileset_Building",
-      "secondary_tileset": "gTileset_GenericBuilding",
+      "secondary_tileset": "gTileset_BrendansMaysHouse",
       "border_filepath": "data/layouts/PelipperTownFarmersHouse/border.bin",
       "blockdata_filepath": "data/layouts/PelipperTownFarmersHouse/map.bin"
+    },
+    {
+      "id": "LAYOUT_PELIPPER_TOWN_FARM_HOUSE_UNPACKED",
+      "name": "PelipperTownFarmHouse_Unpacked_Layout",
+      "width": 10,
+      "height": 9,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/PelipperTownFarmHouse_Unpacked/border.bin",
+      "blockdata_filepath": "data/layouts/PelipperTownFarmHouse_Unpacked/map.bin"
     }
   ]
 }

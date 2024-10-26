@@ -6,12 +6,13 @@
 //
 
 // gMapGroup_SamsAdventure
-#define MAP_NEW_MAP1                    (0 | (0 << 8))
-#define MAP_ROUTE1                      (1 | (0 << 8))
-#define MAP_PELIPPER_BEACH_REAL         (2 | (0 << 8))
-#define MAP_LITTLEROOT_TOWN_MART        (3 | (0 << 8))
-#define MAP_LITTLEROOT_TOWN_SAMS_HOUSE  (4 | (0 << 8))
-#define MAP_PELIPPER_TOWN_FARMERS_HOUSE (5 | (0 << 8))
+#define MAP_NEW_MAP1                          (0 | (0 << 8))
+#define MAP_ROUTE1                            (1 | (0 << 8))
+#define MAP_PELIPPER_BEACH_REAL               (2 | (0 << 8))
+#define MAP_LITTLEROOT_TOWN_MART              (3 | (0 << 8))
+#define MAP_LITTLEROOT_TOWN_SAMS_HOUSE        (4 | (0 << 8))
+#define MAP_PELIPPER_TOWN_FARMERS_HOUSE       (5 | (0 << 8))
+#define MAP_PELIPPER_TOWN_FARM_HOUSE_UNPACKED (6 | (0 << 8))
 
 // gMapGroup_TownsAndRoutes
 #define MAP_PETALBURG_CITY      (0 | (1 << 8))
