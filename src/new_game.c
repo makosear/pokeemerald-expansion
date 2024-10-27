@@ -15,6 +15,7 @@
 #include "dewford_trend.h"
 #include "berry.h"
 #include "rtc.h"
+#include "fake_rtc.h"
 #include "easy_chat.h"
 #include "event_data.h"
 #include "money.h"
@@ -195,6 +196,8 @@ void NewGameInitData(void)
     ResetFanClub();
     ResetLotteryCorner();
     WarpToTruck();
+    FakeRtc_AdvanceTimeBy(11, 58, 0);
+    FakeRtc_ResetDayCount();
     RunScriptImmediately(EventScript_ResetAllMapFlags);
     ResetMiniGamesRecords();
     InitUnionRoomChatRegisteredTexts();

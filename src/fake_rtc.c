@@ -35,6 +35,17 @@ void FakeRtc_TickTimeForward(void)
     FakeRtc_AdvanceTimeBy(0, 0, FakeRtc_GetSecondsRatio());
 }
 
+void FakeRtc_ResetDayCount(void)
+{
+    struct Time* time = FakeRtc_GetCurrentTime();
+    u32 secondsNormalize = time->seconds;
+    u32 leftoverSeconds = secondsNormalize % SECONDS_PER_MINUTE;
+    secondsNormalize = secondsNormalize - leftoverSeconds;
+    time->seconds = secondsNormalize;
+    time->days = 1;
+    RtcSetDayOfWeek(DAY_MONDAY);
+}
+
 void FakeRtc_AdvanceTimeBy(u32 hours, u32 minutes, u32 seconds)
 {
     struct Time* time = FakeRtc_GetCurrentTime();
@@ -83,7 +94,7 @@ u32 FakeRtc_GetSecondsRatio(void)
 {
     return (OW_ALTERED_TIME_RATIO == GEN_8_PLA) ? 60 :
            (OW_ALTERED_TIME_RATIO == GEN_9)     ? 20 :
-           (OW_ALTERED_TIME_RATIO == SV_STYLE)  ? 85 :
+           (OW_ALTERED_TIME_RATIO == SV_STYLE)  ? 100 :
                                                   1;
 }
 

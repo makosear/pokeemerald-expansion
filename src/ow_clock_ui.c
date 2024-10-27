@@ -141,24 +141,43 @@ void ShowFieldClockFromMenu(void)
 
 //basically need to add ShowTimeWindow(); to the field ui init 
 
-#define CLOCK_WINDOW_WIDTH 70
-
-#define TIME_UPDATE_INTERVAL (1 << 8)
+#define CLOCK_WINDOW_WIDTH                      70
+#define POWER_OF_TWO                            FALSE  // TRUE = uses default interval, FALSE = non-binary
+#define TIME_UPDATE_INTERVAL                    (1 << 8)
+#define TIME_UPDATE_INTERVAL_NONBINARY          200
 
 static void UpdateMenuClock(void)
 {
     switch (gSaveBlock1Ptr->clockState)
     {
     case 0:
-        if (gMain.vblankCounter1 & TIME_UPDATE_INTERVAL)
-        {
-            RtcCalcLocalTime();
-            gSaveBlock1Ptr->clockState++;
-        }
-        break;
+        if (POWER_OF_TWO)
+            {
+                if (gMain.vblankCounter1 & TIME_UPDATE_INTERVAL)
+                {
+                    RtcCalcLocalTime();
+                    gSaveBlock1Ptr->clockState++;
+                }
+            }
+            else
+            {
+                if (gMain.vblankCounter1 % TIME_UPDATE_INTERVAL_NONBINARY == 0)
+                {
+                    RtcCalcLocalTime();
+                    gSaveBlock1Ptr->clockState++;
+                }
+            }
     case 1:
-        if (!(gMain.vblankCounter1 & TIME_UPDATE_INTERVAL))
-            gSaveBlock1Ptr->clockState--;
+        if (POWER_OF_TWO)
+        {
+            if (!(gMain.vblankCounter1 & TIME_UPDATE_INTERVAL))
+                gSaveBlock1Ptr->clockState--;
+        }
+        else
+        {
+            if (gMain.vblankCounter1 % TIME_UPDATE_INTERVAL_NONBINARY != 0)
+                gSaveBlock1Ptr->clockState--;
+        }
         break;
     }
 }
