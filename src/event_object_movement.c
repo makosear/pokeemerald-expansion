@@ -8113,7 +8113,7 @@ bool8 MovementAction_OpenBox_Step0(struct ObjectEvent *objectEvent, struct Sprit
 bool8 MovementAction_CloseBox_Step0(struct ObjectEvent *objectEvent, struct Sprite *sprite)
 {
     SetAndStartSpriteAnim(sprite, ANIM_CLOSE_BOX, 0);
-    sprite->sActionFuncId = 0;
+    sprite->sActionFuncId = 1;
     return FALSE;
 }
 
