@@ -1,3 +1,232 @@
-const BOXES_OPENED = VAR_TEMP_E;
+const FLAG_BOX1_OPEN = FLAG_TEMP_1
+const FLAG_BOX2_OPEN = FLAG_TEMP_2
+const FLAG_BOX3_OPEN = FLAG_TEMP_3
+const FLAG_BOX4_OPEN = FLAG_TEMP_4
+const FLAG_BOX5_OPEN = FLAG_TEMP_5
+const FLAG_BOX6_OPEN = FLAG_TEMP_6
+const FLAG_BOX7_OPEN = FLAG_TEMP_7
+const FLAG_BOX8_OPEN = FLAG_TEMP_8
+const FLAG_BOX9_OPEN = FLAG_TEMP_9
+const FLAG_BOX10_OPEN = FLAG_TEMP_A
+const VAR_LOADED_MAP = VAR_TEMP_D
+const VAR_BOXES_OPENED = VAR_TEMP_E
+const FLAG_READY_TO_WARP = VAR_TEMP_F
 
-mapscripts PelipperTownFarmHouse_Unpacked_MapScripts {}
+mapscripts PelipperTownFarmHouse_Unpacked_MapScripts {
+     MAP_SCRIPT_ON_FRAME_TABLE [
+        VAR_LOADED_MAP, 1
+        {
+            applymoveplayer(Common_Movement_ExclamationMark)
+            msgbox(format("{PLAYER}: Jeez, this is a mess."), MSGBOX_DEFAULT)
+            msgbox(format("{PLAYER}: Well, my things are not gonna unpack themselves!"), MSGBOX_DEFAULT)
+            closemessage
+            addvar(VAR_LOADED_MAP, 1)
+        } 
+        VAR_BOXES_OPENED, 10 
+        { 
+            setvar(FLAG_READY_TO_WARP, 1) 
+            addvar(VAR_BOXES_OPENED, 1) 
+        }
+        FLAG_READY_TO_WARP, 1: PelipperTownFarmHouse_Unpacked_EventScript_Warp
+    ]
+    MAP_SCRIPT_ON_TRANSITION: PelipperTownFarmHouse_Unpacked_Helper
+}
+
+script PelipperTownFarmHouse_Unpacked_Helper {
+    setvar(FLAG_READY_TO_WARP, 0)
+    setvar(VAR_BOXES_OPENED, 0)
+    setvar(VAR_LOADED_MAP, 1)
+
+    #msgbox(format("{PLAYER}: My things are not gonna unpack themselves!"), MSGBOX_DEFAULT)
+    #closemessage
+}
+
+script PelipperTownFarmHouse_Unpacked_EventScript_Warp {
+    waitmovement(0)
+    msgbox(format("{PLAYER}: Alright, that should be all..."), MSGBOX_DEFAULT)
+    closemessage
+    warp(MAP_PELIPPER_TOWN_FARMERS_HOUSE, 4, 5)
+    waitstate
+}
+
+script PelipperTownFarmHouse_Unpacked_EventScript_Box1 {
+    lock
+    if (flag(FLAG_BOX1_OPEN)) {
+        subvar(VAR_BOXES_OPENED, 1)
+        applymovement(VAR_LAST_TALKED, Movement_CloseBox)
+        waitmovement(0)
+        clearflag(FLAG_BOX1_OPEN)
+    }
+
+    else {
+        applymovement(VAR_LAST_TALKED, Movement_OpenBox)
+        waitmovement(0)
+        setflag(FLAG_BOX1_OPEN)
+        addvar(VAR_BOXES_OPENED, 1)
+    }
+    
+    release
+}
+
+script PelipperTownFarmHouse_Unpacked_EventScript_Box2 {
+    lock
+    if (flag(FLAG_BOX2_OPEN)) {
+        subvar(VAR_BOXES_OPENED, 1)
+        applymovement(VAR_LAST_TALKED, Movement_CloseBox)
+        waitmovement(0)
+        clearflag(FLAG_BOX2_OPEN)
+    }
+    else {
+        applymovement(VAR_LAST_TALKED, Movement_OpenBox)
+        waitmovement(0)
+        setflag(FLAG_BOX2_OPEN)
+        addvar(VAR_BOXES_OPENED, 1)
+    }
+    release
+}
+
+# REPEAT ABOVE FOR BOXES 3-10
+
+script PelipperTownFarmHouse_Unpacked_EventScript_Box3 {
+    lock
+    if (flag(FLAG_BOX3_OPEN)) {
+        subvar(VAR_BOXES_OPENED, 1)
+        applymovement(VAR_LAST_TALKED, Movement_CloseBox)
+        waitmovement(0)
+        clearflag(FLAG_BOX3_OPEN)
+    }
+    else {
+        applymovement(VAR_LAST_TALKED, Movement_OpenBox)
+        waitmovement(0)
+        setflag(FLAG_BOX3_OPEN)
+        addvar(VAR_BOXES_OPENED, 1)
+    }
+    release
+}
+
+script PelipperTownFarmHouse_Unpacked_EventScript_Box4 {
+    lock
+    if (flag(FLAG_BOX4_OPEN)) {
+        subvar(VAR_BOXES_OPENED, 1)
+        applymovement(VAR_LAST_TALKED, Movement_CloseBox)
+        waitmovement(0)
+        clearflag(FLAG_BOX4_OPEN)
+    }
+    else {
+        applymovement(VAR_LAST_TALKED, Movement_OpenBox)
+        waitmovement(0)
+        setflag(FLAG_BOX4_OPEN)
+        addvar(VAR_BOXES_OPENED, 1)
+    }
+    release
+}
+
+script PelipperTownFarmHouse_Unpacked_EventScript_Box5 {
+    lock
+    if (flag(FLAG_BOX5_OPEN)) {
+        subvar(VAR_BOXES_OPENED, 1)
+        applymovement(VAR_LAST_TALKED, Movement_CloseBox)
+        waitmovement(0)
+        clearflag(FLAG_BOX5_OPEN)
+    }
+    else {
+        applymovement(VAR_LAST_TALKED, Movement_OpenBox)
+        waitmovement(0)
+        setflag(FLAG_BOX5_OPEN)
+        addvar(VAR_BOXES_OPENED, 1)
+    }
+    release
+}
+
+script PelipperTownFarmHouse_Unpacked_EventScript_Box6 {
+    lock
+    if (flag(FLAG_BOX6_OPEN)) {
+        subvar(VAR_BOXES_OPENED, 1)
+        applymovement(VAR_LAST_TALKED, Movement_CloseBox)
+        waitmovement(0)
+        clearflag(FLAG_BOX6_OPEN)
+    }
+    else {
+        applymovement(VAR_LAST_TALKED, Movement_OpenBox)
+        waitmovement(0)
+        setflag(FLAG_BOX6_OPEN)
+        addvar(VAR_BOXES_OPENED, 1)
+    }
+    release
+}
+
+script PelipperTownFarmHouse_Unpacked_EventScript_Box7 {
+    lock
+    if (flag(FLAG_BOX7_OPEN)) {
+        subvar(VAR_BOXES_OPENED, 1)
+        applymovement(VAR_LAST_TALKED, Movement_CloseBox)
+        waitmovement(0)
+        clearflag(FLAG_BOX7_OPEN)
+    }
+    else {
+        applymovement(VAR_LAST_TALKED, Movement_OpenBox)
+        waitmovement(0)
+        setflag(FLAG_BOX7_OPEN)
+        addvar(VAR_BOXES_OPENED, 1)
+    }
+    release
+}
+
+script PelipperTownFarmHouse_Unpacked_EventScript_Box8 {
+    lock
+    if (flag(FLAG_BOX8_OPEN)) {
+        subvar(VAR_BOXES_OPENED, 1)
+        applymovement(VAR_LAST_TALKED, Movement_CloseBox)
+        waitmovement(0)
+        clearflag(FLAG_BOX8_OPEN)
+    }
+    else {
+        applymovement(VAR_LAST_TALKED, Movement_OpenBox)
+        waitmovement(0)
+        setflag(FLAG_BOX8_OPEN)
+        addvar(VAR_BOXES_OPENED, 1)
+    }
+    release
+}
+
+script PelipperTownFarmHouse_Unpacked_EventScript_Box9 {
+    lock
+    if (flag(FLAG_BOX9_OPEN)) {
+        subvar(VAR_BOXES_OPENED, 1)
+        applymovement(VAR_LAST_TALKED, Movement_CloseBox)
+        waitmovement(0)
+        clearflag(FLAG_BOX9_OPEN)
+    }
+    else {
+        applymovement(VAR_LAST_TALKED, Movement_OpenBox)
+        waitmovement(0)
+        setflag(FLAG_BOX9_OPEN)
+        addvar(VAR_BOXES_OPENED, 1)
+    }
+    release
+}
+
+script PelipperTownFarmHouse_Unpacked_EventScript_Box10 {
+    lock
+    if (flag(FLAG_BOX10_OPEN)) {
+        subvar(VAR_BOXES_OPENED, 1)
+        applymovement(VAR_LAST_TALKED, Movement_CloseBox)
+        waitmovement(0)
+        clearflag(FLAG_BOX10_OPEN)
+    }
+    else {
+        applymovement(VAR_LAST_TALKED, Movement_OpenBox)
+        waitmovement(0)
+        setflag(FLAG_BOX10_OPEN)
+        addvar(VAR_BOXES_OPENED, 1)
+    }
+    release
+}
+
+movement Movement_OpenBox {
+    open_box
+}
+
+movement Movement_CloseBox {
+    close_box
+}
