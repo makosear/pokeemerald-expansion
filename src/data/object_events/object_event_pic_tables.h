@@ -338,6 +338,10 @@ static const struct SpriteFrameImage sPicTable_CuttableTree[] = {
     overworld_ascending_frames(gObjectEventPic_CuttableTree, 2, 2),
 };
 
+static const struct SpriteFrameImage sPicTable_OpenableBox[] = {
+    overworld_ascending_frames(gObjectEventPic_OpenableBox, 2, 2),
+};
+
 static const struct SpriteFrameImage sPicTable_MartEmployee[] = {
     overworld_ascending_frames(gObjectEventPic_MartEmployee, 2, 4),
 };

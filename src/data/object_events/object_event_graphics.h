@@ -386,6 +386,9 @@ const u16 gObjectEventPal_Substitute[] = INCBIN_U16("graphics/pokemon/question_m
 
 const u16 gObjectEventPaletteEmotes[] = INCBIN_U16("graphics/misc/emotes.gbapal");
 
+const u32 gObjectEventPic_OpenableBox[] = INCBIN_U32("graphics/object_events/pics/misc/openable_box.4bpp");
+const u16 gObjectEventPalette_OpenableBox[] = INCBIN_U16("graphics/object_events/pics/misc/openable_box.gbapal");
+
 #if OW_FOLLOWERS_POKEBALLS
 const u32 gObjectEventPic_MasterBall[] = INCBIN_U32("graphics/object_events/pics/misc/ball_master.4bpp");
 const u32 gObjectEventPic_UltraBall[] = INCBIN_U32("graphics/object_events/pics/misc/ball_ultra.4bpp");

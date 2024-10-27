@@ -508,6 +508,7 @@ static const struct SpritePalette sObjectEventSpritePalettes[] = {
     {gObjectEventPal_RubySapphireBrendan,   OBJ_EVENT_PAL_TAG_RS_BRENDAN},
     {gObjectEventPal_RubySapphireMay,       OBJ_EVENT_PAL_TAG_RS_MAY},
     {gObjectEventPal_Sam,                   OBJ_EVENT_PAL_TAG_SAM},
+    {gObjectEventPalette_OpenableBox,      OBJ_EVENT_PAL_OPENABLE_BOX},
 #if OW_FOLLOWERS_POKEBALLS
     {gObjectEventPal_MasterBall,            OBJ_EVENT_PAL_TAG_BALL_MASTER},
     {gObjectEventPal_UltraBall,             OBJ_EVENT_PAL_TAG_BALL_ULTRA},
@@ -8099,6 +8100,20 @@ bool8 MovementAction_CutTree_Step2(struct ObjectEvent *objectEvent, struct Sprit
         objectEvent->invisible = TRUE;
         sprite->sActionFuncId = 3;
     }
+    return FALSE;
+}
+
+bool8 MovementAction_OpenBox_Step0(struct ObjectEvent *objectEvent, struct Sprite *sprite)
+{
+    SetAndStartSpriteAnim(sprite, ANIM_OPEN_BOX, 0);
+    sprite->sActionFuncId = 1;
+    return FALSE;
+}
+
+bool8 MovementAction_CloseBox_Step0(struct ObjectEvent *objectEvent, struct Sprite *sprite)
+{
+    SetAndStartSpriteAnim(sprite, ANIM_CLOSE_BOX, 0);
+    sprite->sActionFuncId = 0;
     return FALSE;
 }
 

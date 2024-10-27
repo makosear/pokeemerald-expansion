@@ -1,1 +1,3 @@
+const BOXES_OPENED = VAR_TEMP_E;
+
 mapscripts PelipperTownFarmHouse_Unpacked_MapScripts {}

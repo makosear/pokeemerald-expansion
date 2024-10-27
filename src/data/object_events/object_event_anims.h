@@ -1094,6 +1094,20 @@ static const union AnimCmd sAnim_HoOhStayStill[] =
     ANIMCMD_JUMP(0),
 };
 
+static const union AnimCmd sAnim_OpenOpenableBox[] =
+{
+    ANIMCMD_FRAME(0, 8),
+    ANIMCMD_FRAME(1, 8),
+    ANIMCMD_END,
+};
+
+static const union AnimCmd sAnim_CloseOpenableBox[] =
+{
+    ANIMCMD_FRAME(1, 8),
+    ANIMCMD_FRAME(0, 8),
+    ANIMCMD_END,
+};
+
 static const union AnimCmd *const sAnimTable_Inanimate[] = {
     [ANIM_STAY_STILL] = sAnim_StayStill,
 };
@@ -1474,6 +1488,12 @@ static const union AnimCmd *const sAnimTable_BreakableRock[] = {
 static const union AnimCmd *const sAnimTable_CuttableTree[] = {
     [ANIM_STAY_STILL] = sAnim_StayStill,
     [ANIM_REMOVE_OBSTACLE] = sAnim_TreeCut,
+};
+
+static const union AnimCmd *const sAnimTable_OpenableBox[] = {
+    [ANIM_STAY_STILL] = sAnim_StayStill,
+    [ANIM_OPEN_BOX] = sAnim_OpenOpenableBox,
+    [ANIM_CLOSE_BOX] = sAnim_CloseOpenableBox,
 };
 
 static const union AnimCmd *const sAnimTable_Fishing[] = {

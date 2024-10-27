@@ -171,6 +171,8 @@ u8 MovementAction_RockSmashBreak_Step2(struct ObjectEvent *, struct Sprite *);
 u8 MovementAction_CutTree_Step0(struct ObjectEvent *, struct Sprite *);
 u8 MovementAction_CutTree_Step1(struct ObjectEvent *, struct Sprite *);
 u8 MovementAction_CutTree_Step2(struct ObjectEvent *, struct Sprite *);
+u8 MovementAction_OpenBox_Step0(struct ObjectEvent *, struct Sprite *);
+u8 MovementAction_CloseBox_Step0(struct ObjectEvent *, struct Sprite *);
 u8 MovementAction_SetFixedPriority_Step0(struct ObjectEvent *, struct Sprite *);
 u8 MovementAction_ClearFixedPriority_Step0(struct ObjectEvent *, struct Sprite *);
 u8 MovementAction_InitAffineAnim_Step0(struct ObjectEvent *, struct Sprite *);
@@ -429,6 +431,8 @@ u8 (*const gMovementActionFuncs_FlyUp[])(struct ObjectEvent *, struct Sprite *);
 u8 (*const gMovementActionFuncs_FlyDown[])(struct ObjectEvent *, struct Sprite *);
 u8 (*const gMovementActionFuncs_EmoteX[])(struct ObjectEvent *, struct Sprite *);
 u8 (*const gMovementActionFuncs_EmoteDoubleExclMark[])(struct ObjectEvent *, struct Sprite *);
+u8 (*const gMovementActionFuncs_OpenBox[])(struct ObjectEvent *, struct Sprite *);
+u8 (*const gMovementActionFuncs_CloseBox[])(struct ObjectEvent *, struct Sprite *);
 
 u8 (*const *const gMovementActionFuncs[])(struct ObjectEvent *, struct Sprite *) = {
     [MOVEMENT_ACTION_FACE_DOWN] = gMovementActionFuncs_FaceDown,
@@ -593,6 +597,8 @@ u8 (*const *const gMovementActionFuncs[])(struct ObjectEvent *, struct Sprite *)
     [MOVEMENT_ACTION_EMOTE_DOUBLE_EXCL_MARK] = gMovementActionFuncs_EmoteDoubleExclMark,
     [MOVEMENT_ACTION_EXIT_POKEBALL] = gMovementActionFuncs_ExitPokeball,
     [MOVEMENT_ACTION_ENTER_POKEBALL] = gMovementActionFuncs_EnterPokeball,
+    [MOVEMENT_ACTION_OPEN_BOX] = gMovementActionFuncs_OpenBox,
+    [MOVEMENT_ACTION_CLOSE_BOX] = gMovementActionFuncs_CloseBox,
 };
 
 u8 (*const gMovementActionFuncs_FaceDown[])(struct ObjectEvent *, struct Sprite *) = {
@@ -1207,6 +1213,16 @@ u8 (*const gMovementActionFuncs_CutTree[])(struct ObjectEvent *, struct Sprite *
     MovementAction_CutTree_Step0,
     MovementAction_CutTree_Step1,
     MovementAction_CutTree_Step2,
+    MovementAction_Finish,
+};
+
+u8 (*const gMovementActionFuncs_OpenBox[])(struct ObjectEvent *, struct Sprite *) = {
+    MovementAction_OpenBox_Step0,
+    MovementAction_Finish,
+};
+
+u8 (*const gMovementActionFuncs_CloseBox[])(struct ObjectEvent *, struct Sprite *) = {
+    MovementAction_CloseBox_Step0,
     MovementAction_Finish,
 };
 

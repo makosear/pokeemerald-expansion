@@ -96,6 +96,8 @@
 	create_movement_action reveal_trainer, MOVEMENT_ACTION_REVEAL_TRAINER
 	create_movement_action rock_smash_break, MOVEMENT_ACTION_ROCK_SMASH_BREAK
 	create_movement_action cut_tree, MOVEMENT_ACTION_CUT_TREE
+	create_movement_action open_box, MOVEMENT_ACTION_OPEN_BOX
+	create_movement_action close_box, MOVEMENT_ACTION_CLOSE_BOX
 	create_movement_action set_fixed_priority, MOVEMENT_ACTION_SET_FIXED_PRIORITY
 	create_movement_action clear_fixed_priority, MOVEMENT_ACTION_CLEAR_FIXED_PRIORITY
 	create_movement_action init_affine_anim, MOVEMENT_ACTION_INIT_AFFINE_ANIM
