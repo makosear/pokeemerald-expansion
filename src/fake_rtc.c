@@ -94,46 +94,37 @@ void FakeRtc_AdvanceTimeBy(u32 years, u32 months, u32 days, u32 hours, u32 minut
 
     while(seconds >= SECONDS_PER_MINUTE)
     {
-        //MgbaPrintf(MGBA_LOG_WARN, "seconds higher than minute");
         minutes++;
         seconds -= SECONDS_PER_MINUTE;
     }
 
     while(minutes >= MINUTES_PER_HOUR)
     {
-        //MgbaPrintf(MGBA_LOG_WARN, "minutes higher than hour");
-
         hours++;
         minutes -= MINUTES_PER_HOUR;
     }
 
     while(hours >= HOURS_PER_DAY)
     {
-        MgbaPrintf(MGBA_LOG_WARN, "day of week before: %u", dayOfWeek);
-        MgbaPrintf(MGBA_LOG_WARN, "hours higher than day");
         days++;
         dayOfWeek++;
-        MgbaPrintf(MGBA_LOG_WARN, "day of week after: %u", dayOfWeek);
         hours -= HOURS_PER_DAY;
     }
 
     while(dayOfWeek >= DAYS_PER_WEEK)
     {
-        MgbaPrintf(MGBA_LOG_WARN, "day went over the index 6"); //so like sunday + 1, which should cycle back to 0, so monday
         dayOfWeek -= DAYS_PER_WEEK;
-        MgbaPrintf(MGBA_LOG_WARN, "day of week after index 6: %u", dayOfWeek);
+
     }
 
     while(days > DAYS_PER_MONTH)
     {
-        MgbaPrintf(MGBA_LOG_WARN, "days higher than month");
         months++;
         days -= DAYS_PER_MONTH;
     }
 
     while(months > MONTHS_PER_YEAR)
     {
-        MgbaPrintf(MGBA_LOG_WARN, "months higher than year");
         years++;
         months -= MONTHS_PER_YEAR;
     }
@@ -144,9 +135,7 @@ void FakeRtc_AdvanceTimeBy(u32 years, u32 months, u32 days, u32 hours, u32 minut
     time->days = days;
     time->months = months;
     time->years = years;
-    MgbaPrintf(MGBA_LOG_WARN, "day of week before the setTime: %u", time->dayOfWeek);
     time->dayOfWeek = dayOfWeek;
-    MgbaPrintf(MGBA_LOG_WARN, "day of week after the setTime: %u", time->dayOfWeek);
 }
 
 void FakeRtc_ManuallySetTime(u32 year, u32 month, u32 day, u32 hour, u32 minute, u32 second)
