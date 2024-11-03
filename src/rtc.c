@@ -17,23 +17,35 @@ struct Time gLocalTime;
 
 // const rom
 
+#if OW_USE_SEASONS_AS_MONTH == FALSE
 static const struct SiiRtcInfo sRtcDummy = {0, MONTH_JAN, 1}; // 2000 Jan 1
 
 static const s32 sNumDaysInMonths[MONTH_COUNT] =
 {
-    [MONTH_JAN - 1] = 28,
-    [MONTH_FEB - 1] = 28,
-    [MONTH_MAR - 1] = 28,
-    [MONTH_APR - 1] = 28,
-    [MONTH_MAY - 1] = 28,
-    [MONTH_JUN - 1] = 28,
-    [MONTH_JUL - 1] = 28,
-    [MONTH_AUG - 1] = 28,
-    [MONTH_SEP - 1] = 28,
-    [MONTH_OCT - 1] = 28,
-    [MONTH_NOV - 1] = 28,
-    [MONTH_DEC - 1] = 28,
+    [MONTH_JAN - 1] = 31,
+    [MONTH_FEB - 1] = 29,
+    [MONTH_MAR - 1] = 31,
+    [MONTH_APR - 1] = 30,
+    [MONTH_MAY - 1] = 31,
+    [MONTH_JUN - 1] = 30,
+    [MONTH_JUL - 1] = 31,
+    [MONTH_AUG - 1] = 31,
+    [MONTH_SEP - 1] = 30,
+    [MONTH_OCT - 1] = 31,
+    [MONTH_NOV - 1] = 30,
+    [MONTH_DEC - 1] = 31,
 };
+
+#else
+static const struct SiiRtcInfo sRtcDummy = {0, MONTH_SPRING, 1}; // Year 0, Spring 1;
+static const s32 sNumDaysInMonths[MONTH_COUNT] =
+{
+    [MONTH_SPRING - 1] = 28,
+    [MONTH_SUMMER - 1] = 28,
+    [MONTH_FALL - 1] = 28,
+    [MONTH_WINTER - 1] = 28,
+};
+#endif
 
 void RtcDisableInterrupts(void)
 {
@@ -73,32 +85,47 @@ u16 ConvertDateToDayCount(u8 year, u8 month, u8 day)
     s32 i;
     u16 dayCount = 0;
 
-    for (i = year - 1; i >= 0; i--)
+    if (OW_USE_FAKE_RTC)
     {
-        dayCount += 365;
-
-        if (IsLeapYear(i) == TRUE)
-            dayCount++;
+        dayCount = year * MONTHS_PER_YEAR * DAYS_PER_MONTH + month * DAYS_PER_MONTH + day;
+        return dayCount;
     }
 
-    for (i = 0; i < month - 1; i++)
-        dayCount += sNumDaysInMonths[i];
+    else {
+        for (i = year - 1; i >= 0; i--)
+        {
+            dayCount += 365;
 
-    if (month > MONTH_FEB && IsLeapYear(year) == TRUE)
-        dayCount++;
+            if (IsLeapYear(i) == TRUE)
+                dayCount++;
+        }
 
-    dayCount += day;
+        for (i = 0; i < month - 1; i++)
+            dayCount += sNumDaysInMonths[i];
+        #if OW_USE_SEASONS_AS_MONTH == FALSE
+        if (month > MONTH_FEB && IsLeapYear(year) == TRUE)
+            dayCount++;
+        #endif 
+        dayCount += day;
 
-    return dayCount;
+        return dayCount;
+    }
+}
+
+u16 RtcGetYearCount(struct SiiRtcInfo *rtc)
+{
+    if (OW_USE_FAKE_RTC)
+        return rtc->day;
 }
 
 u16 RtcGetDayCount(struct SiiRtcInfo *rtc)
 {
     u8 year, month, day;
 
+    /*
     if (OW_USE_FAKE_RTC)
         return rtc->day;
-
+    */ 
     year = ConvertBcdToBinary(rtc->year);
     month = ConvertBcdToBinary(rtc->month);
     day = ConvertBcdToBinary(rtc->day);
@@ -163,7 +190,7 @@ void RtcGetStatus(struct SiiRtcInfo *rtc)
 
 void RtcGetRawInfo(struct SiiRtcInfo *rtc)
 {
-    RtcGetStatus(rtc);
+RtcGetStatus(rtc);
     RtcGetDateTime(rtc);
 }
 
@@ -197,13 +224,14 @@ u16 RtcCheckInfo(struct SiiRtcInfo *rtc)
 
     if (value == 0xFF)
         errorFlags |= RTC_ERR_INVALID_DAY;
-
-    if (month == MONTH_FEB)
-    {
-        if (value > IsLeapYear(year) + sNumDaysInMonths[month - 1])
-            errorFlags |= RTC_ERR_INVALID_DAY;
-    }
-    else
+    #if OW_USE_SEASONS_AS_MONTH == FALSE
+        if (month == MONTH_FEB)
+        {
+            if (value > IsLeapYear(year) + sNumDaysInMonths[month - 1])
+                errorFlags |= RTC_ERR_INVALID_DAY;
+        }
+        else
+    #endif
     {
         if (value > sNumDaysInMonths[month - 1])
             errorFlags |= RTC_ERR_INVALID_DAY;
@@ -232,6 +260,20 @@ void RtcReset(void)
     if (OW_USE_FAKE_RTC)
     {
         memset(FakeRtc_GetCurrentTime(), 0, sizeof(struct Time));
+        struct Time* initTime = FakeRtc_GetCurrentTime();
+
+        initTime->days = 28; 
+
+        initTime->months = MONTH_SPRING;
+
+        initTime->dayOfWeek = DAY_MONDAY;
+
+        initTime->years = 1;
+
+        initTime->hours = 23;
+
+        initTime->minutes = 40;
+
         return;
     }
 
@@ -293,6 +335,8 @@ void RtcCalcTimeDifference(struct SiiRtcInfo *rtc, struct Time *result, struct T
     result->hours = ConvertBcdToBinary(rtc->hour) - t->hours;
     result->days = days - t->days;
     result->dayOfWeek = ConvertBcdToBinary(rtc->dayOfWeek) - t->dayOfWeek;
+    result->months = ConvertBcdToBinary(rtc->month) - t->months;
+    result->years = ConvertBcdToBinary(rtc->year) - t->years;
 
     if (result->seconds < 0)
     {
@@ -316,6 +360,19 @@ void RtcCalcTimeDifference(struct SiiRtcInfo *rtc, struct Time *result, struct T
     if (result->dayOfWeek < 0)
     {
         result->dayOfWeek += DAYS_PER_WEEK;
+    }
+
+    
+    if(result->days < 1)
+    {
+        result->days += DAYS_PER_MONTH;
+        --result->months;
+    }
+
+    if (result->months < 1)
+    {
+        result->months += MONTHS_PER_YEAR;
+        --result->years;
     }
 }
 
@@ -345,13 +402,15 @@ u8 GetTimeOfDay(void)
     return TIME_DAY;
 }
 
-void RtcInitLocalTimeOffset(s32 hour, s32 minute)
+void RtcInitLocalTimeOffset(s32 years, s32 months, s32 days, s32 hours, s32 minutes, s32 seconds)
 {
-    RtcCalcLocalTimeOffset(0, hour, minute, 0);
+    RtcCalcLocalTimeOffset(0, 0, 0, hours, minutes, 0);
 }
 
-void RtcCalcLocalTimeOffset(s32 days, s32 hours, s32 minutes, s32 seconds)
+void RtcCalcLocalTimeOffset(s32 years, s32 months, s32 days, s32 hours, s32 minutes, s32 seconds)
 {
+    gLocalTime.years = years;
+    gLocalTime.months = months;
     gLocalTime.days = days;
     gLocalTime.hours = hours;
     gLocalTime.minutes = minutes;
@@ -367,6 +426,8 @@ void CalcTimeDifference(struct Time *result, struct Time *t1, struct Time *t2)
     result->hours = t2->hours - t1->hours;
     result->days = t2->days - t1->days;
     result->dayOfWeek = t2->dayOfWeek - t1->dayOfWeek;
+    result->months = t2->months - t1->months;
+    result->years = t2->years - t1->years;
 
     if (result->seconds < 0)
     {
@@ -390,6 +451,18 @@ void CalcTimeDifference(struct Time *result, struct Time *t1, struct Time *t2)
     if (result->dayOfWeek < 0)
     {
         result->dayOfWeek += DAYS_PER_WEEK;
+    }
+
+    if(result->days < 1)
+    {
+        result->days += DAYS_PER_MONTH;
+        --result->months;
+    }
+
+    if (result->months < 1)
+    {
+        result->months += MONTHS_PER_YEAR;
+        --result->years;
     }
 }
 
@@ -458,7 +531,7 @@ u8 RtcSecondChange(void)
     }
 }
 
-u8 GetDate(void)
+u8 GetDay(void)
 {
     RtcGetInfo(&sRtc);
 
@@ -477,4 +550,25 @@ u8 GetYear(void)
     RtcGetInfo(&sRtc);
 
     return ConvertBcdToBinary(sRtc.year);
+}
+
+u8 GetHour(void)
+{
+    RtcGetInfo(&sRtc);
+
+    return ConvertBcdToBinary(sRtc.hour);
+}
+
+u8 GetMinute(void)
+{
+    RtcGetInfo(&sRtc);
+
+    return ConvertBcdToBinary(sRtc.minute);
+}
+
+u8 GetDayOfWeek(void)
+{
+    RtcGetInfo(&sRtc);
+
+    return ConvertBcdToBinary(sRtc.dayOfWeek);
 }

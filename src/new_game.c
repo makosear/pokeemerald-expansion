@@ -162,6 +162,8 @@ void NewGameInitData(void)
     ClearFrontierRecord();
     ClearSav1();
     ClearSav3();
+        //if (gSaveFileStatus == SAVE_STATUS_EMPTY || gSaveFileStatus == SAVE_STATUS_CORRUPT)
+        RtcReset();
     ClearAllMail();
     gSaveBlock2Ptr->specialSaveWarpFlags = 0;
     gSaveBlock2Ptr->gcnLinkFlags = 0;
@@ -195,9 +197,10 @@ void NewGameInitData(void)
     InitDewfordTrend();
     ResetFanClub();
     ResetLotteryCorner();
+    gSaveBlock1Ptr->initialVBlank = 0;
     WarpToTruck();
-    FakeRtc_AdvanceTimeBy(11, 58, 0);
-    FakeRtc_ResetDayCount();
+    //FakeRtc_ManuallySetTime(1, 1, 2, 23, 50, 0);
+    //FakeRtc_ResetDayCount();
     RunScriptImmediately(EventScript_ResetAllMapFlags);
     ResetMiniGamesRecords();
     InitUnionRoomChatRegisteredTexts();

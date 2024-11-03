@@ -692,7 +692,7 @@ bool8 ScrCmd_initclock(struct ScriptContext *ctx)
     u8 hour = VarGet(ScriptReadHalfword(ctx));
     u8 minute = VarGet(ScriptReadHalfword(ctx));
 
-    RtcInitLocalTimeOffset(hour, minute);
+    RtcInitLocalTimeOffset(1, 1, 1, hour, minute, 0);
     return FALSE;
 }
 
@@ -709,6 +709,9 @@ bool8 ScrCmd_gettime(struct ScriptContext *ctx)
     gSpecialVar_0x8001 = gLocalTime.minutes;
     gSpecialVar_0x8002 = gLocalTime.seconds;
     gSpecialVar_0x8003 = gLocalTime.dayOfWeek;
+    gSpecialVar_0x8004 = gLocalTime.months;
+    gSpecialVar_0x8005 = gLocalTime.years;
+
     return FALSE;
 }
 

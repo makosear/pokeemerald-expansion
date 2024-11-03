@@ -9,10 +9,14 @@
 #define SIIRTCINFO_24HOUR 0x40 // 0: 12-hour mode, 1: 24-hour mode
 #define SIIRTCINFO_POWER  0x80 // power on or power failure occurred
 
+#define MONTHS_PER_YEAR     4
+#define DAYS_PER_MONTH      28
 #define HOURS_PER_DAY       24
 #define MINUTES_PER_HOUR    60
 #define SECONDS_PER_MINUTE  60
 
+
+#if OW_USE_SEASONS_AS_MONTH == FALSE
 enum
 {
     MONTH_JAN = 1,
@@ -29,6 +33,16 @@ enum
     MONTH_DEC,
     MONTH_COUNT = MONTH_DEC
 };
+#else
+enum
+{
+    MONTH_SPRING = 1,
+    MONTH_SUMMER,
+    MONTH_FALL,
+    MONTH_WINTER,
+    MONTH_COUNT = MONTH_WINTER
+};
+#endif
 
 struct SiiRtcInfo
 {

@@ -68,6 +68,7 @@
 #define OW_USE_FAKE_RTC                 TRUE      // When TRUE, seconds on the in-game clock will only advance once every 60 playTimeVBlanks (every 60 frames).
 #define OW_ALTERED_TIME_RATIO           SV_STYLE // In GEN_8_PLA, the time in game moves forward 60 seconds for every second in the RTC. In GEN_9, it is 20 seconds. This has no effect if OW_USE_FAKE_RTC is FALSE.
 #define OW_TIME_RATIO_SV                TRUE //makes it as close as possible to Stardew Valley's RTC, which is 85 seconds in-game every second in the RTC 
+#define OW_USE_SEASONS_AS_MONTH         TRUE //doesn't define the 12 months enum, defining the 4 seasons as month instead and various other adjustments lol
 
 // Overworld flags
 // To use the following features in scripting, replace the 0s with the flag ID you're assigning it to.

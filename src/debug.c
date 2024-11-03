@@ -68,6 +68,7 @@
 #include "constants/weather.h"
 #include "save.h"
 #include "ow_clock_ui.h"
+#include "fake_rtc.h"
 
 #if DEBUG_OVERWORLD_MENU == TRUE
 // *******************************
@@ -2340,7 +2341,7 @@ static void DebugAction_Util_Player_Id(u8 taskId)
 static void DebugAction_Util_CheatStart(u8 taskId)
 {
     if (!FlagGet(FLAG_SYS_CLOCK_SET))
-        RtcInitLocalTimeOffset(0, 0);
+        RtcInitLocalTimeOffset(0, 1, 1, 0, 0, 0);
 
     InitTimeBasedEvents();
     Debug_DestroyMenu_Full_Script(taskId, Debug_CheatStart);
@@ -2374,6 +2375,7 @@ void BufferExpansionVersion(struct ScriptContext *ctx)
 // Actions Scripts
 static void DebugAction_Util_Script_1(u8 taskId)
 {
+    FakeRtc_ManuallySetTime(1, 1, 1, 23, 40, 0);
     Debug_DestroyMenu_Full_Script(taskId, Debug_EventScript_Script_1);
 }
 

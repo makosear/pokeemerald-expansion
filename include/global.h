@@ -174,6 +174,8 @@ struct Time
     /*0x03*/ s8 minutes;
     /*0x04*/ s8 seconds;
     /*0x05*/ s8 dayOfWeek;
+    /*0x06*/ s8 months;
+    /*0x07*/ s8 years; 
 };
 
 
@@ -1019,6 +1021,7 @@ struct SaveBlock1
     /*0x988*/ struct Coords16 savedPos;
     /*0x989*/ u8 clockState;
     /*0x98A*/ u8 isPopupActive;
+    /*0x98B*/ u8 initialVBlank;
     /*0x98C*/ u8 filler1[0x30]; // Previously Dex Flags, feel free to remove.
 #endif //FREE_EXTRA_SEEN_FLAGS_SAVEBLOCK1
     /*0x9BC*/ u16 berryBlenderRecords[3];

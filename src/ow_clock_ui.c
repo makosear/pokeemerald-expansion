@@ -57,16 +57,6 @@ static const struct FieldClockGfx sFieldClock = {sFieldClock_Gfx, sFieldClock_Pa
 static const u8 sFieldClock_Gfx[]        = INCBIN_U8("graphics/interface/fieldclock.4bpp");
 static const u16 sFieldClock_Pal[16]        = INCBIN_U16("graphics/interface/fieldclock.gbapal");
 
-/*struct FieldClockGfx
-{
-    const u8 *gfx;
-    const u16 *pal;
-};
-
-static const struct FieldClockGfx sFieldClock = {sFieldClock_Gfx, sFieldClock_Pal};*/
-
-//sMapPopUpTilesPrimary_BW = sFieldClock_GFX
-//sMapPopUpTilesPalette_BW_Black = sFieldClock_Pal
 
 EWRAM_DATA static s8 sInitShowFieldClockData[2] = {0};
 EWRAM_DATA u8 gFieldClockTaskId = 0;
@@ -141,43 +131,27 @@ void ShowFieldClockFromMenu(void)
 
 //basically need to add ShowTimeWindow(); to the field ui init 
 
-#define CLOCK_WINDOW_WIDTH                      70
-#define POWER_OF_TWO                            FALSE  // TRUE = uses default interval, FALSE = non-binary
-#define TIME_UPDATE_INTERVAL                    (1 << 8)
-#define TIME_UPDATE_INTERVAL_NONBINARY          200
+#define CLOCK_WINDOW_WIDTH 70
+
+#define TIME_UPDATE_INTERVAL (1 << 6)
 
 static void UpdateMenuClock(void)
 {
+    //MgbaPrintf(MGBA_LOG_WARN, "variable value: %u", gMain.vblankCounter1);
+   //#if OW_USE_SEASONS_AS_MONTH == FALSE 
+    //MgbaPrintf(MGBA_LOG_)
     switch (gSaveBlock1Ptr->clockState)
     {
     case 0:
-        if (POWER_OF_TWO)
-            {
-                if (gMain.vblankCounter1 & TIME_UPDATE_INTERVAL)
-                {
-                    RtcCalcLocalTime();
-                    gSaveBlock1Ptr->clockState++;
-                }
-            }
-            else
-            {
-                if (gMain.vblankCounter1 % TIME_UPDATE_INTERVAL_NONBINARY == 0)
-                {
-                    RtcCalcLocalTime();
-                    gSaveBlock1Ptr->clockState++;
-                }
-            }
+        if (gMain.vblankCounter1 & TIME_UPDATE_INTERVAL)
+        {
+            RtcCalcLocalTime();
+            gSaveBlock1Ptr->clockState++;
+        }
+        break;
     case 1:
-        if (POWER_OF_TWO)
-        {
-            if (!(gMain.vblankCounter1 & TIME_UPDATE_INTERVAL))
-                gSaveBlock1Ptr->clockState--;
-        }
-        else
-        {
-            if (gMain.vblankCounter1 % TIME_UPDATE_INTERVAL_NONBINARY != 0)
-                gSaveBlock1Ptr->clockState--;
-        }
+        if (!(gMain.vblankCounter1 & TIME_UPDATE_INTERVAL))
+            gSaveBlock1Ptr->clockState--;
         break;
     }
 }
@@ -189,7 +163,7 @@ static void ShowTimeWindow(void)
     u8 convertedHours;
     u8 fieldClockWindowId;
 
-    UpdateMenuClock();
+    //UpdateMenuClock();
 
     // * Below is for the standard window graphics (so like msgbox and stuff)
     //LoadMessageBoxAndBorderGfx(); 
@@ -204,35 +178,43 @@ static void ShowTimeWindow(void)
     */
 
 //GET CONVERTED HOURS + SUFFIX (AM/PM)
-    if (gLocalTime.hours < 12) {
-        if (gLocalTime.hours == 0)
+    if (GetHour() < 12) {
+        if (GetHour() == 0)
             convertedHours = 12;
         else
-            convertedHours = gLocalTime.hours;
+            convertedHours = GetHour();
         suffix = gText_AM;
     }
 
-    else if (gLocalTime.hours == 12){
+    else if (GetHour() == 12){
         convertedHours = 12;
         if (suffix == gText_AM);
             suffix = gText_PM;
     }
-    else{
-        convertedHours = gLocalTime.hours - 12;
+    else {
+        convertedHours = GetHour() - 12;
         suffix = gText_PM;
     }
 
-
-    //GET DAY OF WEEK (SUN/MON/TUE/WED/THU/FRI/SAT)
-    if (gLocalTime.dayOfWeek <= DAY_SATURDAY)
-        StringCopy(gStringVar4, gDayNameStringsTable[gLocalTime.dayOfWeek]);
-    else
-        StringCopy(gStringVar4, gText_None);
+    u8 gText_DebugDayOfWeek[] = _("Nun");
+    //GET DAY OF WEEK (MON/TUE/WED/THU/FRI/SAT/SUN)
+    if (GetDayOfWeek() <= DAYS_PER_WEEK - 1) 
+    {
+        StringCopy(gStringVar4, gDayNameStringsTable[GetDayOfWeek()]);
+        if (GetDayOfWeek() == 0) MgbaPrintf(MGBA_LOG_WARN, "monday");
+        if (GetDayOfWeek() == 1) MgbaPrintf(MGBA_LOG_WARN, "tuesday");
+        MgbaPrintf(MGBA_LOG_WARN, "day of week id: %u", GetDayOfWeek());
+    }
+    else 
+    {
+        StringCopy(gStringVar4, gText_DebugDayOfWeek);
+        if (GetDayOfWeek() == 0) MgbaPrintf(MGBA_LOG_WARN, "monday");
+    }
     
 
     AddTextPrinterParameterized(fieldClockWindowId, 1, gStringVar4, 4, 5, TEXT_SKIP_DRAW, NULL);
 
-    ConvertIntToDecimalStringN(gStringVar4, GetDate(), STR_CONV_MODE_RIGHT_ALIGN, 2);
+    ConvertIntToDecimalStringN(gStringVar4, GetDay(), STR_CONV_MODE_RIGHT_ALIGN, 2);
 
     AddTextPrinterParameterized(fieldClockWindowId, 1, gStringVar4, 24, 5, TEXT_SKIP_DRAW, NULL);
     
@@ -252,9 +234,16 @@ static void ShowTimeWindow(void)
 
     ptr = ConvertIntToDecimalStringN(gStringVar4, convertedHours, STR_CONV_MODE_LEADING_ZEROS, 2);
     *ptr = 0xF0;
-    ConvertIntToDecimalStringN(ptr + 1, gLocalTime.minutes, STR_CONV_MODE_LEADING_ZEROS, 2);
 
-    
+    /*
+    //This gets minute and reduces it to counts of 10
+    s8 minutesNotNormal = gLocalTime.minutes;
+    if (minutesNotNormal % 10 != 0) minutesNotNormal = minutesNotNormal - (minutesNotNormal % 10);
+    ConvertIntToDecimalStringN(ptr + 1, minutesNotNormal, STR_CONV_MODE_LEADING_ZEROS, 2); */
+
+    ConvertIntToDecimalStringN(ptr + 1, GetMinute(), STR_CONV_MODE_LEADING_ZEROS, 2);
+
+
 
     AddTextPrinterParameterized(fieldClockWindowId, 1, gStringVar4, GetStringRightAlignXOffset(1, suffix, CLOCK_WINDOW_WIDTH) - (CLOCK_WINDOW_WIDTH - GetStringRightAlignXOffset(1, gStringVar4, CLOCK_WINDOW_WIDTH) + 3) + 14, 5, 0xFF, NULL);
     

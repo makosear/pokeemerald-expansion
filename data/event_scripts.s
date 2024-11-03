@@ -1095,3 +1095,4 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/PelipperTownFarmersHouse/scripts.inc"
 
 	.include "data/maps/PelipperTownFarmHouse_Unpacked/scripts.inc"
+

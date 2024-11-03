@@ -263,10 +263,32 @@ static void SeedRngWithRtc(void)
         u32 seconds;
         struct SiiRtcInfo rtc;
         RtcGetInfo(&rtc);
+
+        #if OW_USE_SEASONS_AS_MONTH == FALSE
         seconds =
             ((HOURS_PER_DAY * RtcGetDayCount(&rtc) + BCD8(rtc.hour))
             * MINUTES_PER_HOUR + BCD8(rtc.minute))
             * SECONDS_PER_MINUTE + BCD8(rtc.second);
+        #else
+                seconds =
+            (
+                (
+                    (
+                        MONTHS_PER_YEAR * DAYS_PER_MONTH * HOURS_PER_DAY * RtcGetYearCount(&rtc) 
+                        + DAYS_PER_MONTH * HOURS_PER_DAY * BCD8(rtc.month)
+                    ) 
+
+                    + HOURS_PER_DAY * RtcGetDayCount(&rtc)
+                    + BCD8(rtc.hour)
+                ) * MINUTES_PER_HOUR
+
+                + BCD8(rtc.minute)
+            ) * SECONDS_PER_MINUTE
+
+        + BCD8(rtc.second);
+
+        #endif
+
         SeedRng(seconds);
         #undef BCD8
     #endif
