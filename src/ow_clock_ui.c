@@ -58,9 +58,40 @@ static const u8 sFieldClock_Gfx[]        = INCBIN_U8("graphics/interface/fieldcl
 static const u16 sFieldClock_Pal[16]        = INCBIN_U16("graphics/interface/fieldclock.gbapal");
 
 
+// * SEASON DEFINES
+
+enum IconOrPalette
+{
+    OPTION_ICON,
+    OPTION_PALETTE
+};
+
+enum SeasonIcons
+{
+    SEASON_ICON_SPRING,
+    SEASON_ICON_SUMMER,
+    SEASON_ICON_FALL,
+    SEASON_ICON_WINTER
+};
+
+static const u16 gSeasonIcon_Spring_Gfx[]          = INCBIN_U16("graphics/interface/seasons/spring.4bpp");
+static const u16 gSeasonIcon_Summer_Gfx[]          = INCBIN_U16("graphics/interface/seasons/summer.4bpp");
+static const u16 gSeasonIcon_Fall_Gfx[]            = INCBIN_U16("graphics/interface/seasons/fall.4bpp");
+static const u16 gSeasonIcon_Winter_Gfx[]          = INCBIN_U16("graphics/interface/seasons/winter.4bpp");
+static const u16 gSeasonIcon_Pal[16]               = INCBIN_U16("graphics/interface/seasons/season.gbapal");
+
+// * TASK DEFINES
+
 EWRAM_DATA static s8 sInitShowFieldClockData[2] = {0};
 EWRAM_DATA u8 gFieldClockTaskId = 0;
 
+#define tPrintTimer    data[4]
+#define FROM_MENU 2
+
+// * PROTOTYPES
+
+static void LoadSeasonIconSprite(void);
+static void ShowSeasonIcon(void);
 static void LoadFieldClockWindowBg(void);
 static void ShowTimeWindow(void);
 void ShowFieldClockFromMenu(void);
@@ -68,9 +99,6 @@ static void InitShowFieldClockStep(u8 taskId);
 static void Task_ShowFieldClock(u8 taskId);
 void ShowFieldClock(void);
 void HideFieldClockWindow(void);
-
-#define tPrintTimer    data[4]
-#define FROM_MENU 2
 
 void ShowFieldClock(void) //we start here
 {
@@ -110,6 +138,7 @@ static void InitShowFieldClockStep(u8 taskId)
             ShowTimeWindow();
             task->tPrintTimer = 0;
             //sInitShowFieldClockData[0]++;
+            ShowSeasonIcon();
         }
         return;
     case FROM_MENU:
@@ -162,6 +191,7 @@ static void ShowTimeWindow(void)
     u8* ptr;
     u8 convertedHours;
     u8 fieldClockWindowId;
+    //u8 seasonIconWindowId;
 
     //UpdateMenuClock();
 
@@ -171,6 +201,9 @@ static void ShowTimeWindow(void)
 
     fieldClockWindowId = AddFieldClockWindow();
     LoadFieldClockWindowBg();
+    //seasonIconWindowId = AddSeasonIconWindow();
+    //LoadSeasonIconSprite();
+    
     /*
      * this was also for the std window graphics (I think?)
         PutWindowTilemap(fieldClockWindowId);
@@ -201,9 +234,6 @@ static void ShowTimeWindow(void)
     if (GetDayOfWeek() <= DAYS_PER_WEEK - 1) 
     {
         StringCopy(gStringVar4, gDayNameStringsTable[GetDayOfWeek()]);
-        if (GetDayOfWeek() == 0) MgbaPrintf(MGBA_LOG_WARN, "monday");
-        if (GetDayOfWeek() == 1) MgbaPrintf(MGBA_LOG_WARN, "tuesday");
-        MgbaPrintf(MGBA_LOG_WARN, "day of week id: %u", GetDayOfWeek());
     }
     else 
     {
@@ -266,6 +296,8 @@ void HideFieldClockWindow(void)
         {
             ClearStdWindowAndFrame(GetFieldClockWindowId(), TRUE);
             RemoveFieldClockWindow();
+            ClearStdWindowAndFrame(GetSeasonIconWindowId(), TRUE);
+            RemoveSeasonIconWindow();
         }
 
         //SetGpuReg_ForcedBlank(REG_OFFSET_BG0VOFS, 0);
@@ -285,5 +317,40 @@ static void LoadFieldClockWindowBg(void)
     PutWindowTilemap(fieldClockWindowId);
 }
 
+static void ShowSeasonIcon(void)
+{
+    u8 seasonIconWindowId;
+    seasonIconWindowId = AddSeasonIconWindow();
+    LoadSeasonIconSprite();
+    CopyWindowToVram(seasonIconWindowId, COPYWIN_FULL);
+}
 
+static void LoadSeasonIconSprite(void)
+{
+    u8 seasonIconWindowId = GetSeasonIconWindowId();
 
+    LoadPalette(gSeasonIcon_Pal, BG_PLTT_ID(13), sizeof(gSeasonIcon_Pal));
+
+    u8 season = GetMonth();
+    MgbaPrintf(MGBA_LOG_WARN, "season: %u", season);
+
+    switch (season)
+    {
+        case MONTH_SPRING:
+            CopyToWindowPixelBuffer(seasonIconWindowId, gSeasonIcon_Spring_Gfx, sizeof(gSeasonIcon_Spring_Gfx), 0);
+        break;
+        case MONTH_SUMMER:
+            CopyToWindowPixelBuffer(seasonIconWindowId, gSeasonIcon_Summer_Gfx, sizeof(gSeasonIcon_Summer_Gfx), 0);
+        break;
+        case MONTH_FALL:
+            CopyToWindowPixelBuffer(seasonIconWindowId, gSeasonIcon_Fall_Gfx, sizeof(gSeasonIcon_Fall_Gfx), 0);
+        break;
+        case MONTH_WINTER:
+            CopyToWindowPixelBuffer(seasonIconWindowId, gSeasonIcon_Winter_Gfx, sizeof(gSeasonIcon_Winter_Gfx), 0);
+        break;
+        default:
+            CopyToWindowPixelBuffer(seasonIconWindowId, gSeasonIcon_Spring_Gfx, sizeof(gSeasonIcon_Spring_Gfx), 0);
+    }
+
+    PutWindowTilemap(seasonIconWindowId);
+}

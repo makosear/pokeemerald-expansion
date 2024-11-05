@@ -509,7 +509,7 @@ static const u8 sDebugText_Give[] =          _("Give X…{CLEAR_TO 110}{RIGHT_AR
 static const u8 sDebugText_Sound[] =         _("Sound…{CLEAR_TO 110}{RIGHT_ARROW}");
 static const u8 sDebugText_Cancel[] =        _("Cancel");
 // Script menu
-static const u8 sDebugText_Util_Script_1[] = _("Script 1");
+static const u8 sDebugText_Util_Script_1[] = _("Increase Month");
 static const u8 sDebugText_Util_Script_2[] = _("Script 2");
 static const u8 sDebugText_Util_Script_3[] = _("Script 3");
 static const u8 sDebugText_Util_Script_4[] = _("Script 4");
@@ -2375,7 +2375,7 @@ void BufferExpansionVersion(struct ScriptContext *ctx)
 // Actions Scripts
 static void DebugAction_Util_Script_1(u8 taskId)
 {
-    FakeRtc_ManuallySetTime(1, 1, 1, 23, 40, 0);
+    FakeRtc_AdvanceTimeBy(0, 1, 0, 0, 0, 0);
     Debug_DestroyMenu_Full_Script(taskId, Debug_EventScript_Script_1);
 }
 

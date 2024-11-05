@@ -869,3 +869,36 @@ const struct Tileset gTileset_porybeach =
     .metatileAttributes = gMetatileAttributes_porybeach,
     .callback = NULL,
 };
+
+const struct Tileset gTileset_porytiletesting_winter =
+{
+    .isCompressed = TRUE,
+    .isSecondary = FALSE,
+    .tiles = gTilesetTiles_porytiletesting_winter,
+    .palettes = gTilesetPalettes_porytiletesting_winter,
+    .metatiles = gMetatiles_porytiletesting_winter,
+    .metatileAttributes = gMetatileAttributes_porytiletesting_winter,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_porytiletesting_fall =
+{
+    .isCompressed = TRUE,
+    .isSecondary = FALSE,
+    .tiles = gTilesetTiles_porytiletesting_fall,
+    .palettes = gTilesetPalettes_porytiletesting_fall,
+    .metatiles = gMetatiles_porytiletesting_fall,
+    .metatileAttributes = gMetatileAttributes_porytiletesting_fall,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_porytiletesting_summer =
+{
+    .isCompressed = TRUE,
+    .isSecondary = FALSE,
+    .tiles = gTilesetTiles_porytiletesting_summer,
+    .palettes = gTilesetPalettes_porytiletesting_summer,
+    .metatiles = gMetatiles_porytiletesting_summer,
+    .metatileAttributes = gMetatileAttributes_porytiletesting_summer,
+    .callback = NULL,
+};
