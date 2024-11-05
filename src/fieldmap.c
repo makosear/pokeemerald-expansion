@@ -17,6 +17,9 @@
 #include "constants/rgb.h"
 #include "constants/metatile_behaviors.h"
 #include "wild_encounter.h"
+//SEASONS INCLUDES
+#include "rtc.h"
+#include "siirtc.h"
 
 struct ConnectionFlags
 {
@@ -881,23 +884,93 @@ static void UNUSED ApplyGlobalTintToPaletteSlot(u8 slot, u8 count)
 static void LoadTilesetPalette(struct Tileset const *tileset, u16 destOffset, u16 size)
 {
     u16 black = RGB_BLACK;
+    u8 season = GetMonth();
 
     if (tileset)
     {
         if (tileset->isSecondary == FALSE)
         {
             LoadPalette(&black, destOffset, PLTT_SIZEOF(1));
-            LoadPalette(tileset->palettes[0] + 1, destOffset + 1, size - PLTT_SIZEOF(1));
+            switch(season){
+                case MONTH_SPRING:
+                    LoadPalette(tileset->palettes[0] + 1, destOffset + 1, size - PLTT_SIZEOF(1));
+                break;
+
+                case MONTH_SUMMER:
+                    if(tileset->palettes_summer != NULL)
+                        LoadPalette(tileset->palettes_summer[0] + 1, destOffset + 1, size - PLTT_SIZEOF(1));
+                    else
+                        LoadPalette(tileset->palettes[0] + 1, destOffset + 1, size - PLTT_SIZEOF(1));
+                break;
+
+                case MONTH_FALL:
+                    if(tileset->palettes_fall != NULL)
+                        LoadPalette(tileset->palettes_fall[0] + 1, destOffset + 1, size - PLTT_SIZEOF(1));
+                    else
+                        LoadPalette(tileset->palettes[0] + 1, destOffset + 1, size - PLTT_SIZEOF(1));
+                break;
+                
+                case MONTH_WINTER:
+                    if(tileset->palettes_winter != NULL)
+                        LoadPalette(tileset->palettes_winter[0] + 1, destOffset + 1, size - PLTT_SIZEOF(1));
+                    else
+                        LoadPalette(tileset->palettes[0] + 1, destOffset + 1, size - PLTT_SIZEOF(1));
+                break;
+            }
             ApplyGlobalTintToPaletteEntries(destOffset + 1, (size - PLTT_SIZEOF(1)) >> 1);
         }
         else if (tileset->isSecondary == TRUE)
         {
-            LoadPalette(tileset->palettes[NUM_PALS_IN_PRIMARY], destOffset, size);
+            switch(season){
+                case MONTH_SPRING:
+                    LoadPalette(tileset->palettes[NUM_PALS_IN_PRIMARY], destOffset, size);
+                break;
+                case MONTH_SUMMER:
+                    if(tileset->palettes_summer != NULL)
+                        LoadPalette(tileset->palettes_summer[NUM_PALS_IN_PRIMARY], destOffset, size);
+                    else
+                        LoadPalette(tileset->palettes[NUM_PALS_IN_PRIMARY], destOffset, size);
+                break;
+                case MONTH_FALL:
+                    if(tileset->palettes_fall != NULL)
+                        LoadPalette(tileset->palettes_fall[NUM_PALS_IN_PRIMARY], destOffset, size);
+                    else
+                        LoadPalette(tileset->palettes[NUM_PALS_IN_PRIMARY], destOffset, size);
+                break;
+                case MONTH_WINTER:
+                    if(tileset->palettes_winter != NULL)
+                        LoadPalette(tileset->palettes_winter[NUM_PALS_IN_PRIMARY], destOffset, size);
+                    else
+                        LoadPalette(tileset->palettes[NUM_PALS_IN_PRIMARY], destOffset, size);
+                break;
+            }
             ApplyGlobalTintToPaletteEntries(destOffset, size >> 1);
         }
         else
         {
-            LoadCompressedPalette((const u32 *)tileset->palettes, destOffset, size);
+            switch(season){
+                case MONTH_SPRING:
+                    LoadCompressedPalette((const u32 *)tileset->palettes, destOffset, size);
+                break;
+                case MONTH_SUMMER:
+                    if(tileset->palettes_summer != NULL)
+                        LoadCompressedPalette((const u32 *)tileset->palettes_summer, destOffset, size);
+                    else
+                        LoadCompressedPalette((const u32 *)tileset->palettes, destOffset, size);
+                break;
+                case MONTH_FALL:
+                    if(tileset->palettes_fall != NULL)
+                        LoadCompressedPalette((const u32 *)tileset->palettes_fall, destOffset, size);
+                    else
+                        LoadCompressedPalette((const u32 *)tileset->palettes, destOffset, size);
+                break;
+                case MONTH_WINTER:
+                    if(tileset->palettes_winter != NULL)
+                        LoadCompressedPalette((const u32 *)tileset->palettes_winter, destOffset, size);
+                    else
+                        LoadCompressedPalette((const u32 *)tileset->palettes, destOffset, size);
+                break;
+            }
             ApplyGlobalTintToPaletteEntries(destOffset, size >> 1);
         }
     }
