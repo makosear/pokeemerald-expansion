@@ -1088,9 +1088,9 @@ const struct Tileset gTileset_porysecondarytest =
     .metatiles = gMetatiles_porysecondarytest,
     .metatileAttributes = gMetatileAttributes_porysecondarytest,
     .callback = NULL,
-    .palettes_summer = NULL,
-    .palettes_fall = NULL,
-    .palettes_winter = NULL,
+    .palettes_winter = gTilesetPalettes_porysecondarytest_winter,
+    .palettes_fall = gTilesetPalettes_porysecondarytest_fall,
+    .palettes_summer = gTilesetPalettes_porysecondarytest_summer,
 };
 
 const struct Tileset gTileset_porybeach =
@@ -1147,4 +1147,37 @@ const struct Tileset gTileset_porytiletesting_summer =
     .palettes_summer = NULL,
     .palettes_fall = NULL,
     .palettes_winter = NULL,
+};
+
+const struct Tileset gTileset_porysecondarytest_summer =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_porysecondarytest_summer,
+    .palettes = gTilesetPalettes_porysecondarytest_summer,
+    .metatiles = gMetatiles_porysecondarytest_summer,
+    .metatileAttributes = gMetatileAttributes_porysecondarytest_summer,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_porysecondarytest_fall =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_porysecondarytest_fall,
+    .palettes = gTilesetPalettes_porysecondarytest_fall,
+    .metatiles = gMetatiles_porysecondarytest_fall,
+    .metatileAttributes = gMetatileAttributes_porysecondarytest_fall,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_porysecondarytest_winter =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_porysecondarytest_winter,
+    .palettes = gTilesetPalettes_porysecondarytest_winter,
+    .metatiles = gMetatiles_porysecondarytest_winter,
+    .metatileAttributes = gMetatileAttributes_porysecondarytest_winter,
+    .callback = NULL,
 };

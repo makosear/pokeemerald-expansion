@@ -228,3 +228,12 @@ const u16 gMetatileAttributes_porytiletesting_fall[] = INCBIN_U16("data/tilesets
 
 const u16 gMetatiles_porytiletesting_summer[] = INCBIN_U16("data/tilesets/primary/porytiletesting_summer/metatiles.bin");
 const u16 gMetatileAttributes_porytiletesting_summer[] = INCBIN_U16("data/tilesets/primary/porytiletesting_summer/metatile_attributes.bin");
+
+const u16 gMetatiles_porysecondarytest_summer[] = INCBIN_U16("data/tilesets/secondary/porysecondarytest_summer/metatiles.bin");
+const u16 gMetatileAttributes_porysecondarytest_summer[] = INCBIN_U16("data/tilesets/secondary/porysecondarytest_summer/metatile_attributes.bin");
+
+const u16 gMetatiles_porysecondarytest_fall[] = INCBIN_U16("data/tilesets/secondary/porysecondarytest_fall/metatiles.bin");
+const u16 gMetatileAttributes_porysecondarytest_fall[] = INCBIN_U16("data/tilesets/secondary/porysecondarytest_fall/metatile_attributes.bin");
+
+const u16 gMetatiles_porysecondarytest_winter[] = INCBIN_U16("data/tilesets/secondary/porysecondarytest_winter/metatiles.bin");
+const u16 gMetatileAttributes_porysecondarytest_winter[] = INCBIN_U16("data/tilesets/secondary/porysecondarytest_winter/metatile_attributes.bin");

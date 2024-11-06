@@ -9,6 +9,11 @@ extern const u16 gTilesetPalettes_porytiletesting_winter[][16];
 extern const u16 gTilesetPalettes_porytiletesting_fall[][16];
 extern const u16 gTilesetPalettes_porytiletesting_summer[][16];
 
+extern const u16 gTilesetPalettes_porysecondarytest[][16];
+extern const u16 gTilesetPalettes_porysecondarytest_summer[][16];
+extern const u16 gTilesetPalettes_porysecondarytest_fall[][16];
+extern const u16 gTilesetPalettes_porysecondarytest_winter[][16];
+
 extern const struct Tileset * const gTilesetPointer_SecretBase;
 extern const struct Tileset * const gTilesetPointer_SecretBaseRedCave;
 

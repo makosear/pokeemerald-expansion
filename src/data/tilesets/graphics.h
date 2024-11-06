@@ -1767,3 +1767,60 @@ const u16 gTilesetPalettes_porytiletesting_summer[][16] =
 };
 
 const u32 gTilesetTiles_porytiletesting_summer[] = INCBIN_U32("data/tilesets/primary/porytiletesting_summer/tiles.4bpp.lz");
+
+const u16 gTilesetPalettes_porysecondarytest_summer[][16] =
+{
+    INCBIN_U16("data/tilesets/secondary/porysecondarytest_summer/palettes/00.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/porysecondarytest_summer/palettes/01.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/porysecondarytest_summer/palettes/02.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/porysecondarytest_summer/palettes/03.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/porysecondarytest_summer/palettes/04.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/porysecondarytest_summer/palettes/05.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/porysecondarytest_summer/palettes/06.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/porysecondarytest_summer/palettes/07.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/porysecondarytest_summer/palettes/08.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/porysecondarytest_summer/palettes/09.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/porysecondarytest_summer/palettes/10.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/porysecondarytest_summer/palettes/11.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/porysecondarytest_summer/palettes/12.gbapal"),
+};
+
+const u32 gTilesetTiles_porysecondarytest_summer[] = INCBIN_U32("data/tilesets/secondary/porysecondarytest_summer/tiles.4bpp.lz");
+
+const u16 gTilesetPalettes_porysecondarytest_fall[][16] =
+{
+    INCBIN_U16("data/tilesets/secondary/porysecondarytest_fall/palettes/00.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/porysecondarytest_fall/palettes/01.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/porysecondarytest_fall/palettes/02.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/porysecondarytest_fall/palettes/03.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/porysecondarytest_fall/palettes/04.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/porysecondarytest_fall/palettes/05.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/porysecondarytest_fall/palettes/06.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/porysecondarytest_fall/palettes/07.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/porysecondarytest_fall/palettes/08.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/porysecondarytest_fall/palettes/09.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/porysecondarytest_fall/palettes/10.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/porysecondarytest_fall/palettes/11.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/porysecondarytest_fall/palettes/12.gbapal"),
+};
+
+const u32 gTilesetTiles_porysecondarytest_fall[] = INCBIN_U32("data/tilesets/secondary/porysecondarytest_fall/tiles.4bpp.lz");
+
+const u16 gTilesetPalettes_porysecondarytest_winter[][16] =
+{
+    INCBIN_U16("data/tilesets/secondary/porysecondarytest_winter/palettes/00.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/porysecondarytest_winter/palettes/01.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/porysecondarytest_winter/palettes/02.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/porysecondarytest_winter/palettes/03.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/porysecondarytest_winter/palettes/04.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/porysecondarytest_winter/palettes/05.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/porysecondarytest_winter/palettes/06.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/porysecondarytest_winter/palettes/07.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/porysecondarytest_winter/palettes/08.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/porysecondarytest_winter/palettes/09.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/porysecondarytest_winter/palettes/10.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/porysecondarytest_winter/palettes/11.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/porysecondarytest_winter/palettes/12.gbapal"),
+};
+
+const u32 gTilesetTiles_porysecondarytest_winter[] = INCBIN_U32("data/tilesets/secondary/porysecondarytest_winter/tiles.4bpp.lz");
