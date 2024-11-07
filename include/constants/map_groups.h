@@ -13,6 +13,7 @@
 #define MAP_LITTLEROOT_TOWN_SAMS_HOUSE        (4 | (0 << 8))
 #define MAP_PELIPPER_TOWN_FARMERS_HOUSE       (5 | (0 << 8))
 #define MAP_PELIPPER_TOWN_FARM_HOUSE_UNPACKED (6 | (0 << 8))
+#define MAP_ROUTE2                            (7 | (0 << 8))
 
 // gMapGroup_TownsAndRoutes
 #define MAP_PETALBURG_CITY      (0 | (1 << 8))
