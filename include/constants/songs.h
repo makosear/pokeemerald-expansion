@@ -490,7 +490,7 @@
 #define MUS_RG_TRAINER_TOWER        556 // MUS_RG_T_TOWER
 #define MUS_RG_SLOW_PALLET          557 // MUS_RG_SLOWMASARA
 #define MUS_RG_TEACHY_TV_MENU       558 // MUS_RG_TVNOIZE
-#define END_MUS                     MUS_LAST_POKEMON 
+#define END_MUS                     MUS_PELIPPERTOWN_WINTER 
 
 #define PH_TRAP_BLEND               559
 #define PH_TRAP_HELD                560
@@ -546,6 +546,10 @@
 
 #define MUS_CRITICAL_HEALTH         610
 #define MUS_LAST_POKEMON            611
+#define MUS_PELIPPERTOWN_SPRING     612
+#define MUS_PELIPPERTOWN_SUMMER     613
+#define MUS_PELIPPERTOWN_FALL       614
+#define MUS_PELIPPERTOWN_WINTER     615
 
 #define MUS_ROUTE118                0x7FFF  // Map is split into 2 music sections. controlled by GetCurrLocationDefaultMusic().
 

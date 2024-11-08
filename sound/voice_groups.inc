@@ -194,3 +194,7 @@
 .include "sound/voicegroups/voicegroup_drums_dd.inc"
 .include "sound/voicegroups/voicegroup_IAmAwesome2_Drums.inc"
 .include "sound/voicegroups/voicegroup_VictoryLiesBeforeYou.inc"
+.include "sound/voicegroups/voicegroup_Spring.inc"
+.include "sound/voicegroups/voicegroup_Summer.inc"
+.include "sound/voicegroups/voicegroup_Fall.inc"
+.include "sound/voicegroups/voicegroup_Winter.inc"

@@ -639,6 +639,30 @@ $(MID_SUBDIR)/mus_critical_health.s: %.s: %.mid
 $(MID_SUBDIR)/mus_last_pokemon.s: %.s: %.mid
 	$(MID) $< $@ -E -R$(STD_REVERB) -G_VictoryLiesBeforeYou -V076 -P2
 
+$(MID_SUBDIR)/mus_pelippertown_spring.s: %.s: %.mid
+	$(MID) $< $@ -E -R$(STD_REVERB) -G_Spring -V099
+
+$(MID_SUBDIR)/mus_pelippertown_summer.s: %.s: %.mid
+	$(MID) $< $@ -E -R$(STD_REVERB) -G_Summer -V099
+
+$(MID_SUBDIR)/mus_pelippertown_fall.s: %.s: %.mid
+	$(MID) $< $@ -E -R$(STD_REVERB) -G_Fall -V099
+
+$(MID_SUBDIR)/mus_pelippertown_winter.s: %.s: %.mid
+	$(MID) $< $@ -E -R$(STD_REVERB) -G_Winter -V099
+
+$(MID_SUBDIR)/mus_dp_canalave_day.s: %.s: %.mid
+	$(MID) $< $@ -E -R0 -G_SongExpansion -V108
+
+$(MID_SUBDIR)/mus_dp_route216_day.s: %.s: %.mid
+	$(MID) $< $@ -E -R0 -G_SongExpansion -V100
+
+$(MID_SUBDIR)/mus_dp_sunyshore_day.s: %.s: %.mid
+	$(MID) $< $@ -E -R0 -G_SongExpansion -V090
+
+$(MID_SUBDIR)/mus_bw_aspertia_city.s: %.s: %.mid
+	$(MID) $< $@ -E -R0 -G_universal -V090
+
 $(MID_SUBDIR)/ph_choice_blend.s: %.s: %.mid
 	$(MID) $< $@ -E -G130 -P4
 

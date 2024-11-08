@@ -1,1 +1,23 @@
-mapscripts NewMap1_MapScripts {}
+const SEASON_SPRING = 1
+const SEASON_SUMMER = 2
+const SEASON_FALL = 3
+const SEASON_WINTER = 4
+
+mapscripts NewMap1_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION: PelipperTown_Music
+}
+
+script PelipperTown_Music {
+    fadeoutbgm(0)
+    switch (getseason)
+    {
+        case SEASON_SPRING:
+            playbgm(MUS_PELIPPERTOWN_SPRING, TRUE)
+        case SEASON_SUMMER:
+            playbgm(MUS_PELIPPERTOWN_SUMMER, TRUE)
+        case SEASON_FALL:
+            playbgm(MUS_PELIPPERTOWN_FALL, TRUE)
+        case SEASON_WINTER:
+            playbgm(MUS_PELIPPERTOWN_WINTER, TRUE)
+    }
+}

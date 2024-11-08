@@ -613,6 +613,10 @@ gSongTable::
 	song ph_nurse_solo, 2, 2
 	song mus_critical_health, 0, 0
 	song mus_last_pokemon, 0, 0
+	song mus_pelippertown_spring, 0, 0
+	song mus_pelippertown_summer, 0, 0
+	song mus_pelippertown_fall, 0, 0
+	song mus_pelippertown_winter, 0, 0
 
 	.align 2
 dummy_song_header:
