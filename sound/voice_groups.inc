@@ -1,4 +1,4 @@
-.include "sound/voicegroups/voicegroup000.inc"
+.include "sound/voicegroups/voicegroupdummy.inc"
 .include "sound/voicegroups/voicegroup001.inc"
 .include "sound/voicegroups/voicegroup002.inc"
 .include "sound/voicegroups/voicegroup003.inc"
@@ -190,3 +190,7 @@
 .include "sound/voicegroups/voicegroup188.inc"
 .include "sound/voicegroups/voicegroup189.inc"
 .include "sound/voicegroups/voicegroup190.inc"
+.include "sound/voicegroups/voicegroup192.inc"
+.include "sound/voicegroups/voicegroup_drums_dd.inc"
+.include "sound/voicegroups/voicegroup_IAmAwesome2_Drums.inc"
+.include "sound/voicegroups/voicegroup_VictoryLiesBeforeYou.inc"

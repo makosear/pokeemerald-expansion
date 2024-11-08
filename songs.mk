@@ -633,6 +633,12 @@ $(MID_SUBDIR)/mus_vs_rayquaza.s: %.s: %.mid
 $(MID_SUBDIR)/mus_encounter_hiker.s: %.s: %.mid
 	$(MID) $< $@ -E -R$(STD_REVERB) -G097 -V076
 
+$(MID_SUBDIR)/mus_critical_health.s: %.s: %.mid
+	$(MID) $< $@ -E -R$(STD_REVERB) -G192 -V076 -P3
+
+$(MID_SUBDIR)/mus_last_pokemon.s: %.s: %.mid
+	$(MID) $< $@ -E -R$(STD_REVERB) -G_VictoryLiesBeforeYou -V076 -P2
+
 $(MID_SUBDIR)/ph_choice_blend.s: %.s: %.mid
 	$(MID) $< $@ -E -G130 -P4
 
