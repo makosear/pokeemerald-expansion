@@ -2589,7 +2589,14 @@ bool8 ScrCmd_subquestmenu(struct ScriptContext *ctx)
     return TRUE;
 }
 
+bool8 ScrCmd_getseason(struct ScriptContext *ctx)
+{
+    gSpecialVar_Result = GetMonth();
+    return FALSE;
+}
+
 void ScriptSetDoubleBattleFlag(struct ScriptContext *ctx)
 {
     sIsScriptedWildDouble = TRUE;
 }
+

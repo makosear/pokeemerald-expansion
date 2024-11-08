@@ -2397,6 +2397,11 @@
     .byte 0xe7
     .byte \questId
     .endm
+
+	@ Checks the current season. Sets VAR_RESULT to 1 (Spring), 2 (Summer), 3 (Fall) or 4 (Winter)
+	.macro getseason 
+	.byte 0xe8
+	.endm
     
     .macro openquestmenu
     questmenu 0 0
