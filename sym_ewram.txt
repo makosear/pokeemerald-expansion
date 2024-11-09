@@ -150,6 +150,10 @@
 	.include "src/trainer_hill.o"
 	.include "src/rayquaza_scene.o"
 	.include "src/debug.o"
+<<<<<<< HEAD
 	.include "src/battle_controller_player.o"
 	.include "src/pokedex_plus_hgss.o"
 	.include "src/quests.o"
+=======
+	.include "src/sound_check_menu.o"
+>>>>>>> 17f9edc90efc46cde860ffd56f6bcadc9595491a
