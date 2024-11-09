@@ -3067,3 +3067,8 @@ void BtlController_HandleBattleAnimation(u32 battler, bool32 ignoreSE, bool32 up
             BattleTv_SetDataBasedOnAnimation(animationId);
     }
 }
+
+void SetLastPokemonMusic (void)
+{
+    TryLastMonBGM();
+}

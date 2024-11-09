@@ -336,4 +336,7 @@ void SetControllerToLinkOpponent(u32 battler);
 // link partner
 void SetControllerToLinkPartner(u32 battler);
 
+// Change music to mus_last_pokemon
+void SetLastPokemonMusic (void);
+
 #endif // GUARD_BATTLE_CONTROLLERS_H
