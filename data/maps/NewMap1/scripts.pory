@@ -4,20 +4,35 @@ const SEASON_FALL = 3
 const SEASON_WINTER = 4
 
 mapscripts NewMap1_MapScripts {
-    MAP_SCRIPT_ON_TRANSITION: PelipperTown_Music
+    MAP_SCRIPT_ON_TRANSITION: PelipperTown_InitSeason
 }
 
-script PelipperTown_Music {
+script PelipperTown_InitSeason {
     fadeoutbgm(0)
     switch (getseason)
     {
         case SEASON_SPRING:
-            playbgm(MUS_PELIPPERTOWN_SPRING, TRUE)
+            playbgm(MUS_HG_NEW_BARK, TRUE)
         case SEASON_SUMMER:
-            playbgm(MUS_PELIPPERTOWN_SUMMER, TRUE)
+            playbgm(MUS_DP_SUNYSHORE_DAY, TRUE)
         case SEASON_FALL:
-            playbgm(MUS_PELIPPERTOWN_FALL, TRUE)
+            playbgm(MUS_DP_CANALAVE_DAY, TRUE)
         case SEASON_WINTER:
-            playbgm(MUS_PELIPPERTOWN_WINTER, TRUE)
+            playbgm(MUS_DP_ROUTE216_DAY, TRUE)
     }
+
+    if (getseason != SEASON_WINTER)
+    {
+        if (random(3) == 0) {
+            setweather(WEATHER_DOWNPOUR)
+        }
+    }
+    # * SNOW FOR WHEN YOU ADD SNOW WEATHER LOL
+    # else
+    # {
+    #     if (random(3) == 0) 
+    #     {
+    #         setweather(WEATHER_SNOWSTORM)
+    #     }
+    # }
 }
