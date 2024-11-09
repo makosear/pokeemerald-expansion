@@ -1,17 +1,17 @@
 	.align 2
 voicegroup_Summer::
     voice_keysplit_all voicegroup002
-	voice_keysplit voicegroup005, KeySplitTable1
+	voice_keysplit voicegroup195, KeySplitTable6     @ piano
 	voice_keysplit voicegroup005, KeySplitTable1
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
 	voice_square_2 60, 0, 2, 0, 0, 9, 2
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
-	voice_directsound 60, 0, DirectSoundWaveData_celesta_an3, 255, 165, 51, 235
+	voice_keysplit voicegroup227, KeySplitTable25
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_glockenspiel, 255, 165, 51, 235
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
-	voice_directsound 60, 0, DirectSoundWaveData_vibraphone_c3, 255, 246, 0, 216
+	voice_keysplit voicegroup200, KeySplitTable11    @ vibraphone
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
@@ -26,7 +26,7 @@ voicegroup_Summer::
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
-    voice_directsound 60, 0, DirectSoundWaveData_guitar_c3, 255, 0, 255, 127
+	voice_keysplit voicegroup208, KeySplitTable19    @ acoustic guitar
     voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
 	voice_directsound 60, 0, DirectSoundWaveData_sd90_classical_overdrive_guitar, 255, 0, 255, 127
 	voice_directsound 60, 0, DirectSoundWaveData_sd90_classical_distortion_guitar_high, 255, 0, 255, 127
@@ -63,8 +63,8 @@ voicegroup_Summer::
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
     voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
-	voice_directsound 60, 0, DirectSoundWaveData_synth_brass, 255, 252, 0, 115
-	voice_directsound 60, 0, DirectSoundWaveData_synth_brass, 255, 252, 0, 115
+	voice_keysplit voicegroup219, KeySplitTable29    @ trumpets 1
+	voice_keysplit voicegroup222, KeySplitTable29    @ trumpets 2
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
@@ -105,7 +105,7 @@ voicegroup_Summer::
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
-    voice_directsound 60, 0, DirectSoundWaveData_guitar_c3, 255, 0, 255, 127	
+	voice_keysplit voicegroup208, KeySplitTable19    @ acoustic guitar
     voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
     voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
