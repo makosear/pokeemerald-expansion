@@ -627,17 +627,8 @@ $(MID_SUBDIR)/mus_pelippertown_fall.s: %.s: %.mid
 $(MID_SUBDIR)/mus_pelippertown_winter.s: %.s: %.mid
 	$(MID) $< $@ -E -R$(STD_REVERB) -G_Winter -V099
 
-$(MID_SUBDIR)/mus_dp_canalave_day.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G_SongExpansion -V108
-
-$(MID_SUBDIR)/mus_dp_route216_day.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G_SongExpansion -V100
-
-$(MID_SUBDIR)/mus_dp_sunyshore_day.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G_SongExpansion -V090
-
 $(MID_SUBDIR)/mus_bw_aspertia_city.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G_universal -V090
+	$(MID) $< $@ -E -R0 -G_SongExpansion -V090
 
 $(MID_SUBDIR)/ph_choice_blend.s: %.s: %.mid
 	$(MID) $< $@ -E -G130 -P4
@@ -1270,577 +1261,577 @@ $(MID_SUBDIR)/se_dex_search.s: %.s: %.mid
 	$(MID) $< $@ -E -G127 -v100 -P5
 
 $(MID_SUBDIR)/mus_dp_twinleaf_day.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G191 -V125
+	$(MID) $< $@ -E -R0 -G_SongExpansion -V125
 
 $(MID_SUBDIR)/mus_dp_sandgem_day.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G191 -V090
+	$(MID) $< $@ -E -R0 -G_SongExpansion -V090
 
 $(MID_SUBDIR)/mus_dp_floaroma_day.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G191 -V110
+	$(MID) $< $@ -E -R0 -G_SongExpansion -V110
 
 $(MID_SUBDIR)/mus_dp_solaceon_day.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G191 -V110
+	$(MID) $< $@ -E -R0 -G_SongExpansion -V110
 
 $(MID_SUBDIR)/mus_dp_route225_day.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G191 -V094
+	$(MID) $< $@ -E -R0 -G_SongExpansion -V094
 
 $(MID_SUBDIR)/mus_dp_valor_lakefront_day.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G191 -V096 -X
+	$(MID) $< $@ -E -R0 -G_SongExpansion -V096 -X
 
 $(MID_SUBDIR)/mus_dp_jubilife_day.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G191 -V096
+	$(MID) $< $@ -E -R0 -G_SongExpansion -V096
 
 $(MID_SUBDIR)/mus_dp_canalave_day.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G191 -V108
+	$(MID) $< $@ -E -R0 -G_SongExpansion -V108
 
 $(MID_SUBDIR)/mus_dp_oreburgh_day.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G191 -V090
+	$(MID) $< $@ -E -R0 -G_SongExpansion -V090
 
 $(MID_SUBDIR)/mus_dp_eterna_day.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G191 -V096
+	$(MID) $< $@ -E -R0 -G_SongExpansion -V096
 
 $(MID_SUBDIR)/mus_dp_hearthome_day.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G191 -V092
+	$(MID) $< $@ -E -R0 -G_SongExpansion -V092
 
 $(MID_SUBDIR)/mus_dp_veilstone_day.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G191 -V120
+	$(MID) $< $@ -E -R0 -G_SongExpansion -V120
 
 $(MID_SUBDIR)/mus_dp_sunyshore_day.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G191 -V090
+	$(MID) $< $@ -E -R0 -G_SongExpansion -V090
 
 $(MID_SUBDIR)/mus_dp_snowpoint_day.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G191 -V100
+	$(MID) $< $@ -E -R0 -G_SongExpansion -V100
 
 $(MID_SUBDIR)/mus_dp_pokemon_league_day.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G191 -V110
+	$(MID) $< $@ -E -R0 -G_SongExpansion -V110
 
 $(MID_SUBDIR)/mus_dp_fight_area_day.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G191 -V080
+	$(MID) $< $@ -E -R0 -G_SongExpansion -V080
 
 $(MID_SUBDIR)/mus_dp_route201_day.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G191 -V127
+	$(MID) $< $@ -E -R0 -G_SongExpansion -V127
 
 $(MID_SUBDIR)/mus_dp_route203_day.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G191 -V100
+	$(MID) $< $@ -E -R0 -G_SongExpansion -V100
 
 $(MID_SUBDIR)/mus_dp_route205_day.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G191 -V086
+	$(MID) $< $@ -E -R0 -G_SongExpansion -V086
 
 $(MID_SUBDIR)/mus_dp_route206_day.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G191 -V108
+	$(MID) $< $@ -E -R0 -G_SongExpansion -V108
 
 $(MID_SUBDIR)/mus_dp_route209_day.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G191 -V086
+	$(MID) $< $@ -E -R0 -G_SongExpansion -V086
 
 $(MID_SUBDIR)/mus_dp_route210_day.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G191 -V080
+	$(MID) $< $@ -E -R0 -G_SongExpansion -V080
 
 $(MID_SUBDIR)/mus_dp_route216_day.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G191 -V100
+	$(MID) $< $@ -E -R0 -G_SongExpansion -V100
 
 $(MID_SUBDIR)/mus_dp_route228_day.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G191 -V090
+	$(MID) $< $@ -E -R0 -G_SongExpansion -V090
 
 $(MID_SUBDIR)/mus_dp_rowan.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G191 -V127
+	$(MID) $< $@ -E -R0 -G_SongExpansion -V127
 
 $(MID_SUBDIR)/mus_dp_tv_broadcast.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G191 -V096
+	$(MID) $< $@ -E -R0 -G_SongExpansion -V096
 
 $(MID_SUBDIR)/mus_dp_twinleaf_night.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G191 -V090
+	$(MID) $< $@ -E -R0 -G_SongExpansion -V090
 
 $(MID_SUBDIR)/mus_dp_sandgem_night.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G191 -V090
+	$(MID) $< $@ -E -R0 -G_SongExpansion -V090
 
 $(MID_SUBDIR)/mus_dp_floaroma_night.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G191 -V110
+	$(MID) $< $@ -E -R0 -G_SongExpansion -V110
 
 $(MID_SUBDIR)/mus_dp_solaceon_night.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G191 -V110
+	$(MID) $< $@ -E -R0 -G_SongExpansion -V110
 
 $(MID_SUBDIR)/mus_dp_route225_night.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G191 -V094
+	$(MID) $< $@ -E -R0 -G_SongExpansion -V094
 
 $(MID_SUBDIR)/mus_dp_valor_lakefront_night.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G191 -V095 -X
+	$(MID) $< $@ -E -R0 -G_SongExpansion -V095 -X
 
 $(MID_SUBDIR)/mus_dp_jubilife_night.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G191 -V104
+	$(MID) $< $@ -E -R0 -G_SongExpansion -V104
 
 $(MID_SUBDIR)/mus_dp_canalave_night.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G191 -V110
+	$(MID) $< $@ -E -R0 -G_SongExpansion -V110
 
 $(MID_SUBDIR)/mus_dp_oreburgh_night.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G191 -V090
+	$(MID) $< $@ -E -R0 -G_SongExpansion -V090
 
 $(MID_SUBDIR)/mus_dp_eterna_night.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G191 -V098
+	$(MID) $< $@ -E -R0 -G_SongExpansion -V098
 
 $(MID_SUBDIR)/mus_dp_hearthome_night.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G191 -V100
+	$(MID) $< $@ -E -R0 -G_SongExpansion -V100
 
 $(MID_SUBDIR)/mus_dp_veilstone_night.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G191 -V118
+	$(MID) $< $@ -E -R0 -G_SongExpansion -V118
 
 $(MID_SUBDIR)/mus_dp_sunyshore_night.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G191 -V090
+	$(MID) $< $@ -E -R0 -G_SongExpansion -V090
 
 $(MID_SUBDIR)/mus_dp_snowpoint_night.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G191 -V100
+	$(MID) $< $@ -E -R0 -G_SongExpansion -V100
 
 $(MID_SUBDIR)/mus_dp_pokemon_league_night.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G191 -V110
+	$(MID) $< $@ -E -R0 -G_SongExpansion -V110
 
 $(MID_SUBDIR)/mus_dp_fight_area_night.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G191 -V080
+	$(MID) $< $@ -E -R0 -G_SongExpansion -V080
 
 $(MID_SUBDIR)/mus_dp_route201_night.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G191 -V127
+	$(MID) $< $@ -E -R0 -G_SongExpansion -V127
 
 $(MID_SUBDIR)/mus_dp_route203_night.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G191 -V100
+	$(MID) $< $@ -E -R0 -G_SongExpansion -V100
 
 $(MID_SUBDIR)/mus_dp_route205_night.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G191 -V086
+	$(MID) $< $@ -E -R0 -G_SongExpansion -V086
 
 $(MID_SUBDIR)/mus_dp_route206_night.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G191 -V108
+	$(MID) $< $@ -E -R0 -G_SongExpansion -V108
 
 $(MID_SUBDIR)/mus_dp_route209_night.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G191 -V086
+	$(MID) $< $@ -E -R0 -G_SongExpansion -V086
 
 $(MID_SUBDIR)/mus_dp_route210_night.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G191 -V080
+	$(MID) $< $@ -E -R0 -G_SongExpansion -V080
 
 $(MID_SUBDIR)/mus_dp_route216_night.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G191 -V100
+	$(MID) $< $@ -E -R0 -G_SongExpansion -V100
 
 $(MID_SUBDIR)/mus_dp_route228_night.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G191 -V090
+	$(MID) $< $@ -E -R0 -G_SongExpansion -V090
 
 $(MID_SUBDIR)/mus_dp_underground.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G191 -V100
+	$(MID) $< $@ -E -R0 -G_SongExpansion -V100
 
 $(MID_SUBDIR)/mus_dp_flag_captured.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G191 -V090
+	$(MID) $< $@ -E -R0 -G_SongExpansion -V090
 
 $(MID_SUBDIR)/mus_dp_victory_road.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G191 -V090
+	$(MID) $< $@ -E -R0 -G_SongExpansion -V090
 
 $(MID_SUBDIR)/mus_dp_eterna_forest.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G191 -V088
+	$(MID) $< $@ -E -R0 -G_SongExpansion -V088
 
 $(MID_SUBDIR)/mus_dp_old_chateau.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G191 -V127
+	$(MID) $< $@ -E -R0 -G_SongExpansion -V127
 
 $(MID_SUBDIR)/mus_dp_lake_caverns.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G191 -V090
+	$(MID) $< $@ -E -R0 -G_SongExpansion -V090
 
 $(MID_SUBDIR)/mus_dp_amity_square.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G191 -V115
+	$(MID) $< $@ -E -R0 -G_SongExpansion -V115
 
 $(MID_SUBDIR)/mus_dp_galactic_hq.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G191 -V086
+	$(MID) $< $@ -E -R0 -G_SongExpansion -V086
 
 $(MID_SUBDIR)/mus_dp_galactic_eterna_building.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G191 -V100
+	$(MID) $< $@ -E -R0 -G_SongExpansion -V100
 
 $(MID_SUBDIR)/mus_dp_great_marsh.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G191 -V084
+	$(MID) $< $@ -E -R0 -G_SongExpansion -V084
 
 $(MID_SUBDIR)/mus_dp_lake.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G191 -V088
+	$(MID) $< $@ -E -R0 -G_SongExpansion -V088
 
 $(MID_SUBDIR)/mus_dp_mt_coronet.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G191 -V112
+	$(MID) $< $@ -E -R0 -G_SongExpansion -V112
 
 $(MID_SUBDIR)/mus_dp_spear_pillar.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G191 -V110
+	$(MID) $< $@ -E -R0 -G_SongExpansion -V110
 
 $(MID_SUBDIR)/mus_dp_stark_mountain.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G191 -V100
+	$(MID) $< $@ -E -R0 -G_SongExpansion -V100
 
 $(MID_SUBDIR)/mus_dp_oreburgh_gate.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G191 -V110
+	$(MID) $< $@ -E -R0 -G_SongExpansion -V110
 
 $(MID_SUBDIR)/mus_dp_oreburgh_mine.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G191 -V120
+	$(MID) $< $@ -E -R0 -G_SongExpansion -V120
 
 $(MID_SUBDIR)/mus_dp_inside_pokemon_league.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G191 -V100
+	$(MID) $< $@ -E -R0 -G_SongExpansion -V100
 
 $(MID_SUBDIR)/mus_dp_hall_of_fame_room.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G191 -V112
+	$(MID) $< $@ -E -R0 -G_SongExpansion -V112
 
 $(MID_SUBDIR)/mus_dp_poke_center_day.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G191 -V110
+	$(MID) $< $@ -E -R0 -G_SongExpansion -V110
 
 $(MID_SUBDIR)/mus_dp_poke_center_night.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G191 -V127
+	$(MID) $< $@ -E -R0 -G_SongExpansion -V127
 
 $(MID_SUBDIR)/mus_dp_gym.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G191 -V118
+	$(MID) $< $@ -E -R0 -G_SongExpansion -V118
 
 $(MID_SUBDIR)/mus_dp_rowan_lab.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G191 -V127
+	$(MID) $< $@ -E -R0 -G_SongExpansion -V127
 
 $(MID_SUBDIR)/mus_dp_contest_lobby.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G191 -V056
+	$(MID) $< $@ -E -R0 -G_SongExpansion -V056
 
 $(MID_SUBDIR)/mus_dp_poke_mart.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G191 -V082
+	$(MID) $< $@ -E -R0 -G_SongExpansion -V082
 
 $(MID_SUBDIR)/mus_dp_game_corner.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G191 -V127
+	$(MID) $< $@ -E -R0 -G_SongExpansion -V127
 
 $(MID_SUBDIR)/mus_dp_b_tower.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G191 -V078
+	$(MID) $< $@ -E -R0 -G_SongExpansion -V078
 
 $(MID_SUBDIR)/mus_dp_tv_station.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G191 -V108
+	$(MID) $< $@ -E -R0 -G_SongExpansion -V108
 
 $(MID_SUBDIR)/mus_dp_galactic_hq_basement.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G191 -V127
+	$(MID) $< $@ -E -R0 -G_SongExpansion -V127
 
 $(MID_SUBDIR)/mus_dp_azure_flute.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G191 -V127
+	$(MID) $< $@ -E -R0 -G_SongExpansion -V127
 
 $(MID_SUBDIR)/mus_dp_hall_of_origin.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G191 -V127
+	$(MID) $< $@ -E -R0 -G_SongExpansion -V127
 
 $(MID_SUBDIR)/mus_dp_gts.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G191 -V096
+	$(MID) $< $@ -E -R0 -G_SongExpansion -V096
 
 $(MID_SUBDIR)/mus_dp_encounter_boy.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G191 -V105
+	$(MID) $< $@ -E -R0 -G_SongExpansion -V105
 
 $(MID_SUBDIR)/mus_dp_encounter_twins.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G191 -V082
+	$(MID) $< $@ -E -R0 -G_SongExpansion -V082
 
 $(MID_SUBDIR)/mus_dp_encounter_intense.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G191 -V070
+	$(MID) $< $@ -E -R0 -G_SongExpansion -V070
 
 $(MID_SUBDIR)/mus_dp_encounter_galactic.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G191 -V068
+	$(MID) $< $@ -E -R0 -G_SongExpansion -V068
 
 $(MID_SUBDIR)/mus_dp_encounter_lady.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G191 -V090
+	$(MID) $< $@ -E -R0 -G_SongExpansion -V090
 
 $(MID_SUBDIR)/mus_dp_encounter_hiker.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G191 -V088
+	$(MID) $< $@ -E -R0 -G_SongExpansion -V088
 
 $(MID_SUBDIR)/mus_dp_encounter_rich.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G191 -V080
+	$(MID) $< $@ -E -R0 -G_SongExpansion -V080
 
 $(MID_SUBDIR)/mus_dp_encounter_sailor.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G191 -V070
+	$(MID) $< $@ -E -R0 -G_SongExpansion -V070
 
 $(MID_SUBDIR)/mus_dp_encounter_suspicious.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G191 -V080
+	$(MID) $< $@ -E -R0 -G_SongExpansion -V080
 
 $(MID_SUBDIR)/mus_dp_encounter_ace_trainer.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G191 -V080
+	$(MID) $< $@ -E -R0 -G_SongExpansion -V080
 
 $(MID_SUBDIR)/mus_dp_encounter_girl.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G191 -V095
+	$(MID) $< $@ -E -R0 -G_SongExpansion -V095
 
 $(MID_SUBDIR)/mus_dp_encounter_cyclist.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G191 -V095
+	$(MID) $< $@ -E -R0 -G_SongExpansion -V095
 
 $(MID_SUBDIR)/mus_dp_encounter_artist.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G191 -V115
+	$(MID) $< $@ -E -R0 -G_SongExpansion -V115
 
 $(MID_SUBDIR)/mus_dp_encounter_elite_four.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G191 -V086
+	$(MID) $< $@ -E -R0 -G_SongExpansion -V086
 
 $(MID_SUBDIR)/mus_dp_encounter_champion.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G191 -V100
+	$(MID) $< $@ -E -R0 -G_SongExpansion -V100
 
 $(MID_SUBDIR)/mus_dp_vs_wild.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G191 -V088
+	$(MID) $< $@ -E -R0 -G_SongExpansion -V088
 
 $(MID_SUBDIR)/mus_dp_vs_gym_leader.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G191 -V088
+	$(MID) $< $@ -E -R0 -G_SongExpansion -V088
 
 $(MID_SUBDIR)/mus_dp_vs_uxie_mesprit_azelf.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G191 -V078
+	$(MID) $< $@ -E -R0 -G_SongExpansion -V078
 
 $(MID_SUBDIR)/mus_dp_vs_trainer.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G191 -V088
+	$(MID) $< $@ -E -R0 -G_SongExpansion -V088
 
 $(MID_SUBDIR)/mus_dp_vs_galactic_boss.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G191 -V090
+	$(MID) $< $@ -E -R0 -G_SongExpansion -V090
 
 $(MID_SUBDIR)/mus_dp_vs_dialga_palkia.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G191 -V090
+	$(MID) $< $@ -E -R0 -G_SongExpansion -V090
 
 $(MID_SUBDIR)/mus_dp_vs_champion.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G191 -V090
+	$(MID) $< $@ -E -R0 -G_SongExpansion -V090
 
 $(MID_SUBDIR)/mus_dp_vs_galactic.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G191 -V090
+	$(MID) $< $@ -E -R0 -G_SongExpansion -V090
 
 $(MID_SUBDIR)/mus_dp_vs_rival.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G191 -V088
+	$(MID) $< $@ -E -R0 -G_SongExpansion -V088
 
 $(MID_SUBDIR)/mus_dp_vs_arceus.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G191 -V092
+	$(MID) $< $@ -E -R0 -G_SongExpansion -V092
 
 $(MID_SUBDIR)/mus_dp_vs_legend.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G191 -V092
+	$(MID) $< $@ -E -R0 -G_SongExpansion -V092
 
 $(MID_SUBDIR)/mus_dp_victory_wild.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G191 -V114
+	$(MID) $< $@ -E -R0 -G_SongExpansion -V114
 
 $(MID_SUBDIR)/mus_dp_victory_trainer.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G191 -V118
+	$(MID) $< $@ -E -R0 -G_SongExpansion -V118
 
 $(MID_SUBDIR)/mus_dp_victory_gym_leader.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G191 -V120
+	$(MID) $< $@ -E -R0 -G_SongExpansion -V120
 
 $(MID_SUBDIR)/mus_dp_victory_champion.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G191 -V105
+	$(MID) $< $@ -E -R0 -G_SongExpansion -V105
 
 $(MID_SUBDIR)/mus_dp_victory_galactic.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G191 -V100
+	$(MID) $< $@ -E -R0 -G_SongExpansion -V100
 
 $(MID_SUBDIR)/mus_dp_victory_elite_four.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G191 -V090
+	$(MID) $< $@ -E -R0 -G_SongExpansion -V090
 
 $(MID_SUBDIR)/mus_dp_vs_galactic_commander.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G191 -V090
+	$(MID) $< $@ -E -R0 -G_SongExpansion -V090
 
 $(MID_SUBDIR)/mus_dp_contest.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G191 -V110
+	$(MID) $< $@ -E -R0 -G_SongExpansion -V110
 
 $(MID_SUBDIR)/mus_dp_vs_elite_four.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G191 -V094
+	$(MID) $< $@ -E -R0 -G_SongExpansion -V094
 
 $(MID_SUBDIR)/mus_dp_follow_me.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G191 -V125
+	$(MID) $< $@ -E -R0 -G_SongExpansion -V125
 
 $(MID_SUBDIR)/mus_dp_rival.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G191 -V070
+	$(MID) $< $@ -E -R0 -G_SongExpansion -V070
 
 $(MID_SUBDIR)/mus_dp_lake_event.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G191 -V096
+	$(MID) $< $@ -E -R0 -G_SongExpansion -V096
 
 $(MID_SUBDIR)/mus_dp_evolution.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G191 -V090
+	$(MID) $< $@ -E -R0 -G_SongExpansion -V090
 
 $(MID_SUBDIR)/mus_dp_lucas.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G191 -V090
+	$(MID) $< $@ -E -R0 -G_SongExpansion -V090
 
 $(MID_SUBDIR)/mus_dp_dawn.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G191 -V090
+	$(MID) $< $@ -E -R0 -G_SongExpansion -V090
 
 $(MID_SUBDIR)/mus_dp_legend_appears.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G191 -V100
+	$(MID) $< $@ -E -R0 -G_SongExpansion -V100
 
 $(MID_SUBDIR)/mus_dp_catastrophe.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G191 -V100
+	$(MID) $< $@ -E -R0 -G_SongExpansion -V100
 
 $(MID_SUBDIR)/mus_dp_poke_radar.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G191 -V105
+	$(MID) $< $@ -E -R0 -G_SongExpansion -V105
 
 $(MID_SUBDIR)/mus_dp_surf.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G191 -V115
+	$(MID) $< $@ -E -R0 -G_SongExpansion -V115
 
 $(MID_SUBDIR)/mus_dp_cycling.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G191 -V115
+	$(MID) $< $@ -E -R0 -G_SongExpansion -V115
 
 $(MID_SUBDIR)/mus_dp_lets_go_together.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G191 -V106 -P5
+	$(MID) $< $@ -E -R0 -G_SongExpansion -V106 -P5
 
 $(MID_SUBDIR)/mus_dp_tv_end.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G191 -V090 -P5
+	$(MID) $< $@ -E -R0 -G_SongExpansion -V090 -P5
 
 $(MID_SUBDIR)/mus_dp_level_up.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G191 -V125 -P5
+	$(MID) $< $@ -E -R0 -G_SongExpansion -V125 -P5
 
 $(MID_SUBDIR)/mus_dp_evolved.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G191 -V094 -P5
+	$(MID) $< $@ -E -R0 -G_SongExpansion -V094 -P5
 
 $(MID_SUBDIR)/mus_dp_obtain_key_item.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G191 -V094 -p5
+	$(MID) $< $@ -E -R0 -G_SongExpansion -V094 -p5
 
 $(MID_SUBDIR)/mus_dp_obtain_item.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G191 -V100 -P5
+	$(MID) $< $@ -E -R0 -G_SongExpansion -V100 -P5
 
 $(MID_SUBDIR)/mus_dp_caught_intro.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G191 -V100 -P5
+	$(MID) $< $@ -E -R0 -G_SongExpansion -V100 -P5
 
 $(MID_SUBDIR)/mus_dp_dex_rating.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G191 -V094 -P5
+	$(MID) $< $@ -E -R0 -G_SongExpansion -V094 -P5
 
 $(MID_SUBDIR)/mus_dp_obtain_badge.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G191 -V100 -P5
+	$(MID) $< $@ -E -R0 -G_SongExpansion -V100 -P5
 
 $(MID_SUBDIR)/mus_dp_poketch.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G191 -V100 -P5
+	$(MID) $< $@ -E -R0 -G_SongExpansion -V100 -P5
 
 $(MID_SUBDIR)/mus_dp_obtain_tmhm.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G191 -V100 -P5
+	$(MID) $< $@ -E -R0 -G_SongExpansion -V100 -P5
 
 $(MID_SUBDIR)/mus_dp_obtain_accessory.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G191 -V088 -P5
+	$(MID) $< $@ -E -R0 -G_SongExpansion -V088 -P5
 
 $(MID_SUBDIR)/mus_dp_move_deleted.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G191 -V127 -P5
+	$(MID) $< $@ -E -R0 -G_SongExpansion -V127 -P5
 
 $(MID_SUBDIR)/mus_dp_heal.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G191 -V100 -P5
+	$(MID) $< $@ -E -R0 -G_SongExpansion -V100 -P5
 
 $(MID_SUBDIR)/mus_dp_obtain_berry.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G191 -V100 -P5
+	$(MID) $< $@ -E -R0 -G_SongExpansion -V100 -P5
 
 $(MID_SUBDIR)/mus_dp_contest_dress_up.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G191 -V110
+	$(MID) $< $@ -E -R0 -G_SongExpansion -V110
 
 $(MID_SUBDIR)/mus_dp_hall_of_fame.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G191 -V088
+	$(MID) $< $@ -E -R0 -G_SongExpansion -V088
 
 $(MID_SUBDIR)/mus_dp_intro.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G191 -V127
+	$(MID) $< $@ -E -R0 -G_SongExpansion -V127
 
 $(MID_SUBDIR)/mus_dp_title.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G191 -V127
+	$(MID) $< $@ -E -R0 -G_SongExpansion -V127
 
 $(MID_SUBDIR)/mus_dp_mystery_gift.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G191 -V090
+	$(MID) $< $@ -E -R0 -G_SongExpansion -V090
 
 $(MID_SUBDIR)/mus_dp_wfc.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G191 -V090
+	$(MID) $< $@ -E -R0 -G_SongExpansion -V090
 
 $(MID_SUBDIR)/mus_dp_dance_easy.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G191 -V100
+	$(MID) $< $@ -E -R0 -G_SongExpansion -V100
 
 $(MID_SUBDIR)/mus_dp_dance_difficult.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G191 -V095
+	$(MID) $< $@ -E -R0 -G_SongExpansion -V095
 
 $(MID_SUBDIR)/mus_dp_contest_results.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G191 -V080
+	$(MID) $< $@ -E -R0 -G_SongExpansion -V080
 
 $(MID_SUBDIR)/mus_dp_contest_winner.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G191 -V100
+	$(MID) $< $@ -E -R0 -G_SongExpansion -V100
 
 $(MID_SUBDIR)/mus_dp_poffins.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G191 -V090
+	$(MID) $< $@ -E -R0 -G_SongExpansion -V090
 
 $(MID_SUBDIR)/mus_dp_slots_win.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G191 -V080
+	$(MID) $< $@ -E -R0 -G_SongExpansion -V080
 
 $(MID_SUBDIR)/mus_dp_slots_jackpot.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G191 -V075
+	$(MID) $< $@ -E -R0 -G_SongExpansion -V075
 
 $(MID_SUBDIR)/mus_dp_credits.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G191 -V127
+	$(MID) $< $@ -E -R0 -G_SongExpansion -V127
 
 $(MID_SUBDIR)/mus_dp_slots_unused.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G191 -V112
+	$(MID) $< $@ -E -R0 -G_SongExpansion -V112
 
 $(MID_SUBDIR)/mus_pl_fight_area_day.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G191 -V080
+	$(MID) $< $@ -E -R0 -G_SongExpansion -V080
 
 $(MID_SUBDIR)/mus_pl_tv_broadcast.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G191 -V096
+	$(MID) $< $@ -E -R0 -G_SongExpansion -V096
 
 $(MID_SUBDIR)/mus_pl_tv_end.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G191 -V090 -P5
+	$(MID) $< $@ -E -R0 -G_SongExpansion -V090 -P5
 
 $(MID_SUBDIR)/mus_pl_intro.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G191 -V127
+	$(MID) $< $@ -E -R0 -G_SongExpansion -V127
 
 $(MID_SUBDIR)/mus_pl_title.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G191 -V127
+	$(MID) $< $@ -E -R0 -G_SongExpansion -V127
 
 $(MID_SUBDIR)/mus_pl_distortion_world.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G191 -V105
+	$(MID) $< $@ -E -R0 -G_SongExpansion -V105
 
 $(MID_SUBDIR)/mus_pl_b_arcade.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G191 -V110 -X
+	$(MID) $< $@ -E -R0 -G_SongExpansion -V110 -X
 
 $(MID_SUBDIR)/mus_pl_b_hall.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G191 -V115
+	$(MID) $< $@ -E -R0 -G_SongExpansion -V115
 
 $(MID_SUBDIR)/mus_pl_b_castle.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G191 -V110
+	$(MID) $< $@ -E -R0 -G_SongExpansion -V110
 
 $(MID_SUBDIR)/mus_pl_b_factory.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G191 -V110
+	$(MID) $< $@ -E -R0 -G_SongExpansion -V110
 
 $(MID_SUBDIR)/mus_pl_global_terminal.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G191 -V085
+	$(MID) $< $@ -E -R0 -G_SongExpansion -V085
 
 $(MID_SUBDIR)/mus_pl_lilycove_bossa_nova.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G191 -V120
+	$(MID) $< $@ -E -R0 -G_SongExpansion -V120
 
 $(MID_SUBDIR)/mus_pl_looker.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G191 -V115
+	$(MID) $< $@ -E -R0 -G_SongExpansion -V115
 
 $(MID_SUBDIR)/mus_pl_vs_giratina.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G191 -V105
+	$(MID) $< $@ -E -R0 -G_SongExpansion -V105
 
 $(MID_SUBDIR)/mus_pl_vs_frontier_brain.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G191 -V120
+	$(MID) $< $@ -E -R0 -G_SongExpansion -V120
 
 $(MID_SUBDIR)/mus_pl_victory_frontier_brain.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G191 -V108
+	$(MID) $< $@ -E -R0 -G_SongExpansion -V108
 
 $(MID_SUBDIR)/mus_pl_vs_regi.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G191 -V105
+	$(MID) $< $@ -E -R0 -G_SongExpansion -V105
 
 $(MID_SUBDIR)/mus_pl_contest_cool.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G191 -V100
+	$(MID) $< $@ -E -R0 -G_SongExpansion -V100
 
 $(MID_SUBDIR)/mus_pl_contest_smart.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G191 -V100
+	$(MID) $< $@ -E -R0 -G_SongExpansion -V100
 
 $(MID_SUBDIR)/mus_pl_contest_cute.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G191 -V100
+	$(MID) $< $@ -E -R0 -G_SongExpansion -V100
 
 $(MID_SUBDIR)/mus_pl_contest_tough.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G191 -V100
+	$(MID) $< $@ -E -R0 -G_SongExpansion -V100
 
 $(MID_SUBDIR)/mus_pl_contest_beauty.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G191 -V100
+	$(MID) $< $@ -E -R0 -G_SongExpansion -V100
 
 $(MID_SUBDIR)/mus_pl_spin_trade.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G191 -V100
+	$(MID) $< $@ -E -R0 -G_SongExpansion -V100
 
 $(MID_SUBDIR)/mus_pl_wifi_minigames.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G191 -V115
+	$(MID) $< $@ -E -R0 -G_SongExpansion -V115
 
 $(MID_SUBDIR)/mus_pl_wifi_plaza.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G191 -V100
+	$(MID) $< $@ -E -R0 -G_SongExpansion -V100
 
 $(MID_SUBDIR)/mus_pl_wifi_parade.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G191 -V110
+	$(MID) $< $@ -E -R0 -G_SongExpansion -V110
 
 $(MID_SUBDIR)/mus_pl_giratina_appears_1.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G191 -V110
+	$(MID) $< $@ -E -R0 -G_SongExpansion -V110
 
 $(MID_SUBDIR)/mus_pl_giratina_appears_2.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G191 -V115
+	$(MID) $< $@ -E -R0 -G_SongExpansion -V115
 
 $(MID_SUBDIR)/mus_pl_mystery_gift.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G191 -V090
+	$(MID) $< $@ -E -R0 -G_SongExpansion -V090
 
 $(MID_SUBDIR)/mus_pl_twinleaf_music_box.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G191 -V100
+	$(MID) $< $@ -E -R0 -G_SongExpansion -V100
 
 $(MID_SUBDIR)/mus_pl_obtain_arcade_points.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G191 -V120
+	$(MID) $< $@ -E -R0 -G_SongExpansion -V120
 
 $(MID_SUBDIR)/mus_pl_obtain_castle_points.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G191 -V105
+	$(MID) $< $@ -E -R0 -G_SongExpansion -V105
 
 $(MID_SUBDIR)/mus_pl_obtain_b_points.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G191 -V127
+	$(MID) $< $@ -E -R0 -G_SongExpansion -V127
 
 $(MID_SUBDIR)/mus_pl_win_minigame.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G191 -V100
+	$(MID) $< $@ -E -R0 -G_SongExpansion -V100
 
 $(MID_SUBDIR)/mus_hg_intro.s: %.s: %.mid
 	$(MID) $< $@ -E -R0 -G229 -V122

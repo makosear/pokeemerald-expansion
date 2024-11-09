@@ -1,7 +1,7 @@
 	.align 2
-voicegroup191:: @ DPPt main
+voicegroup_SongExpansion:: @ DPPt main
 	voice_directsound 60, 0, DirectSoundWaveData_dp_reverscyn_16, 255, 0, 255, 16
-	voice_keysplit_all voicegroup192				 @ drums 1
+	voice_keysplit_all voicegroup_DP_Drums				 @ drums 1
 	voice_keysplit voicegroup195, KeySplitTable6     @ piano
 	voice_keysplit voicegroup196, KeySplitTable7     @ piano low
 	voice_keysplit voicegroup197, KeySplitTable8     @ ep 1

@@ -198,8 +198,7 @@
 .include "sound/voicegroups/voicegroup_Summer.inc"
 .include "sound/voicegroups/voicegroup_Fall.inc"
 .include "sound/voicegroups/voicegroup_Winter.inc"
-.include "sound/voicegroups/voicegroup191.inc" @ DPPt main
-.include "sound/voicegroups/voicegroup_SongExpansion.inc"
+.include "sound/voicegroups/voicegroup_SongExpansion.inc" @ DPPt main
 .include "sound/voicegroups/voicegroup193.inc"
 .include "sound/voicegroups/voicegroup194.inc"
 .include "sound/voicegroups/voicegroup195.inc"
@@ -281,3 +280,4 @@
 .include "sound/voicegroups/voicegroup271.inc"
 .include "sound/voicegroups/voicegroup272.inc"
 .include "sound/voicegroups/voicegroup273.inc"
+.include "sound/voicegroups/voicegroup_DP_Drums.inc"

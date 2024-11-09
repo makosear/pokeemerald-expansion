@@ -280,6 +280,9 @@
 #define SE_SUDOWOODO_SHAKE                269 // SE_USSOKI
 #define SE_DUMMY_1                        270 // nothing, corresponds to a dummy entry in the song table
 
+#define END_SE                            SE_DUMMY_1
+#define SOUND_EFFECTS_END                 SE_DUMMY_1
+
 // Bard SFX
 #define PH_TRAP_BLEND                     271
 #define PH_TRAP_HELD                      272
@@ -956,8 +959,9 @@
 #define MUS_PELIPPERTOWN_SUMMER           902
 #define MUS_PELIPPERTOWN_FALL             903
 #define MUS_PELIPPERTOWN_WINTER           904
+#define MUS_BW_ASPERTIA_CITY              905
 
-#define SONGS_END                         MUS_PELIPPERTOWN_WINTER
+#define SONGS_END                         MUS_BW_ASPERTIA_CITY
 #define END_MUS                           SONGS_END
 
 #define MUS_ROUTE118                      0x7FFF  // Map is split into 2 music sections. controlled by GetCurrLocationDefaultMusic().
