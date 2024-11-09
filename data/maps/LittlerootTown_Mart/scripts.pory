@@ -1,0 +1,10 @@
+mapscripts LittlerootTown_Mart_MapScripts{}
+
+script PelipperTownMart_MartGruntTest{
+    lock
+    faceplayer
+    msgbox("hi im testing the trainer sprites for this guy", MSGBOX_NPC)
+    trainerbattle_no_intro(TRAINER_PELIPPERTOWNMART_GRUNT1, "slay")
+    releaseall
+}
+
