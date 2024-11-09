@@ -652,7 +652,7 @@ $(MID_SUBDIR)/mus_pelippertown_winter.s: %.s: %.mid
 	$(MID) $< $@ -E -R$(STD_REVERB) -G_Winter -V099
 
 $(MID_SUBDIR)/mus_bw_aspertia_city.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G_universal -V090
+	$(MID) $< $@ -E -R0 -G_SongExpansion -V090
 
 $(MID_SUBDIR)/ph_choice_blend.s: %.s: %.mid
 	$(MID) $< $@ -E -G130 -P4
