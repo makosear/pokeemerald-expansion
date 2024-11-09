@@ -42254,3 +42254,46 @@ F_TRAINER_FEMALE |
             },
         },
     },
+#line 16907
+    [TRAINER_PELIPPERTOWNMART_GRUNT1] =
+    {
+#line 16908
+        .trainerName = _("GRUNT"),
+#line 16909
+        .trainerClass = TRAINER_CLASS_MARTGRUNT,
+#line 16910
+        .trainerPic = TRAINER_PIC_MARTGRUNT,
+        .encounterMusic_gender = 
+#line 16912
+            TRAINER_ENCOUNTER_MUSIC_AQUA,
+#line 16913
+        .doubleBattle = FALSE,
+#line 16914
+        .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+        .partySize = 2,
+        .party = (const struct TrainerMon[])
+        {
+            {
+#line 16916
+            .species = SPECIES_POOCHYENA,
+            .gender = TRAINER_MON_RANDOM_GENDER,
+#line 16918
+            .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
+#line 16917
+            .lvl = 5,
+            .nature = NATURE_HARDY,
+            .dynamaxLevel = MAX_DYNAMAX_LEVEL,
+            },
+            {
+#line 16920
+            .species = SPECIES_WURMPLE,
+            .gender = TRAINER_MON_RANDOM_GENDER,
+#line 16922
+            .iv = TRAINER_PARTY_IVS(6, 6, 6, 6, 6, 6),
+#line 16921
+            .lvl = 5,
+            .nature = NATURE_HARDY,
+            .dynamaxLevel = MAX_DYNAMAX_LEVEL,
+            },
+        },
+    },

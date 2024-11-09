@@ -16903,3 +16903,20 @@ AI: Check Bad Move
 Wurmple
 Level: 5
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+
+=== TRAINER_PELIPPERTOWNMART_GRUNT1 ===
+Name: GRUNT 
+Class: TRAINER_CLASS_MARTGRUNT
+Pic: TRAINER_PIC_MARTGRUNT
+Gender: Male
+Music: Aqua
+Double Battle: No
+AI: Check Bad Move
+
+Poochyena
+Level: 5
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Wurmple
+Level: 5
+IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe

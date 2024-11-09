@@ -248,7 +248,11 @@
 // is 65519, but even considering follower Pokémon, this should be more than enough :)
 #define OBJ_EVENT_GFX_SAM                        241
 #define OBJ_EVENT_GFX_OPENABLE_BOX               242
-#define NUM_OBJ_EVENT_GFX                        243
+#define OBJ_EVENT_GFX_MARTGRUNT                  243
+
+
+
+#define NUM_OBJ_EVENT_GFX                        244
 
 
 // These are dynamic object gfx ids.
