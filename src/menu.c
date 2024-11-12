@@ -20,6 +20,7 @@
 #include "task.h"
 #include "text_window.h"
 #include "window.h"
+#include "field_mugshot.h"
 #include "config/overworld.h"
 #include "constants/songs.h"
 
@@ -158,6 +159,7 @@ void InitStandardTextBoxWindows(void)
         sSecondaryPopupWindowId = WINDOW_NONE;
     sFieldClockWindowId = WINDOW_NONE;
     sSeasonIconWindowId = WINDOW_NONE;
+    SetFieldMugshotSpriteId(WINDOW_NONE); // its the same as SPRITE_NONE
 }
 
 void FreeAllOverworldWindowBuffers(void)

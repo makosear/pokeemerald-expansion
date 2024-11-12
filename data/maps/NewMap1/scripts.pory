@@ -2,6 +2,7 @@ const SEASON_SPRING = 1
 const SEASON_SUMMER = 2
 const SEASON_FALL = 3
 const SEASON_WINTER = 4
+const RAIN_CHANCE = 3 # 1 in RAIN_CHANCE that it rains
 
 mapscripts NewMap1_MapScripts {
     MAP_SCRIPT_ON_TRANSITION: PelipperTown_InitSeason
@@ -23,7 +24,7 @@ script PelipperTown_InitSeason {
 
     if (getseason != SEASON_WINTER)
     {
-        if (random(3) == 0) {
+        if (random(RAIN_CHANCE) == RAIN_CHANCE - 1) {
             setweather(WEATHER_DOWNPOUR)
         }
     }
