@@ -136,6 +136,7 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Steven;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Wally;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Sam;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_MartGrunt;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_FarmerNormal;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RubySapphireLittleBoy;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_BrendanFishing;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_MayFishing;
@@ -391,6 +392,7 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_WALLY] =                    &gObjectEventGraphicsInfo_Wally,
     [OBJ_EVENT_GFX_SAM] =                      &gObjectEventGraphicsInfo_Sam,
     [OBJ_EVENT_GFX_MARTGRUNT] =                &gObjectEventGraphicsInfo_MartGrunt,
+    [OBJ_EVENT_GFX_FARMER_NORMAL] =                   &gObjectEventGraphicsInfo_FarmerNormal,
     [OBJ_EVENT_GFX_LITTLE_BOY_3] =             &gObjectEventGraphicsInfo_RubySapphireLittleBoy,
     [OBJ_EVENT_GFX_BRENDAN_FISHING] =          &gObjectEventGraphicsInfo_BrendanFishing,
     [OBJ_EVENT_GFX_MAY_FISHING] =              &gObjectEventGraphicsInfo_MayFishing,

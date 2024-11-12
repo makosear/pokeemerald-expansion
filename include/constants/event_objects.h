@@ -249,10 +249,11 @@
 #define OBJ_EVENT_GFX_SAM                        241
 #define OBJ_EVENT_GFX_OPENABLE_BOX               242
 #define OBJ_EVENT_GFX_MARTGRUNT                  243
+#define OBJ_EVENT_GFX_FARMER_NORMAL              244
 
 
 
-#define NUM_OBJ_EVENT_GFX                        244
+#define NUM_OBJ_EVENT_GFX                        245
 
 
 // These are dynamic object gfx ids.
@@ -385,6 +386,7 @@
 #define OBJ_EVENT_PAL_TAG_DYNAMIC                 0x1124
 #define OBJ_EVENT_PAL_TAG_SAM                     0x1125
 #define OBJ_EVENT_PAL_OPENABLE_BOX                0x1126
+#define OBJ_EVENT_PAL_TAG_FARMER                  0x1127
 
 #if OW_FOLLOWERS_POKEBALLS
 // Vanilla
