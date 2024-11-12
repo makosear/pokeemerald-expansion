@@ -28,6 +28,7 @@ script LittlerootTown_SamsHouse_Event_Script_MeetSam {
     if(!flag(FLAG_MEETSAM)) {
         playbgm(MUS_ENCOUNTER_BRENDAN, TRUE)
         createfieldmugshot(MUGSHOT_SAM, EMOTE_SMILE)
+        speakername("Sam")
         msgbox ("Hey, I'm Sam. Good to meet you.", MSGBOX_NPC)
         removefieldmugshot
         setflag(FLAG_MEETSAM)
@@ -36,6 +37,7 @@ script LittlerootTown_SamsHouse_Event_Script_MeetSam {
 
     elif (var(VAR_SAM_STATE) < 3) { 
         createfieldmugshot(MUGSHOT_SAM, EMOTE_HAPPY)
+        speakername("Sam")
         msgbox(format("I'm glad I have the day off! Sebastian and I have been meaning to hang for a while. Why don't you drop by later. {PLAYER}?"), MSGBOX_NPC)
         removefieldmugshot
         setvar(VAR_SAM_STATE, 1)
@@ -43,6 +45,7 @@ script LittlerootTown_SamsHouse_Event_Script_MeetSam {
 
     if (var(VAR_SAM_STATE) < 5 && var(VAR_SAM_STATE) > 2) {
         createfieldmugshot(MUGSHOT_SAM, EMOTE_SMILE)
+        speakername("Sam")
         msgbox(format("Thanks for your help, {PLAYER}!\nI really think we're onto something."), MSGBOX_NPC)
         removefieldmugshot
     }

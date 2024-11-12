@@ -42,15 +42,15 @@ LittlerootTown_SamsHouse_Event_Script_MeetSam::
 	faceplayer
 # 28 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
 	goto_if_unset FLAG_MEETSAM, LittlerootTown_SamsHouse_Event_Script_MeetSam_2
-# 37 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
+# 38 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
 	compare VAR_SAM_STATE, 3
 	goto_if_lt LittlerootTown_SamsHouse_Event_Script_MeetSam_3
 LittlerootTown_SamsHouse_Event_Script_MeetSam_1:
-# 44 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
+# 46 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
 	compare VAR_SAM_STATE, 5
 	goto_if_lt LittlerootTown_SamsHouse_Event_Script_MeetSam_8
 LittlerootTown_SamsHouse_Event_Script_MeetSam_6:
-# 50 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
+# 53 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
 	releaseall
 	return
 
@@ -60,528 +60,540 @@ LittlerootTown_SamsHouse_Event_Script_MeetSam_2:
 # 30 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
 	createfieldmugshot MUGSHOT_SAM, EMOTE_SMILE
 # 31 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
-	msgbox LittlerootTown_SamsHouse_Event_Script_MeetSam_Text_0, MSGBOX_NPC
+	speakername LittlerootTown_SamsHouse_Event_Script_MeetSam_Text_0
 # 32 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
-	removefieldmugshot
+	msgbox LittlerootTown_SamsHouse_Event_Script_MeetSam_Text_1, MSGBOX_NPC
 # 33 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
-	setflag FLAG_MEETSAM
+	removefieldmugshot
 # 34 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
+	setflag FLAG_MEETSAM
+# 35 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
 	fadedefaultbgm
 	goto LittlerootTown_SamsHouse_Event_Script_MeetSam_1
 
 LittlerootTown_SamsHouse_Event_Script_MeetSam_3:
-# 38 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
-	createfieldmugshot MUGSHOT_SAM, EMOTE_HAPPY
 # 39 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
-	msgbox LittlerootTown_SamsHouse_Event_Script_MeetSam_Text_1, MSGBOX_NPC
+	createfieldmugshot MUGSHOT_SAM, EMOTE_HAPPY
 # 40 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
-	removefieldmugshot
+	speakername LittlerootTown_SamsHouse_Event_Script_MeetSam_Text_0
 # 41 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
+	msgbox LittlerootTown_SamsHouse_Event_Script_MeetSam_Text_2, MSGBOX_NPC
+# 42 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
+	removefieldmugshot
+# 43 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
 	setvar VAR_SAM_STATE, 1
 	goto LittlerootTown_SamsHouse_Event_Script_MeetSam_1
 
 LittlerootTown_SamsHouse_Event_Script_MeetSam_7:
-# 45 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
-	createfieldmugshot MUGSHOT_SAM, EMOTE_SMILE
-# 46 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
-	msgbox LittlerootTown_SamsHouse_Event_Script_MeetSam_Text_2, MSGBOX_NPC
 # 47 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
+	createfieldmugshot MUGSHOT_SAM, EMOTE_SMILE
+# 48 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
+	speakername LittlerootTown_SamsHouse_Event_Script_MeetSam_Text_0
+# 49 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
+	msgbox LittlerootTown_SamsHouse_Event_Script_MeetSam_Text_3, MSGBOX_NPC
+# 50 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
 	removefieldmugshot
 	goto LittlerootTown_SamsHouse_Event_Script_MeetSam_6
 
 LittlerootTown_SamsHouse_Event_Script_MeetSam_8:
-# 44 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
+# 46 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
 	compare VAR_SAM_STATE, 2
 	goto_if_gt LittlerootTown_SamsHouse_Event_Script_MeetSam_7
 	goto LittlerootTown_SamsHouse_Event_Script_MeetSam_6
 
 
 LittlerootTown_SamsHouse_Event_Script_Vincent::
-# 54 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
-	lock
-# 55 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
-	faceplayer
-# 56 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
-	msgbox LittlerootTown_SamsHouse_Event_Script_Vincent_Text_0, MSGBOX_NPC
 # 57 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
+	lock
+# 58 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
+	faceplayer
+# 59 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
+	msgbox LittlerootTown_SamsHouse_Event_Script_Vincent_Text_0, MSGBOX_NPC
+# 60 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
 	releaseall
 	return
 
 
 LittlerootTown_SamsHouse_Event_Script_Jodi::
-# 61 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
-	lock
-# 62 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
-	faceplayer
-# 63 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
-	msgbox LittlerootTown_SamsHouse_Event_Script_Jodi_Text_0, MSGBOX_NPC
 # 64 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
-	msgbox LittlerootTown_SamsHouse_Event_Script_Jodi_Text_1, MSGBOX_NPC
+	lock
 # 65 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
+	faceplayer
+# 66 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
+	msgbox LittlerootTown_SamsHouse_Event_Script_Jodi_Text_0, MSGBOX_NPC
+# 67 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
+	msgbox LittlerootTown_SamsHouse_Event_Script_Jodi_Text_1, MSGBOX_NPC
+# 68 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
 	releaseall
 	return
 
 
 LittlerootTown_Samshouse_Event_Script_SamHeart1::
-# 69 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
-	lockall
-# 70 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
-	fadescreen FADE_TO_BLACK
-# 71 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
-	hideobjectat 1, MAP_LITTLEROOT_TOWN_SAMS_HOUSE
 # 72 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
-	hideobjectat 3, MAP_LITTLEROOT_TOWN_SAMS_HOUSE
+	lockall
 # 73 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
-	clearflag FLAG_HIDE_LITTLEROOT_TOWN_SAMS_HOUSE_SEBASTIAN
+	fadescreen FADE_TO_BLACK
 # 74 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
-	addobject 4
+	hideobjectat 1, MAP_LITTLEROOT_TOWN_SAMS_HOUSE
 # 75 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
-	fadescreen FADE_FROM_BLACK
+	hideobjectat 3, MAP_LITTLEROOT_TOWN_SAMS_HOUSE
 # 76 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
-	playbgm MUS_OLDALE, TRUE
+	clearflag FLAG_HIDE_LITTLEROOT_TOWN_SAMS_HOUSE_SEBASTIAN
 # 77 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, SamHeart1_Movement_Player
+	addobject 4
 # 78 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
-	waitmovement 0
+	fadescreen FADE_FROM_BLACK
 # 79 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight
+	playbgm MUS_OLDALE, TRUE
 # 80 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
-	waitmovement 0
+	applymovement OBJ_EVENT_ID_PLAYER, SamHeart1_Movement_Player
 # 81 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
-	playse SE_PIN
+	waitmovement 0
 # 82 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
-	applymovement 2, Common_Movement_ExclamationMark
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight
 # 83 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
-	applymovement 4, Common_Movement_ExclamationMark
+	waitmovement 0
 # 84 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
-	waitmovement 4
+	playse SE_PIN
 # 85 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
-	applymovement 4, Common_Movement_FaceLeft
+	applymovement 2, Common_Movement_ExclamationMark
 # 86 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
-	waitmovement 4
+	applymovement 4, Common_Movement_ExclamationMark
 # 87 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
-	waitmovement 2
+	waitmovement 4
 # 88 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
-	delay 8
+	applymovement 4, Common_Movement_FaceLeft
 # 89 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
-	applymovement 2, SamHeart1_Movement_2
+	waitmovement 4
 # 90 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
 	waitmovement 2
 # 91 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
-	msgbox LittlerootTown_Samshouse_Event_Script_SamHeart1_Text_0, MSGBOX_DEFAULT
-# 92 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
-	delay 4
-# 93 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
-	applymovement 4, Common_Movement_FaceUp
-# 94 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
-	waitmovement 0
-# 95 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
 	delay 8
+# 92 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
+	applymovement 2, SamHeart1_Movement_2
+# 93 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
+	waitmovement 2
+# 94 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
+	msgbox LittlerootTown_Samshouse_Event_Script_SamHeart1_Text_0, MSGBOX_DEFAULT
+# 95 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
+	delay 4
 # 96 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
-	applymovement 4, Common_Movement_FaceLeft
+	applymovement 4, Common_Movement_FaceUp
 # 97 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
 	waitmovement 0
 # 98 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
 	delay 8
 # 99 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
-	msgbox LittlerootTown_Samshouse_Event_Script_SamHeart1_Text_1, MSGBOX_DEFAULT
+	applymovement 4, Common_Movement_FaceLeft
+# 100 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
+	waitmovement 0
 # 101 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
 	delay 8
-# 103 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
-	msgbox LittlerootTown_Samshouse_Event_Script_SamHeart1_Text_2, MSGBOX_DEFAULT
-# 105 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
-	dynmultichoice 8, 4, TRUE, 6, 0, DYN_MULTICHOICE_CB_NONE, LittlerootTown_Samshouse_Event_Script_SamHeart1_Text_3, LittlerootTown_Samshouse_Event_Script_SamHeart1_Text_4, LittlerootTown_Samshouse_Event_Script_SamHeart1_Text_5, LittlerootTown_Samshouse_Event_Script_SamHeart1_Text_6
-# 108 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
-	msgbox LittlerootTown_Samshouse_Event_Script_SamHeart1_Text_7, MSGBOX_DEFAULT
-# 110 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
-	msgbox LittlerootTown_Samshouse_Event_Script_SamHeart1_Text_8, MSGBOX_DEFAULT
-# 112 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
+# 102 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
+	msgbox LittlerootTown_Samshouse_Event_Script_SamHeart1_Text_1, MSGBOX_DEFAULT
+# 104 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
 	delay 8
-# 114 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
+# 106 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
+	msgbox LittlerootTown_Samshouse_Event_Script_SamHeart1_Text_2, MSGBOX_DEFAULT
+# 108 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
+	dynmultichoice 8, 4, TRUE, 6, 0, DYN_MULTICHOICE_CB_NONE, LittlerootTown_Samshouse_Event_Script_SamHeart1_Text_3, LittlerootTown_Samshouse_Event_Script_SamHeart1_Text_4, LittlerootTown_Samshouse_Event_Script_SamHeart1_Text_5, LittlerootTown_Samshouse_Event_Script_SamHeart1_Text_6
+# 111 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
+	msgbox LittlerootTown_Samshouse_Event_Script_SamHeart1_Text_7, MSGBOX_DEFAULT
+# 113 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
+	msgbox LittlerootTown_Samshouse_Event_Script_SamHeart1_Text_8, MSGBOX_DEFAULT
+# 115 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
+	delay 8
+# 117 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
 	msgbox LittlerootTown_Samshouse_Event_Script_SamHeart1_Text_9, MSGBOX_DEFAULT
-# 116 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
+# 119 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
 	msgbox LittlerootTown_Samshouse_Event_Script_SamHeart1_Text_10, MSGBOX_DEFAULT
-# 120 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
+# 123 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
 	trainerbattle_no_intro TRAINER_SAM_ONEHEART, LittlerootTown_Samshouse_Event_Script_SamHeart1_Text_11
-# 122 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
+# 125 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
 	msgbox LittlerootTown_Samshouse_Event_Script_SamHeart1_Text_12, MSGBOX_DEFAULT
-# 124 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
+# 127 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
 	delay 16
-# 126 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
-	msgbox LittlerootTown_Samshouse_Event_Script_SamHeart1_Text_13, MSGBOX_DEFAULT
-# 128 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
-	fadescreen FADE_TO_BLACK
 # 129 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
-	showobjectat 1, MAP_LITTLEROOT_TOWN_SAMS_HOUSE
-# 130 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
-	showobjectat 3, MAP_LITTLEROOT_TOWN_SAMS_HOUSE
+	msgbox LittlerootTown_Samshouse_Event_Script_SamHeart1_Text_13, MSGBOX_DEFAULT
 # 131 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
-	setflag FLAG_HIDE_LITTLEROOT_TOWN_SAMS_HOUSE_SEBASTIAN
+	fadescreen FADE_TO_BLACK
 # 132 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
-	removeobject 4
+	showobjectat 1, MAP_LITTLEROOT_TOWN_SAMS_HOUSE
 # 133 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
-	fadescreen FADE_FROM_BLACK
+	showobjectat 3, MAP_LITTLEROOT_TOWN_SAMS_HOUSE
 # 134 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
-	fadedefaultbgm
+	setflag FLAG_HIDE_LITTLEROOT_TOWN_SAMS_HOUSE_SEBASTIAN
 # 135 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
-	setvar VAR_SAM_STATE, 3
+	removeobject 4
 # 136 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
+	fadescreen FADE_FROM_BLACK
+# 137 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
+	fadedefaultbgm
+# 138 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
+	setvar VAR_SAM_STATE, 3
+# 139 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
 	releaseall
 	return
 
 
-# 139 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
+# 142 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
 SamHeart1_Movement_Player:
-# 140 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
-	walk_up
-# 141 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
-	walk_right
-# 141 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
-	walk_right
-# 141 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
-	walk_right
-# 141 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
-	walk_right
-# 141 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
-	walk_right
-# 141 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
-	walk_right
-# 142 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
-	walk_up
-# 142 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
-	walk_up
-# 142 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
-	walk_up
 # 143 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
+	walk_up
+# 144 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
+	walk_right
+# 144 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
+	walk_right
+# 144 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
+	walk_right
+# 144 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
+	walk_right
+# 144 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
+	walk_right
+# 144 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
+	walk_right
+# 145 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
+	walk_up
+# 145 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
+	walk_up
+# 145 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
+	walk_up
+# 146 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
 	face_right
 	step_end
 
-# 146 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
+# 149 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
 SamHeart1_Movement_2:
-# 147 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
+# 150 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
 	walk_left
-# 148 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
+# 151 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
 	face_down
 	step_end
 
 LittlerootTown_Samshouse_Event_Script_SamHeart2::
-# 152 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
-	lockall
-# 153 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
-	fadescreen FADE_TO_BLACK
-# 154 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
-	hideobjectat 3, MAP_LITTLEROOT_TOWN_SAMS_HOUSE
 # 155 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
-	setobjectxy 1, 16, 7
+	lockall
 # 156 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
-	setobjectmovementtype 1, MOVEMENT_TYPE_FACE_UP
+	fadescreen FADE_TO_BLACK
 # 157 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
-	setobjectxy 2, 5, 2
+	hideobjectat 3, MAP_LITTLEROOT_TOWN_SAMS_HOUSE
 # 158 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
-	setobjectmovementtype 2, MOVEMENT_TYPE_FACE_UP
+	setobjectxy 1, 16, 7
 # 159 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
-	fadescreen FADE_FROM_BLACK
+	setobjectmovementtype 1, MOVEMENT_TYPE_FACE_UP
 # 160 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
+	setobjectxy 2, 5, 2
+# 161 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
+	setobjectmovementtype 2, MOVEMENT_TYPE_FACE_UP
+# 162 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
+	fadescreen FADE_FROM_BLACK
+# 163 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
 	playbgm MUS_OLDALE, TRUE
-# 164 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
-	applymoveplayer SamHeart3_Player
-# 165 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
-	applymove 2, Common_Movement_FaceDown
 # 167 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
-	msgbox LittlerootTown_Samshouse_Event_Script_SamHeart2_Text_0, MSGBOX_DEFAULT
+	applymoveplayer SamHeart3_Player
 # 168 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
+	applymove 2, Common_Movement_FaceDown
+# 170 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
+	msgbox LittlerootTown_Samshouse_Event_Script_SamHeart2_Text_0, MSGBOX_DEFAULT
+# 171 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
 	msgbox LittlerootTown_Samshouse_Event_Script_SamHeart2_Text_1, MSGBOX_DEFAULT
-# 169 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
-	closemessage
 # 172 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
-	applymove 2, Common_Movement_FaceUp
-# 173 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
-	delay 30
-# 174 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
-	playse SE_USE_ITEM
+	closemessage
 # 175 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
-	delay 30
+	applymove 2, Common_Movement_FaceUp
 # 176 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
-	applymove 2, Common_Movement_FaceLeft
+	delay 30
+# 177 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
+	playse SE_USE_ITEM
 # 178 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
-	playse SE_FALL
+	delay 30
 # 179 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
-	waitse
-# 180 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
-	playse SE_SUPER_EFFECTIVE
+	applymove 2, Common_Movement_FaceLeft
 # 181 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
-	waitse
+	playse SE_FALL
 # 182 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
-	playbgm MUS_TOO_BAD, FALSE
+	waitse
 # 183 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
-	delay 60
+	playse SE_SUPER_EFFECTIVE
 # 184 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
-	fadeoutbgm 0
+	waitse
 # 185 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
-	playbgm MUS_DUMMY, FALSE
+	playbgm MUS_TOO_BAD, FALSE
+# 186 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
+	delay 60
 # 187 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
-	msgbox LittlerootTown_Samshouse_Event_Script_SamHeart2_Text_2, MSGBOX_DEFAULT
+	fadeoutbgm 0
 # 188 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
+	playbgm MUS_DUMMY, FALSE
+# 190 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
+	msgbox LittlerootTown_Samshouse_Event_Script_SamHeart2_Text_2, MSGBOX_DEFAULT
+# 191 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
 	closemessage
-# 192 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
+# 195 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
 	applymove 1, SamHeart3_Jodi1
-# 193 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
-	msgbox LittlerootTown_Samshouse_Event_Script_SamHeart2_Text_3, MSGBOX_DEFAULT
-# 194 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
-	closemessage
 # 196 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
-	emote 1, EMOTE_EXCLAM
+	msgbox LittlerootTown_Samshouse_Event_Script_SamHeart2_Text_3, MSGBOX_DEFAULT
 # 197 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
-	msgbox LittlerootTown_Samshouse_Event_Script_SamHeart2_Text_4, MSGBOX_DEFAULT
-# 198 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
 	closemessage
+# 199 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
+	emote 1, EMOTE_EXCLAM
 # 200 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
-	applymove 1, SamHeart3_Jodi2
+	msgbox LittlerootTown_Samshouse_Event_Script_SamHeart2_Text_4, MSGBOX_DEFAULT
 # 201 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
-	msgbox LittlerootTown_Samshouse_Event_Script_SamHeart2_Text_5, MSGBOX_DEFAULT
+	closemessage
 # 203 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
+	applymove 1, SamHeart3_Jodi2
+# 204 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
+	msgbox LittlerootTown_Samshouse_Event_Script_SamHeart2_Text_5, MSGBOX_DEFAULT
+# 206 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
 	msgbox LittlerootTown_Samshouse_Event_Script_SamHeart2_Text_6, MSGBOX_DEFAULT
-# 205 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
-	dynmultichoice 8, 4, TRUE, 6, 0, DYN_MULTICHOICE_CB_NONE, LittlerootTown_Samshouse_Event_Script_SamHeart2_Text_7, LittlerootTown_Samshouse_Event_Script_SamHeart2_Text_8, LittlerootTown_Samshouse_Event_Script_SamHeart2_Text_9
 # 208 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
+	dynmultichoice 8, 4, TRUE, 6, 0, DYN_MULTICHOICE_CB_NONE, LittlerootTown_Samshouse_Event_Script_SamHeart2_Text_7, LittlerootTown_Samshouse_Event_Script_SamHeart2_Text_8, LittlerootTown_Samshouse_Event_Script_SamHeart2_Text_9
+# 211 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
 	compare VAR_RESULT, 2
 	goto_if_lt LittlerootTown_Samshouse_Event_Script_SamHeart2_2
-# 221 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
-	setvar VAR_SAM_STATE, 9
-# 222 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
-	msgbox LittlerootTown_Samshouse_Event_Script_SamHeart2_Text_13, MSGBOX_DEFAULT
 # 224 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
+	setvar VAR_SAM_STATE, 9
+# 225 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
+	msgbox LittlerootTown_Samshouse_Event_Script_SamHeart2_Text_13, MSGBOX_DEFAULT
+# 227 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
 	msgbox LittlerootTown_Samshouse_Event_Script_SamHeart2_Text_14, MSGBOX_DEFAULT
 LittlerootTown_Samshouse_Event_Script_SamHeart2_1:
-# 227 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
-	closemessage
-# 228 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
-	delay 60
 # 230 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
-	msgbox LittlerootTown_Samshouse_Event_Script_SamHeart2_Text_15, MSGBOX_DEFAULT
+	closemessage
 # 231 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
-	closemessage
+	delay 60
+# 233 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
+	msgbox LittlerootTown_Samshouse_Event_Script_SamHeart2_Text_15, MSGBOX_DEFAULT
 # 234 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
-	emote 1, EMOTE_HEART
-# 236 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
-	msgbox LittlerootTown_Samshouse_Event_Script_SamHeart2_Text_16, MSGBOX_DEFAULT
-# 237 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
 	closemessage
+# 237 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
+	emote 1, EMOTE_HEART
 # 239 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
-	applymove 1, SamHeart3_Jodi3
-# 241 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
-	fadescreen FADE_TO_BLACK
+	msgbox LittlerootTown_Samshouse_Event_Script_SamHeart2_Text_16, MSGBOX_DEFAULT
+# 240 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
+	closemessage
 # 242 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
-	showobjectat 3, MAP_LITTLEROOT_TOWN_SAMS_HOUSE
-# 243 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
-	fadescreen FADE_FROM_BLACK
+	applymove 1, SamHeart3_Jodi3
 # 244 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
-	fadedefaultbgm
+	fadescreen FADE_TO_BLACK
 # 245 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
+	showobjectat 3, MAP_LITTLEROOT_TOWN_SAMS_HOUSE
+# 246 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
+	fadescreen FADE_FROM_BLACK
+# 247 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
+	fadedefaultbgm
+# 248 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
 	releaseall
 	return
 
 LittlerootTown_Samshouse_Event_Script_SamHeart2_2:
-# 209 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
+# 212 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_eq LittlerootTown_Samshouse_Event_Script_SamHeart2_6
-# 213 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
+# 216 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
 	compare VAR_RESULT, 1
 	goto_if_eq LittlerootTown_Samshouse_Event_Script_SamHeart2_7
 LittlerootTown_Samshouse_Event_Script_SamHeart2_5:
-# 217 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
+# 220 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
 	msgbox LittlerootTown_Samshouse_Event_Script_SamHeart2_Text_12, MSGBOX_DEFAULT
 	goto LittlerootTown_Samshouse_Event_Script_SamHeart2_1
 
 LittlerootTown_Samshouse_Event_Script_SamHeart2_6:
-# 210 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
+# 213 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
 	setvar VAR_SAM_STATE, 7
-# 211 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
+# 214 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
 	msgbox LittlerootTown_Samshouse_Event_Script_SamHeart2_Text_10, MSGBOX_DEFAULT
 	goto LittlerootTown_Samshouse_Event_Script_SamHeart2_5
 
 LittlerootTown_Samshouse_Event_Script_SamHeart2_7:
-# 214 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
+# 217 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
 	setvar VAR_SAM_STATE, 8
-# 215 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
+# 218 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
 	msgbox LittlerootTown_Samshouse_Event_Script_SamHeart2_Text_11, MSGBOX_DEFAULT
 	goto LittlerootTown_Samshouse_Event_Script_SamHeart2_5
 
 
-# 248 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
+# 251 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
 SamHeart3_Jodi1:
-# 249 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
+# 252 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
 	walk_left
-# 249 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
+# 252 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
 	walk_left
-# 249 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
+# 252 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
 	walk_left
-# 249 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
+# 252 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
 	walk_left
-# 249 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
+# 252 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
 	walk_left
-# 249 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
+# 252 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
 	walk_left
-# 249 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
+# 252 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
 	walk_left
-# 249 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
+# 252 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
 	walk_left
-# 249 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
+# 252 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
 	walk_left
-# 249 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
+# 252 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
 	walk_left
-# 249 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
+# 252 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
 	walk_left
-# 250 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
-	walk_up
-	step_end
-
 # 253 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
-SamHeart3_Jodi2:
-# 254 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
-	walk_left
-# 255 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
-	walk_up
-# 255 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
 	walk_up
 	step_end
 
+# 256 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
+SamHeart3_Jodi2:
+# 257 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
+	walk_left
 # 258 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
-SamHeart3_Jodi3:
-# 259 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
-	walk_down
-# 259 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
-	walk_down
-# 260 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
-	walk_right
+	walk_up
+# 258 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
+	walk_up
+	step_end
+
 # 261 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
+SamHeart3_Jodi3:
+# 262 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
 	walk_down
 # 262 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
-	walk_right
-# 262 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
-	walk_right
-# 262 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
-	walk_right
-# 262 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
-	walk_right
-# 262 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
-	walk_right
-# 262 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
-	walk_right
-# 262 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
-	walk_right
-# 262 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
-	walk_right
-# 262 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
-	walk_right
-# 262 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
-	walk_right
-# 262 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
-	walk_right
+	walk_down
 # 263 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
+	walk_right
+# 264 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
+	walk_down
+# 265 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
+	walk_right
+# 265 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
+	walk_right
+# 265 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
+	walk_right
+# 265 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
+	walk_right
+# 265 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
+	walk_right
+# 265 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
+	walk_right
+# 265 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
+	walk_right
+# 265 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
+	walk_right
+# 265 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
+	walk_right
+# 265 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
+	walk_right
+# 265 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
+	walk_right
+# 266 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
 	face_up
 	step_end
 
-# 266 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
+# 269 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
 SamHeart3_Player:
-# 267 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
+# 270 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
 	walk_up
-# 267 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
+# 270 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
 	walk_up
-# 267 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
+# 270 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
 	walk_up
-# 267 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
+# 270 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
 	walk_up
 	step_end
 
 LittlerootTown_SamsHouse_Event_Script_MeetSam_Text_0:
 # 31 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
-	.string "Hey, I'm Sam. Good to meet you.$"
+	.string "Sam$"
 
 LittlerootTown_SamsHouse_Event_Script_MeetSam_Text_1:
-# 39 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
+# 32 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
+	.string "Hey, I'm Sam. Good to meet you.$"
+
+LittlerootTown_SamsHouse_Event_Script_MeetSam_Text_2:
+# 41 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
 	.string "I'm glad I have the day off! Sebastian\n"
 	.string "and I have been meaning to hang for a\l"
 	.string "while. Why don't you drop by later.\l"
 	.string "{PLAYER}?$"
 
-LittlerootTown_SamsHouse_Event_Script_MeetSam_Text_2:
-# 46 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
+LittlerootTown_SamsHouse_Event_Script_MeetSam_Text_3:
+# 49 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
 	.string "Thanks for your help, {PLAYER}!\n"
 	.string "I really think we're onto something.$"
 
 LittlerootTown_SamsHouse_Event_Script_Vincent_Text_0:
-# 56 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
+# 59 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
 	.string "Oh, hi! Name's Vincent!$"
 
 LittlerootTown_SamsHouse_Event_Script_Jodi_Text_0:
-# 63 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
-	.string "Oh! You aren't exactly how I imagined...\n"
-	.string "but that's okay! I'm Jodi.$"
+# 66 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
+	.string "Oh! You aren't exactly how I\n"
+	.string "imagined... but that's okay! I'm Jodi.$"
 
 LittlerootTown_SamsHouse_Event_Script_Jodi_Text_1:
-# 64 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
+# 67 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
 	.string "Have you met my boys yet?$"
 
 LittlerootTown_Samshouse_Event_Script_SamHeart1_Text_0:
-# 91 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
-	.string "SAM: Oh, hi {PLAYER}! Sebastian and I\n"
-	.string "were just having a little 'jam session'.$"
+# 94 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
+	.string "SAM: Oh, hi {PLAYER}! Sebastian and\n"
+	.string "I were just having a little 'jam\l"
+	.string "session'.$"
 
 LittlerootTown_Samshouse_Event_Script_SamHeart1_Text_1:
-# 99 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
+# 102 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
 	.string "SAM: We're trying to start a band, but\n"
 	.string "we still don't know what kind of music\l"
-	.string "to make. There's too many possibilities.$"
+	.string "to make. There's too many\l"
+	.string "possibilities.$"
 
 LittlerootTown_Samshouse_Event_Script_SamHeart1_Text_2:
-# 103 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
+# 106 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
 	.string "SAM: Say, {PLAYER}... what kind of\n"
 	.string "music do you like?$"
 
 LittlerootTown_Samshouse_Event_Script_SamHeart1_Text_3:
-# 105 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
+# 108 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
 	.string "Cheerful pop music.$"
 
 LittlerootTown_Samshouse_Event_Script_SamHeart1_Text_4:
-# 106 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
+# 109 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
 	.string "Experimental noise rock.$"
 
 LittlerootTown_Samshouse_Event_Script_SamHeart1_Text_5:
-# 106 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
+# 109 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
 	.string "Hi-Energy dance music.$"
 
 LittlerootTown_Samshouse_Event_Script_SamHeart1_Text_6:
-# 106 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
+# 109 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
 	.string "Honky-tonky country music.$"
 
 LittlerootTown_Samshouse_Event_Script_SamHeart1_Text_7:
-# 108 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
+# 111 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
 	.string "SAM: Hey, you know what? If you win\n"
 	.string "against me in a POKEMON battle, we'll\l"
 	.string "play that kind of music.$"
 
 LittlerootTown_Samshouse_Event_Script_SamHeart1_Text_8:
-# 110 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
-	.string "SAM: What do you say, Sebastian? Should\n"
-	.string "we do this?$"
+# 113 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
+	.string "SAM: What do you say, Sebastian?\n"
+	.string "Should we do this?$"
 
 LittlerootTown_Samshouse_Event_Script_SamHeart1_Text_9:
-# 114 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
+# 117 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
 	.string "SEBASTIAN: ...Okay.$"
 
 LittlerootTown_Samshouse_Event_Script_SamHeart1_Text_10:
-# 116 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
-	.string "SAM: Alright, {PLAYER}. Just, psst, try\n"
-	.string "not to make a mess in the house or my\l"
-	.string "Mom will flip.$"
+# 119 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
+	.string "SAM: Alright, {PLAYER}. Just, psst,\n"
+	.string "try not to make a mess in the house or\l"
+	.string "my Mom will flip.$"
 
 LittlerootTown_Samshouse_Event_Script_SamHeart1_Text_11:
-# 120 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
+# 123 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
 	.string "Your buddy is pretty good!$"
 
 LittlerootTown_Samshouse_Event_Script_SamHeart1_Text_12:
-# 122 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
+# 125 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
 	.string "SAM: Thanks for the help, {PLAYER}.\n"
 	.string "With my guitar skills, and Sebastian's\l"
 	.string "wizardry on the synthesizer, we're\l"
@@ -589,80 +601,81 @@ LittlerootTown_Samshouse_Event_Script_SamHeart1_Text_12:
 	.string "convinced of it!$"
 
 LittlerootTown_Samshouse_Event_Script_SamHeart1_Text_13:
-# 126 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
-	.string "SAM: Now I just need to find someone to\n"
-	.string "play drums...$"
+# 129 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
+	.string "SAM: Now I just need to find someone\n"
+	.string "to play drums...$"
 
 LittlerootTown_Samshouse_Event_Script_SamHeart2_Text_0:
-# 167 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
-	.string "SAM: Oh, hi {PLAYER}. I was just about\n"
-	.string "to have a snack.$"
+# 170 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
+	.string "SAM: Oh, hi {PLAYER}. I was just\n"
+	.string "about to have a snack.$"
 
 LittlerootTown_Samshouse_Event_Script_SamHeart2_Text_1:
-# 168 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
-	.string "SAM: Here, let me get something for you.$"
+# 171 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
+	.string "SAM: Here, let me get something for\n"
+	.string "you.$"
 
 LittlerootTown_Samshouse_Event_Script_SamHeart2_Text_2:
-# 187 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
+# 190 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
 	.string "SAM: Oh no... What a mess.$"
 
 LittlerootTown_Samshouse_Event_Script_SamHeart2_Text_3:
-# 193 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
+# 196 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
 	.string "JODI: What was that sound?$"
 
 LittlerootTown_Samshouse_Event_Script_SamHeart2_Text_4:
-# 197 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
+# 200 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
 	.string "JODI: Oh, my!$"
 
 LittlerootTown_Samshouse_Event_Script_SamHeart2_Text_5:
-# 201 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
-	.string "JODI: This is absolutely terrible! What\n"
-	.string "happened?$"
+# 204 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
+	.string "JODI: This is absolutely terrible!\n"
+	.string "What happened?$"
 
 LittlerootTown_Samshouse_Event_Script_SamHeart2_Text_6:
-# 203 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
+# 206 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
 	.string "SAM: Tell her, {PLAYER}...$"
 
 LittlerootTown_Samshouse_Event_Script_SamHeart2_Text_7:
-# 205 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
+# 208 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
 	.string "Sam dropped the snack accidentally.$"
 
 LittlerootTown_Samshouse_Event_Script_SamHeart2_Text_8:
-# 205 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
+# 208 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
 	.string "I dropped the snack accidentally.$"
 
 LittlerootTown_Samshouse_Event_Script_SamHeart2_Text_9:
-# 205 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
+# 208 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
 	.string "Sam dropped it as a joke.$"
 
 LittlerootTown_Samshouse_Event_Script_SamHeart2_Text_10:
-# 211 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
+# 214 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
 	.string "SAM: They're right... That's what\n"
 	.string "happened.$"
 
 LittlerootTown_Samshouse_Event_Script_SamHeart2_Text_11:
-# 215 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
+# 218 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
 	.string "SAM: Yeah... That's what happened!$"
 
 LittlerootTown_Samshouse_Event_Script_SamHeart2_Text_12:
-# 217 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
+# 220 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
 	.string "JODI: Thanks for telling me the truth,\n"
 	.string "{PLAYER}. It's not such a big deal.$"
 
 LittlerootTown_Samshouse_Event_Script_SamHeart2_Text_13:
-# 222 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
+# 225 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
 	.string "SAM: What!? They're lying!$"
 
 LittlerootTown_Samshouse_Event_Script_SamHeart2_Text_14:
-# 224 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
-	.string "JODI: You did WHAT, Sam?! What's gotten\n"
-	.string "into you?$"
+# 227 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
+	.string "JODI: You did WHAT, Sam?! What's\n"
+	.string "gotten into you?$"
 
 LittlerootTown_Samshouse_Event_Script_SamHeart2_Text_15:
-# 230 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
-	.string "SAM: I'm sorry about this, mom. I'll clean\n"
-	.string "it up.$"
+# 233 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
+	.string "SAM: I'm sorry about this, mom. I'll\n"
+	.string "clean it up.$"
 
 LittlerootTown_Samshouse_Event_Script_SamHeart2_Text_16:
-# 236 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
+# 239 "data/maps/LittlerootTown_SamsHouse/scripts.pory"
 	.string "JODI: Thanks, honey.$"
