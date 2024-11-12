@@ -262,7 +262,7 @@ void RtcReset(void)
         memset(FakeRtc_GetCurrentTime(), 0, sizeof(struct Time));
         struct Time* initTime = FakeRtc_GetCurrentTime();
 
-        initTime->days = 28; 
+        initTime->days = 1; 
 
         initTime->months = MONTH_SPRING;
 
@@ -270,9 +270,9 @@ void RtcReset(void)
 
         initTime->years = 1;
 
-        initTime->hours = 23;
+        initTime->hours = 6;
 
-        initTime->minutes = 40;
+        initTime->minutes = 0;
 
         return;
     }

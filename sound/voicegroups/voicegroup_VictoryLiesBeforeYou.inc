@@ -46,7 +46,7 @@ voicegroup_VictoryLiesBeforeYou::
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
 	voice_keysplit voicegroup214, KeySplitTable25    @ pizzicato
-	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0  
+	voice_keysplit voicegroup006, KeySplitTable2 @ String Ensemble
 	voice_keysplit voicegroup216, KeySplitTable27    @ timpani 1
 	voice_keysplit voicegroup006, KeySplitTable2 @ String Ensemble
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
@@ -61,4 +61,4 @@ voicegroup_VictoryLiesBeforeYou::
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
 	voice_keysplit voicegroup223, KeySplitTable9     @ french horns
-    voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
+	voice_keysplit voicegroup220, KeySplitTable30    @ trombone
