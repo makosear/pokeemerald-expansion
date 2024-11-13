@@ -60,15 +60,15 @@
       "x": 49,
       "y": 20,
       "elevation": 0,
-      "dest_map": "MAP_ROUTE2",
+      "dest_map": "MAP_GATE_PELIPPER_TOWN_TO_ROUTE2",
       "dest_warp_id": "0"
     },
     {
       "x": 49,
       "y": 21,
       "elevation": 0,
-      "dest_map": "MAP_ROUTE2",
-      "dest_warp_id": "0"
+      "dest_map": "MAP_GATE_PELIPPER_TOWN_TO_ROUTE2",
+      "dest_warp_id": "1"
     }
   ],
   "coord_events": [

@@ -939,7 +939,8 @@
 #define HG_MUSIC_END                      MUS_HG_WIN_MINIGAME
 
 #define MUS_BW_ASPERTIA_CITY              983
-#define CUSTOM_MUSIC_END                  MUS_BW_ASPERTIA_CITY
+#define MUS_BW_GATE                       984
+#define CUSTOM_MUSIC_END                  MUS_BW_GATE
 
 #define END_MUS                     CUSTOM_MUSIC_END
 #define SONGS_END                   END_MUS

@@ -44,7 +44,8 @@
     "LittlerootTown_SamsHouse",
     "PelipperTownFarmersHouse",
     "PelipperTownFarmHouse_Unpacked",
-    "Route2"
+    "Route2",
+    "Gate_PelipperTownToRoute2"
   ],
   "gMapGroup_TownsAndRoutes": [
     "PetalburgCity",

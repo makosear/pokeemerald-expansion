@@ -1584,6 +1584,7 @@ SECTIONS {
         sound/songs/midi/mus_hg_obtain_b_points.o(.rodata);
         sound/songs/midi/mus_hg_win_minigame.o(.rodata);
         sound/songs/midi/mus_bw_aspertia_city.o(.rodata);
+        sound/songs/midi/mus_bw_gate.o(.rodata);
         sound/songs/midi/ph_trap_blend.o(.rodata);
         sound/songs/midi/ph_trap_held.o(.rodata);
         sound/songs/midi/ph_trap_solo.o(.rodata);

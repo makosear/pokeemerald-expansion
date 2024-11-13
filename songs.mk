@@ -2360,3 +2360,6 @@ $(MID_SUBDIR)/mus_hg_obtain_b_points.s: %.s: %.mid
 
 $(MID_SUBDIR)/mus_hg_win_minigame.s: %.s: %.mid
 	$(MID) $< $@ -E -R0 -G229 -V091 -p5
+
+$(MID_SUBDIR)/mus_bw_gate.s: %.s: %.mid
+	$(MID) $< $@ -E -R0 -G_SongExpansion -V125

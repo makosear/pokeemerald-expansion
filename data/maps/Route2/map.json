@@ -46,14 +46,14 @@
       "x": 10,
       "y": 37,
       "elevation": 0,
-      "dest_map": "MAP_NEW_MAP1",
-      "dest_warp_id": "3"
+      "dest_map": "MAP_GATE_PELIPPER_TOWN_TO_ROUTE2",
+      "dest_warp_id": "2"
     },
     {
       "x": 10,
       "y": 38,
       "elevation": 0,
-      "dest_map": "MAP_NEW_MAP1",
+      "dest_map": "MAP_GATE_PELIPPER_TOWN_TO_ROUTE2",
       "dest_warp_id": "3"
     }
   ],

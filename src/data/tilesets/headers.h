@@ -1181,3 +1181,25 @@ const struct Tileset gTileset_porysecondarytest_winter =
     .metatileAttributes = gMetatileAttributes_porysecondarytest_winter,
     .callback = NULL,
 };
+
+const struct Tileset gTileset_gate_indoors =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_gate_indoors,
+    .palettes = gTilesetPalettes_gate_indoors,
+    .metatiles = gMetatiles_gate_indoors,
+    .metatileAttributes = gMetatileAttributes_gate_indoors,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_primary_gate =
+{
+    .isCompressed = TRUE,
+    .isSecondary = FALSE,
+    .tiles = gTilesetTiles_primary_gate,
+    .palettes = gTilesetPalettes_primary_gate,
+    .metatiles = gMetatiles_primary_gate,
+    .metatileAttributes = gMetatileAttributes_primary_gate,
+    .callback = NULL,
+};

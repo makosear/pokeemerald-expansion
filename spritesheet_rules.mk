@@ -390,6 +390,9 @@ $(OBJEVENTGFXDIR)/people/martgrunt.4bpp: %.4bpp: %.png
 $(OBJEVENTGFXDIR)/people/farmer/walking.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 2 -mheight 4
 
+$(OBJEVENTGFXDIR)/people/gate_guard.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 2 -mheight 4
+
 $(OBJEVENTGFXDIR)/people/woman_1.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 2 -mheight 4
 

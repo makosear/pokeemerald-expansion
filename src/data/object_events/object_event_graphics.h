@@ -155,8 +155,8 @@ const u32 gObjectEventPic_Steven[] = INCBIN_U32("graphics/object_events/pics/peo
 const u32 gObjectEventPic_Wally[] = INCBIN_U32("graphics/object_events/pics/people/wally.4bpp");
 const u32 gObjectEventPic_Sam[] = INCBIN_U32("graphics/object_events/pics/people/sam.4bpp");
 const u32 gObjectEventPic_FarmerNormalRunning[] = INCBIN_U32("graphics/object_events/pics/people/farmer/walking.4bpp", "graphics/object_events/pics/people/farmer/walking.4bpp");
-
 const u32 gObjectEventPic_MartGrunt[] = INCBIN_U32("graphics/object_events/pics/people/martgrunt.4bpp");
+const u32 gObjectEventPic_GateGuard[] = INCBIN_U32("graphics/object_events/pics/people/gate_guard.4bpp");
 const u32 gObjectEventPic_RubySapphireLittleBoy[] = INCBIN_U32("graphics/object_events/pics/people/rs_little_boy.4bpp");
 const u32 gObjectEventPic_HotSpringsOldWoman[] = INCBIN_U32("graphics/object_events/pics/people/hot_springs_old_woman.4bpp");
 const u32 gObjectEventPic_LatiasLatios[] = INCBIN_U32("graphics/object_events/pics/pokemon_old/latias_latios.4bpp");

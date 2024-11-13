@@ -250,10 +250,10 @@
 #define OBJ_EVENT_GFX_OPENABLE_BOX               242
 #define OBJ_EVENT_GFX_MARTGRUNT                  243
 #define OBJ_EVENT_GFX_FARMER_NORMAL              244
+#define OBJ_EVENT_GFX_GATE_GUARD                 245
 
 
-
-#define NUM_OBJ_EVENT_GFX                        245
+#define NUM_OBJ_EVENT_GFX                        OBJ_EVENT_GFX_GATE_GUARD + 1
 
 
 // These are dynamic object gfx ids.

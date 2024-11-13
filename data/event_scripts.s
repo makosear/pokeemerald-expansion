@@ -1099,3 +1099,5 @@ EventScript_VsSeekerChargingDone::
 
 
 	.include "data/maps/Route2/scripts.inc"
+
+	.include "data/maps/Gate_PelipperTownToRoute2/scripts.inc"

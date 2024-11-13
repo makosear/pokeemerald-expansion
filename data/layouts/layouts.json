@@ -5424,6 +5424,18 @@
       "secondary_tileset": "gTileset_porysecondarytest",
       "border_filepath": "data/layouts/Route2/border.bin",
       "blockdata_filepath": "data/layouts/Route2/map.bin"
+    },
+    {
+      "id": "LAYOUT_GATE_PELIPPER_TOWN_TO_ROUTE2",
+      "name": "Gate_PelipperTownToRoute2_Layout",
+      "width": 11,
+      "height": 11,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_primary_gate",
+      "secondary_tileset": "gTileset_OceanicMuseum",
+      "border_filepath": "data/layouts/Gate_PelipperTownToRoute2/border.bin",
+      "blockdata_filepath": "data/layouts/Gate_PelipperTownToRoute2/map.bin"
     }
   ]
 }
